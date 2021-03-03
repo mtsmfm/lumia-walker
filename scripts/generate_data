@@ -1,0 +1,35 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+  gem 'activesupport', require: 'active_support/all'
+end
+
+require 'net/http'
+require 'json'
+require 'pathname'
+
+class BserClient
+  def get(path)
+    uri = URI("https://open-api.bser.io/#{path}")
+    req = Net::HTTP::Get.new(uri, 'Content-Type' => 'application/json', 'x-api-key' => ENV['BSER_API_KEY'])
+    http = Net::HTTP.new(uri.hostname, uri.port)
+    http.use_ssl = true
+    res = http.request(req)
+    raise unless res.code == "200"
+    JSON.parse(res.body)
+  end
+end
+
+data_dir = Pathname.new(__dir__).join('../data')
+
+client = BserClient.new
+
+%w(ItemWeapon ItemArmor ItemConsumable ItemMisc ItemSpecial ItemSpawn).each do |category|
+  json = client.get("v1/data/#{category}")
+  data_dir.join("#{category.underscore}.json").write(JSON.pretty_generate(json['data']))
+end
