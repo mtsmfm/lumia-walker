@@ -1,0 +1,95 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+  gem 'activesupport', require: 'active_support/all'
+  gem 'oga'
+end
+
+require 'net/http'
+require 'json'
+require 'pathname'
+require 'cgi'
+
+class ItemMaster
+  Item = Struct.new(:name, :code, keyword_init: true)
+
+  def find_by_name(name)
+    items.find {|i| i.name == name }
+  end
+
+  private
+
+  def items
+    @items ||= items_data.map do |d|
+      code = d['code']
+      name = en_locale_data['items'][code.to_s]
+
+      Item.new(name: name, code: code)
+    end
+  end
+
+  def items_data
+    @items_data ||= data_dir.glob('*.json').flat_map {|j| JSON.parse(j.read) }
+  end
+
+  def en_locale_data
+    @en_locale_data ||= JSON.parse(root_dir.join('locales/en.json').read)
+  end
+
+  def root_dir
+    @root_dir ||= Pathname.new(__dir__).join('..')
+  end
+
+  def data_dir
+    @data_dir ||= root_dir.join('data')
+  end
+end
+
+class HtmlClient
+  def initialize(cache_dir)
+    @cache_dir = cache_dir
+  end
+
+  def get(uri)
+    file = @cache_dir.join(CGI.escape(uri))
+
+    if file.exist?
+      file.read
+    else
+      result = Net::HTTP.get(URI(uri))
+      sleep 1
+      file.write(result)
+      result
+    end
+  end
+end
+
+item_master = ItemMaster.new
+root_dir = Pathname.new(__dir__).join('..')
+images_dir = root_dir.join('public/images')
+logger = Logger.new(STDOUT)
+html_client = HtmlClient.new(root_dir.join('tmp'))
+
+%w(Weapon Armor Consumable Special Material).each do |category|
+  xml = Oga.parse_xml(html_client.get("https://eternalreturn.gamepedia.com/#{category}"))
+  xml.xpath('//table//td[a[@title and .//img]]').each do |td_tag|
+    title = td_tag.xpath('a').last.text
+    item = item_master.find_by_name(title)
+
+    unless item
+      logger.warn("Item #{title} not found")
+      next
+    end
+
+    src = td_tag.at_xpath('.//img')['src']
+    file = images_dir.join("items/#{item.code}.png")
+    unless file.exist?
+      file.write(html_client.get(src))
+    end
+  end
+end
