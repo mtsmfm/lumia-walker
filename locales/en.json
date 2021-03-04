@@ -1,4 +1,26 @@
 {
+  "weaponTypes": {
+    "OneHandSword": "Dagger",
+    "TwoHandSword": "Two-Handed Sword",
+    "Axe": "Axe",
+    "DualSword": "Dual Swords",
+    "Pistol": "Pistol",
+    "AssaultRifle": "Assault Rifle",
+    "SniperRifle": "Sniper Rifle",
+    "Rapier": "Rapier",
+    "Spear": "Spear",
+    "Hammer": "Hammer",
+    "Bat": "Bat",
+    "HighAngleFire": "Throw",
+    "DirectFire": "Shuriken",
+    "Bow": "Bow",
+    "Crossbow": "Crossbow",
+    "Glove": "Glove",
+    "Tonfa": "Tonfa",
+    "Guitar": "Guitar",
+    "Nunchaku": "Nunchaku",
+    "Whip": "Whip"
+  },
   "items": {
     "101101": "Scissors",
     "101102": "Fountain Pen",

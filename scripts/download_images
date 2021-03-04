@@ -34,7 +34,7 @@ class ItemMaster
   end
 
   def items_data
-    @items_data ||= data_dir.glob('*.json').flat_map {|j| JSON.parse(j.read) }
+    @items_data ||= data_dir.glob('item_*.json').flat_map {|j| JSON.parse(j.read) }
   end
 
   def en_locale_data
@@ -91,5 +91,18 @@ html_client = HtmlClient.new(root_dir.join('tmp'))
     unless file.exist?
       file.write(html_client.get(src))
     end
+  end
+end
+
+weapon_types = JSON.parse(root_dir.join('locales/en.json').read)['weaponTypes']
+
+xml = Oga.parse_xml(html_client.get("https://eternalreturn.gamepedia.com/Weapon"))
+xml.xpath('//span[@class="toctext"]').each.with_index do |toc_text_span, i|
+  en_weapon_type = toc_text_span.text
+  weapon_type, _ = weapon_types.find {|k, v| v == en_weapon_type }
+  src = xml.xpath('//*[@class="ability_details"]//img')[i]['src']
+  file = images_dir.join("weapons/#{weapon_type}.png")
+  unless file.exist?
+    file.write(html_client.get(src))
   end
 end
