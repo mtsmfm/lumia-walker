@@ -38,7 +38,7 @@ class ItemMaster
   end
 
   def en_locale_data
-    @en_locale_data ||= JSON.parse(root_dir.join('locales/en.json').read)
+    @en_locale_data ||= JSON.parse(root_dir.join('public/locales/en/common.json').read)
   end
 
   def root_dir
@@ -94,7 +94,7 @@ html_client = HtmlClient.new(root_dir.join('tmp'))
   end
 end
 
-weapon_types = JSON.parse(root_dir.join('locales/en.json').read)['weaponTypes']
+weapon_types = JSON.parse(root_dir.join('public/locales/en/common.json').read)['weaponTypes']
 
 xml = Oga.parse_xml(html_client.get("https://eternalreturn.gamepedia.com/Weapon"))
 xml.xpath('//span[@class="toctext"]').each.with_index do |toc_text_span, i|
