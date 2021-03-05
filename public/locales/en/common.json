@@ -1,4 +1,12 @@
 {
+  "equipmentTypes": {
+    "Weapon": "Weapon",
+    "Head": "Head",
+    "Chest": "Chest",
+    "Arm": "Arm",
+    "Leg": "Leg",
+    "Trinket": "Accessory"
+  },
   "weaponTypes": {
     "OneHandSword": "Dagger",
     "TwoHandSword": "Two-Handed Sword",
