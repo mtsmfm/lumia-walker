@@ -130,6 +130,8 @@ export default function Home() {
               ))}
             </Grid>
           </Grid>
+          <Divider />
+          {t("footer.copyright")}
         </Container>
       </main>
     </div>
