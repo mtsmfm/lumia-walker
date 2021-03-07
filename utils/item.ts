@@ -75,6 +75,78 @@ export const isWeaponItem = (item: Item): item is WeaponItem => {
   return item.itemType === "Weapon";
 };
 
+export const isArmorItem = (item: Item): item is ArmorItem => {
+  return item.itemType === "Armor";
+};
+
+const equipmentTypeFor = (item: Item): EquipmentType | undefined => {
+  if (isWeaponItem(item)) {
+    return "Weapon";
+  } else if (isArmorItem(item)) {
+    return item.armorType as EquipmentType;
+  }
+
+  return undefined;
+};
+
+export const statsFieldNames = (item: Item) => {
+  if (isWeaponItem(item)) {
+    return [
+      "attackPower",
+      "defense",
+      "maxHp",
+      "hpRegenRatio",
+      "hpRegen",
+      "spRegenRatio",
+      "spRegen",
+      "attackSpeedRatio",
+      "criticalStrikeChance",
+      "criticalStrikeDamage",
+      "cooldownReduction",
+      "lifeSteal",
+      "moveSpeed",
+      "sightRange",
+      "attackRange",
+      "increaseBasicAttackDamage",
+      "increaseSkillDamage",
+      "increaseSkillDamageRatio",
+      "decreaseRecoveryToBasicAttack",
+      "decreaseRecoveryToSkill",
+    ];
+  } else if (isArmorItem(item)) {
+    return [
+      "attackPower",
+      "defense",
+      "maxHp",
+      "maxSp",
+      "hpRegenRatio",
+      "hpRegen",
+      "spRegenRatio",
+      "spRegen",
+      "attackSpeedRatio",
+      "criticalStrikeChance",
+      "criticalStrikeDamage",
+      "preventCriticalStrikeDamaged",
+      "cooldownReduction",
+      "lifeSteal",
+      "moveSpeed",
+      "sightRange",
+      "outOfCombatMoveSpeed",
+      "attackRange",
+      "increaseBasicAttackDamage",
+      "preventBasicAttackDamaged",
+      "increaseSkillDamage",
+      "preventSkillDamaged",
+      "increaseSkillDamageRatio",
+      "preventSkillDamagedRatio",
+      "decreaseRecoveryToBasicAttack",
+      "decreaseRecoveryToSkill",
+    ];
+  } else {
+    return [];
+  }
+};
+
 export const isFinalItem = (item: Item) => {
   return !nonFinalItemCodes.has(item.code);
 };
@@ -86,3 +158,20 @@ export function findItemsByEquipmentType(equipmentType: EquipmentType): Item[] {
     return armorData.filter((d) => d.armorType === equipmentType);
   }
 }
+
+export const sumStats = (codes: number[]) => {
+  const items = codes.map((c) => findItemByCode(c));
+
+  return EQUIPMENT_TYPES.reduce((acc, type) => {
+    const item = items.find((i) => equipmentTypeFor(i) === type);
+    if (item) {
+      statsFieldNames(item).forEach((f) => {
+        if (item[f] !== 0) {
+          acc[f] ||= 0;
+          acc[f] = Number((acc[f] + item[f]).toFixed(5));
+        }
+      });
+    }
+    return acc;
+  }, {});
+};

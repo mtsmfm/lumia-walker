@@ -571,6 +571,34 @@
     "502501": "Remote Mine",
     "502502": "Smart Bomb"
   },
+  "stats": {
+    "attackPower": "Attack Power",
+    "defense": "Defense",
+    "maxHp": "Max HP",
+    "maxSp": "Max SP",
+    "hpRegenRatio": "HP Regen Ratio",
+    "hpRegen": "HP Regen",
+    "spRegenRatio": "SP Regen Ratio",
+    "spRegen": "SP Regen",
+    "attackSpeedRatio": "Attack Speed Ratio",
+    "criticalStrikeChance": "Critical Strike Chance",
+    "criticalStrikeDamage": "Critical Strike Damage",
+    "preventCriticalStrikeDamaged": "Critical Damage Reduction",
+    "cooldownReduction": "Cooldown Reduction",
+    "lifeSteal": "Life Steal",
+    "moveSpeed": "Move Speed",
+    "sightRange": "Sight Range",
+    "outOfCombatMoveSpeed": "Out Of Combat Move Speed",
+    "attackRange": "Attack Range",
+    "increaseBasicAttackDamage": "Increase Basic Attack Damage",
+    "preventBasicAttackDamaged": "Normal Attack Damage Taken Reduction",
+    "increaseSkillDamage": "Skill Damage Increase",
+    "preventSkillDamaged": "Prevent Skill Damaged",
+    "increaseSkillDamageRatio": "Increase Skill Damage Ratio",
+    "preventSkillDamagedRatio": "Prevent Skill Damaged Ratio",
+    "decreaseRecoveryToBasicAttack": "Healing Reduction (Normal Attacks)",
+    "decreaseRecoveryToSkill": "Healing Reduction (Skills)"
+  },
   "footer": {
     "copyright": "Eternal Return: Black Survival and its contents are trademarks and copyrights of Nimble Neuron, inc"
   }

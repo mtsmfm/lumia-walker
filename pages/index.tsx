@@ -13,10 +13,16 @@ import {
   EQUIPMENT_TYPES,
   findItemsByEquipmentType,
   isWeaponItem,
+  sumStats,
   WeaponType,
   WEAPON_TYPES,
 } from "../utils/item";
 import Divider from "@material-ui/core/Divider";
+import TableContainer from "@material-ui/core/TableContainer";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -37,6 +43,8 @@ export default function Home() {
 
   const { t } = useTranslation();
 
+  const stats = sumStats([...selectedItemCodes]);
+
   return (
     <div>
       <Head>
@@ -48,6 +56,20 @@ export default function Home() {
         <Container maxWidth="xl">
           <Grid container>
             <Grid item xs={3}>
+              <TableContainer>
+                <Table size="small">
+                  <TableBody>
+                    {Object.keys(stats).map((k) => {
+                      return (
+                        <TableRow key={k}>
+                          <TableCell>{t(`stats.${k}`)}</TableCell>
+                          <TableCell>{stats[k]}</TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
               {[...selectedItemCodes].map((code) => (
                 <ItemButton
                   key={code}
