@@ -37,3 +37,5 @@ yarn-error.log*
 
 /tmp
 /public/images
+
+/map/wip.svg

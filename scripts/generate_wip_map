@@ -1,0 +1,43 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+  gem 'activesupport', require: 'active_support/all'
+  gem 'oga'
+end
+
+require 'net/http'
+require 'pathname'
+
+map_dir = Pathname.new(__dir__).join('../map')
+xml = Oga.parse_xml(map_dir.join('map.svg'))
+
+blank_map_url = 'https://static.wikia.nocookie.net/blacksurvivaleternalreturn_gamepedia_en/images/f/f3/BlankMap.png/revision/latest'
+image = Base64.strict_encode64(Net::HTTP.get(URI(blank_map_url)))
+
+image_xml = Oga.parse_xml(<<~XML).at_xpath('g')
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     sodipodi:insensitive="true"
+     style="display:inline">
+    <g
+       transform="matrix(0.70208389,0,0,0.70208389,28.601014,14.772216)"
+       sodipodi:insensitive="true">
+      <image
+        xlink:href="data:image/png;base64,#{image}"
+        width="270.93332"
+        height="270.93332"
+        x="-26.394627"
+        y="9.7613926"
+      />
+    </g>
+  </g>
+XML
+
+xml.at_xpath('/svg').children.unshift(image_xml)
+map_dir.join('wip.svg').write(xml.to_xml)
