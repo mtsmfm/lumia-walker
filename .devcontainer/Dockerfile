@@ -8,7 +8,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
   && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
   && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && apt-get update \
-  && apt-get install -y sudo nodejs \
+  && apt-get install -y sudo nodejs inkscape \
   && echo "$USERNAME ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME \
   && chmod 0440 /etc/sudoers.d/$USERNAME
 
