@@ -1,0 +1,165 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+  gem 'activesupport', require: 'active_support/all'
+  gem 'oga'
+  gem 'mini_magick'
+  gem 'geokit'
+  gem 'rexml'
+end
+
+require 'shellwords'
+require 'pathname'
+require_relative 'svg_path_d_parser.tab'
+
+class AreaBorder
+  def initialize(path, ratio:, offset_x:, offset_y:)
+    @path = path
+    @ratio = ratio
+    @offset_x = offset_x
+    @offset_y = offset_y
+  end
+
+  def id
+    @path['id']
+  end
+
+  def d
+    @path['d']
+  end
+
+  def polygon
+    @polygon ||= Geokit::Polygon.new(
+      SvgPathDParser.new(d).parse.map {|point|
+        Geokit::LatLng.new(((point.x - @offset_x) * @ratio).round.to_f, ((point.y - @offset_y) * @ratio).round.to_f)
+      }
+    )
+  end
+
+  def name
+    @name ||= id.scan(/.*--(.*)/)[0][0]
+  end
+end
+
+class ObjectLocation
+  def initialize(circle, ratio:, offset_x:, offset_y:)
+    @circle = circle
+    @ratio = ratio
+    @offset_x = offset_x
+    @offset_y = offset_y
+  end
+
+  def kind
+    @kind ||= @circle.at_xpath('title').text
+  end
+
+  def lat_lng
+    @lat_lng ||= Geokit::LatLng.new(x, y)
+  end
+
+  def x
+    @x ||= ((@circle['cx'].to_f - @offset_x) * @ratio).round.to_f
+  end
+
+  def y
+    @y ||= ((@circle['cy'].to_f - @offset_y) * @ratio).round.to_f
+  end
+end
+
+class Walls
+  attr_reader :dpi
+
+  def initialize(svg_path:, layer_id:, dpi:)
+    @dpi = dpi
+    @walls = Dir.mktmpdir do |d|
+      tmp_dir = Pathname.new(d)
+      map_png_path = tmp_dir.join('map.png')
+      system("inkscape --without-gui --export-id-only --export-id=#{layer_id.shellescape} --export-dpi=#{dpi} #{svg_path} --export-png #{map_png_path}", exception: true)
+
+      image = MiniMagick::Image.new(map_png_path) do |b|
+        b.colorspace('gray')
+        b.depth(1)
+        b.flatten
+      end
+
+      image.get_pixels.map {|cols| cols.map {|r, g, b| r == 0 } }
+    end
+  end
+
+  def wall?(x:, y:)
+    @walls[y][x]
+  end
+
+  def width
+    @walls.first.size
+  end
+
+  def height
+    @walls.size
+  end
+
+  def inspect
+    "#<Walls width=#{width} height=#{height} dpi=#{@dpi}>"
+  end
+end
+
+root_dir = Pathname.new(__dir__).join('..')
+map_dir = root_dir.join('map')
+data_dir = root_dir.join('data')
+xml = Oga.parse_xml(map_dir.join('map.svg'))
+
+DPI = 120
+INCH_IN_MM = 25.4
+
+rect = xml.at_xpath('//g[@inkscape:groupmode="layer" and @inkscape:label="Walls"]/rect')
+offset_x = rect['x'].to_f
+offset_y = rect['y'].to_f
+
+walls = Walls.new(svg_path: map_dir.join('map.svg'), layer_id: xml.at_xpath('//g[@inkscape:groupmode="layer" and @inkscape:label="Walls"]')['id'], dpi: DPI)
+area_borders = xml.xpath('//g[@inkscape:groupmode="layer" and @inkscape:label="Area borders"]//path').map {|o|
+  AreaBorder.new(o, ratio: DPI / INCH_IN_MM, offset_x: offset_x, offset_y: offset_y)
+}
+object_locations = xml.xpath('//g[@inkscape:groupmode="layer" and @inkscape:label="Items"]//circle').map {|o|
+  ObjectLocation.new(o, ratio: DPI / INCH_IN_MM, offset_x: offset_x, offset_y: offset_y)
+}
+
+if object_locations.any? {|l| area_borders.count {|ab| ab.polygon.contains?(l.lat_lng) } != 1 }
+  raise
+end
+
+if object_locations.any? {|l| walls.wall?(x: l.x, y: l.y) }
+  raise
+end
+
+binding.pry
+binding.pry
+
+__END__
+
+# item_spawn = JSON.parse(data_dir.join('item_spawn.json').read)
+# item_spawn.group_by {|i| i['areaCode'] }
+
+binding.pry
+binding.pry
+
+__END__
+
+map_data = object_locations.map {|l|
+  area_name = area_borders.find {|ab| ab.polygon.contains?(l.lat_lng) }.name
+
+  {
+    x: l.x,
+    y: l.y,
+    area_name: area_name,
+    kind: l.kind
+  }
+}
+
+binding.pry
+
+map_dir.join('data.json').write(JSON.pretty_generate(map_data))

@@ -1,0 +1,100 @@
+class SvgPathDParser
+rule
+    operations : operation            { result = val }
+               | operations operation { result = val.flatten }
+
+    operation : moveto
+              | closepath
+              | lineto
+
+    moveto :
+      'm' number number {
+        result = new_point(relative: true, x: val[1], y: val[2])
+      }
+      | 'M' number number {
+        result = new_point(relative: false, x: val[1], y: val[2])
+      }
+      | moveto number number {
+        result = [val[0], new_point(x: val[1], y: val[2])].flatten
+      }
+
+    lineto :
+      'l' number number {
+        result = new_point(relative: true, x: val[1], y: val[2])
+      }
+      | 'L' number number {
+        result = new_point(relative: false, x: val[1], y: val[2])
+      }
+      | lineto number number {
+        result = [val[0], new_point(x: val[1], y: val[2])].flatten
+      }
+
+    closepath : 'z' { result = [] }
+              | 'Z' { result = [] }
+
+    number : NUMBER
+end
+
+---- header
+require 'strscan'
+
+---- inner
+class Point < Struct.new(:x, :y, keyword_init: true)
+  def +(other)
+    Point.new(x: x + other.x, y: y + other.y)
+  end
+
+  def as_json
+    {x: x.to_f, y: y.to_f}
+  end
+
+  def inspect
+    "(x: #{x.to_f}, y: #{y.to_f})"
+  end
+end
+
+def initialize(str)
+  @s = StringScanner.new(str)
+end
+
+def parse
+  do_parse
+end
+
+def next_token
+  loop do
+    break if @s.eos?
+
+    # skip
+    case
+    when @s.scan(/\A\s+/)
+    when @s.scan(/\A,/)
+    else
+      break
+    end
+  end
+
+  case
+  when @s.eos?
+    [false, nil]
+  when @s.scan(/\A-?\d+\.?\d*/)
+    [:NUMBER, @s.matched.to_r]
+  when @s.scan(/\A[mMzZlL]/)
+    [@s.matched, @s.matched]
+  else
+    p @s.scan(/.*/)
+    raise "scanner error"
+  end
+end
+
+def new_point(relative: nil, x:, y:)
+  point = Point.new(x: x, y: y)
+
+  @relative = relative unless relative.nil?
+
+  point += @current if defined?(@current) && @relative
+
+  @current = point
+
+  point
+end
