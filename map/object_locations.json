@@ -1,0 +1,3890 @@
+[
+  {
+    "x": 614,
+    "y": 299,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 613,
+    "y": 270,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 612,
+    "y": 269,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 589,
+    "y": 250,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 600,
+    "y": 239,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 582,
+    "y": 294,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 601,
+    "y": 285,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 602,
+    "y": 287,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 604,
+    "y": 289,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 599,
+    "y": 287,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 590,
+    "y": 271,
+    "kind": "stone",
+    "areaName": "temple"
+  },
+  {
+    "x": 574,
+    "y": 264,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 576,
+    "y": 242,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 565,
+    "y": 226,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 567,
+    "y": 223,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 571,
+    "y": 220,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 592,
+    "y": 225,
+    "kind": "branch",
+    "areaName": "temple"
+  },
+  {
+    "x": 583,
+    "y": 217,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 607,
+    "y": 220,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 614,
+    "y": 226,
+    "kind": "branch",
+    "areaName": "temple"
+  },
+  {
+    "x": 591,
+    "y": 207,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 582,
+    "y": 204,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 567,
+    "y": 210,
+    "kind": "stone",
+    "areaName": "temple"
+  },
+  {
+    "x": 552,
+    "y": 205,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 534,
+    "y": 198,
+    "kind": "security console",
+    "areaName": "temple"
+  },
+  {
+    "x": 568,
+    "y": 197,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 541,
+    "y": 170,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 533,
+    "y": 171,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 517,
+    "y": 168,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 526,
+    "y": 184,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 520,
+    "y": 183,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 509,
+    "y": 174,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 506,
+    "y": 171,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 500,
+    "y": 165,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 485,
+    "y": 142,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 481,
+    "y": 146,
+    "kind": "hyperloop",
+    "areaName": "temple"
+  },
+  {
+    "x": 474,
+    "y": 149,
+    "kind": "stone",
+    "areaName": "temple"
+  },
+  {
+    "x": 465,
+    "y": 139,
+    "kind": "branch",
+    "areaName": "alley"
+  },
+  {
+    "x": 435,
+    "y": 134,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 453,
+    "y": 126,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 426,
+    "y": 110,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 443,
+    "y": 109,
+    "kind": "stone",
+    "areaName": "alley"
+  },
+  {
+    "x": 410,
+    "y": 98,
+    "kind": "branch",
+    "areaName": "alley"
+  },
+  {
+    "x": 398,
+    "y": 81,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 373,
+    "y": 67,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 353,
+    "y": 90,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 340,
+    "y": 87,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 331,
+    "y": 85,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 323,
+    "y": 93,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 307,
+    "y": 87,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 327,
+    "y": 108,
+    "kind": "security console",
+    "areaName": "alley"
+  },
+  {
+    "x": 296,
+    "y": 99,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 287,
+    "y": 92,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 291,
+    "y": 64,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 258,
+    "y": 84,
+    "kind": "stone",
+    "areaName": "alley"
+  },
+  {
+    "x": 254,
+    "y": 93,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 246,
+    "y": 83,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 232,
+    "y": 86,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 235,
+    "y": 84,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 227,
+    "y": 96,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 235,
+    "y": 113,
+    "kind": "branch",
+    "areaName": "alley"
+  },
+  {
+    "x": 214,
+    "y": 99,
+    "kind": "potato",
+    "areaName": "alley"
+  },
+  {
+    "x": 210,
+    "y": 101,
+    "kind": "potato",
+    "areaName": "alley"
+  },
+  {
+    "x": 217,
+    "y": 100,
+    "kind": "potato",
+    "areaName": "alley"
+  },
+  {
+    "x": 219,
+    "y": 102,
+    "kind": "potato",
+    "areaName": "alley"
+  },
+  {
+    "x": 221,
+    "y": 105,
+    "kind": "water",
+    "areaName": "alley"
+  },
+  {
+    "x": 208,
+    "y": 111,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 194,
+    "y": 113,
+    "kind": "branch",
+    "areaName": "alley"
+  },
+  {
+    "x": 204,
+    "y": 122,
+    "kind": "stone",
+    "areaName": "alley"
+  },
+  {
+    "x": 211,
+    "y": 140,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 194,
+    "y": 157,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 191,
+    "y": 181,
+    "kind": "stone",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 174,
+    "y": 179,
+    "kind": "stone",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 166,
+    "y": 171,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 161,
+    "y": 177,
+    "kind": "security console",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 150,
+    "y": 159,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 168,
+    "y": 189,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 146,
+    "y": 188,
+    "kind": "branch",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 144,
+    "y": 157,
+    "kind": "stone",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 131,
+    "y": 172,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 131,
+    "y": 178,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 123,
+    "y": 179,
+    "kind": "branch",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 113,
+    "y": 187,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 134,
+    "y": 190,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 141,
+    "y": 215,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 102,
+    "y": 199,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 107,
+    "y": 206,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 113,
+    "y": 221,
+    "kind": "branch",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 111,
+    "y": 231,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 133,
+    "y": 224,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 142,
+    "y": 239,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 154,
+    "y": 229,
+    "kind": "stone",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 129,
+    "y": 253,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 153,
+    "y": 253,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 159,
+    "y": 217,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 156,
+    "y": 214,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 151,
+    "y": 210,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 153,
+    "y": 224,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 180,
+    "y": 198,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 183,
+    "y": 212,
+    "kind": "branch",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 219,
+    "y": 196,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 215,
+    "y": 199,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 237,
+    "y": 200,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 251,
+    "y": 206,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 249,
+    "y": 213,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 253,
+    "y": 216,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 259,
+    "y": 214,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 185,
+    "y": 251,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 192,
+    "y": 244,
+    "kind": "branch",
+    "areaName": "school"
+  },
+  {
+    "x": 242,
+    "y": 248,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 233,
+    "y": 243,
+    "kind": "stone",
+    "areaName": "school"
+  },
+  {
+    "x": 196,
+    "y": 283,
+    "kind": "security console",
+    "areaName": "school"
+  },
+  {
+    "x": 201,
+    "y": 294,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 214,
+    "y": 305,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 222,
+    "y": 285,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 182,
+    "y": 308,
+    "kind": "branch",
+    "areaName": "school"
+  },
+  {
+    "x": 206,
+    "y": 320,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 214,
+    "y": 328,
+    "kind": "stone",
+    "areaName": "school"
+  },
+  {
+    "x": 204,
+    "y": 336,
+    "kind": "branch",
+    "areaName": "school"
+  },
+  {
+    "x": 248,
+    "y": 339,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 251,
+    "y": 319,
+    "kind": "stone",
+    "areaName": "school"
+  },
+  {
+    "x": 226,
+    "y": 319,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 236,
+    "y": 308,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 232,
+    "y": 301,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 238,
+    "y": 294,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 254,
+    "y": 274,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 278,
+    "y": 311,
+    "kind": "branch",
+    "areaName": "avenue"
+  },
+  {
+    "x": 267,
+    "y": 307,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 283,
+    "y": 286,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 271,
+    "y": 267,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 289,
+    "y": 266,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 301,
+    "y": 261,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 285,
+    "y": 248,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 321,
+    "y": 252,
+    "kind": "branch",
+    "areaName": "school"
+  },
+  {
+    "x": 311,
+    "y": 243,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 299,
+    "y": 231,
+    "kind": "branch",
+    "areaName": "school"
+  },
+  {
+    "x": 197,
+    "y": 353,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 164,
+    "y": 360,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 169,
+    "y": 365,
+    "kind": "branch",
+    "areaName": "hotel"
+  },
+  {
+    "x": 178,
+    "y": 377,
+    "kind": "stone",
+    "areaName": "hotel"
+  },
+  {
+    "x": 148,
+    "y": 377,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 169,
+    "y": 401,
+    "kind": "tree of life",
+    "areaName": "hotel"
+  },
+  {
+    "x": 135,
+    "y": 405,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 128,
+    "y": 398,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 141,
+    "y": 415,
+    "kind": "branch",
+    "areaName": "hotel"
+  },
+  {
+    "x": 94,
+    "y": 406,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 83,
+    "y": 402,
+    "kind": "water",
+    "areaName": "hotel"
+  },
+  {
+    "x": 86,
+    "y": 389,
+    "kind": "stone",
+    "areaName": "hotel"
+  },
+  {
+    "x": 103,
+    "y": 389,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 104,
+    "y": 391,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 64,
+    "y": 384,
+    "kind": "water",
+    "areaName": "hotel"
+  },
+  {
+    "x": 50,
+    "y": 392,
+    "kind": "water",
+    "areaName": "hotel"
+  },
+  {
+    "x": 59,
+    "y": 381,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 65,
+    "y": 374,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 69,
+    "y": 369,
+    "kind": "branch",
+    "areaName": "hotel"
+  },
+  {
+    "x": 64,
+    "y": 349,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 69,
+    "y": 342,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 61,
+    "y": 351,
+    "kind": "stone",
+    "areaName": "hotel"
+  },
+  {
+    "x": 72,
+    "y": 355,
+    "kind": "branch",
+    "areaName": "hotel"
+  },
+  {
+    "x": 71,
+    "y": 340,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 78,
+    "y": 333,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 75,
+    "y": 336,
+    "kind": "water",
+    "areaName": "hotel"
+  },
+  {
+    "x": 83,
+    "y": 343,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 108,
+    "y": 315,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 103,
+    "y": 321,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 101,
+    "y": 323,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 108,
+    "y": 330,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 109,
+    "y": 343,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 116,
+    "y": 336,
+    "kind": "stone",
+    "areaName": "hotel"
+  },
+  {
+    "x": 105,
+    "y": 287,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 122,
+    "y": 346,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 132,
+    "y": 360,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 101,
+    "y": 347,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 140,
+    "y": 379,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 84,
+    "y": 429,
+    "kind": "stone",
+    "areaName": "beach"
+  },
+  {
+    "x": 68,
+    "y": 423,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 61,
+    "y": 417,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 93,
+    "y": 440,
+    "kind": "branch",
+    "areaName": "beach"
+  },
+  {
+    "x": 58,
+    "y": 438,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 58,
+    "y": 450,
+    "kind": "branch",
+    "areaName": "beach"
+  },
+  {
+    "x": 50,
+    "y": 458,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 45,
+    "y": 464,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 42,
+    "y": 471,
+    "kind": "water",
+    "areaName": "beach"
+  },
+  {
+    "x": 43,
+    "y": 474,
+    "kind": "water",
+    "areaName": "beach"
+  },
+  {
+    "x": 49,
+    "y": 479,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 50,
+    "y": 482,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 71,
+    "y": 489,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 93,
+    "y": 496,
+    "kind": "branch",
+    "areaName": "beach"
+  },
+  {
+    "x": 57,
+    "y": 498,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 49,
+    "y": 488,
+    "kind": "water",
+    "areaName": "beach"
+  },
+  {
+    "x": 51,
+    "y": 492,
+    "kind": "water",
+    "areaName": "beach"
+  },
+  {
+    "x": 81,
+    "y": 495,
+    "kind": "stone",
+    "areaName": "beach"
+  },
+  {
+    "x": 74,
+    "y": 506,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 96,
+    "y": 535,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 84,
+    "y": 519,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 107,
+    "y": 524,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 100,
+    "y": 539,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 107,
+    "y": 540,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 118,
+    "y": 541,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 124,
+    "y": 536,
+    "kind": "branch",
+    "areaName": "beach"
+  },
+  {
+    "x": 143,
+    "y": 535,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 107,
+    "y": 504,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 125,
+    "y": 490,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 143,
+    "y": 500,
+    "kind": "branch",
+    "areaName": "beach"
+  },
+  {
+    "x": 154,
+    "y": 500,
+    "kind": "stone",
+    "areaName": "beach"
+  },
+  {
+    "x": 152,
+    "y": 479,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 170,
+    "y": 474,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 125,
+    "y": 475,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 190,
+    "y": 470,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 200,
+    "y": 481,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 196,
+    "y": 464,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 130,
+    "y": 454,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 122,
+    "y": 463,
+    "kind": "stone",
+    "areaName": "beach"
+  },
+  {
+    "x": 103,
+    "y": 449,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 105,
+    "y": 451,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 92,
+    "y": 462,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 100,
+    "y": 490,
+    "kind": "item",
+    "areaName": "beach"
+  },
+  {
+    "x": 107,
+    "y": 491,
+    "kind": "security console",
+    "areaName": "beach"
+  },
+  {
+    "x": 174,
+    "y": 552,
+    "kind": "water",
+    "areaName": "uptown"
+  },
+  {
+    "x": 164,
+    "y": 561,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 227,
+    "y": 546,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 246,
+    "y": 555,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 251,
+    "y": 536,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 252,
+    "y": 584,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 288,
+    "y": 611,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 252,
+    "y": 644,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 228,
+    "y": 653,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 212,
+    "y": 646,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 270,
+    "y": 535,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 252,
+    "y": 497,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 254,
+    "y": 502,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 257,
+    "y": 509,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 267,
+    "y": 510,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 283,
+    "y": 525,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 286,
+    "y": 506,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 265,
+    "y": 503,
+    "kind": "tree of life",
+    "areaName": "forest"
+  },
+  {
+    "x": 281,
+    "y": 500,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 253,
+    "y": 491,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 254,
+    "y": 489,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 258,
+    "y": 488,
+    "kind": "stone",
+    "areaName": "forest"
+  },
+  {
+    "x": 287,
+    "y": 495,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 287,
+    "y": 482,
+    "kind": "security console",
+    "areaName": "forest"
+  },
+  {
+    "x": 280,
+    "y": 474,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 277,
+    "y": 464,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 265,
+    "y": 471,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 262,
+    "y": 465,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 275,
+    "y": 456,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 286,
+    "y": 445,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 269,
+    "y": 432,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 263,
+    "y": 439,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 257,
+    "y": 433,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 243,
+    "y": 451,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 248,
+    "y": 451,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 234,
+    "y": 468,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 216,
+    "y": 450,
+    "kind": "water",
+    "areaName": "forest"
+  },
+  {
+    "x": 221,
+    "y": 452,
+    "kind": "water",
+    "areaName": "forest"
+  },
+  {
+    "x": 209,
+    "y": 455,
+    "kind": "carp",
+    "areaName": "forest"
+  },
+  {
+    "x": 224,
+    "y": 471,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 220,
+    "y": 471,
+    "kind": "stone",
+    "areaName": "forest"
+  },
+  {
+    "x": 206,
+    "y": 456,
+    "kind": "carp",
+    "areaName": "forest"
+  },
+  {
+    "x": 201,
+    "y": 454,
+    "kind": "water",
+    "areaName": "forest"
+  },
+  {
+    "x": 166,
+    "y": 445,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 156,
+    "y": 432,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 189,
+    "y": 426,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 185,
+    "y": 430,
+    "kind": "stone",
+    "areaName": "forest"
+  },
+  {
+    "x": 201,
+    "y": 415,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 217,
+    "y": 418,
+    "kind": "stone",
+    "areaName": "forest"
+  },
+  {
+    "x": 228,
+    "y": 428,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 246,
+    "y": 420,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 249,
+    "y": 422,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 236,
+    "y": 405,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 215,
+    "y": 401,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 223,
+    "y": 393,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 208,
+    "y": 379,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 245,
+    "y": 371,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 272,
+    "y": 316,
+    "kind": "stone",
+    "areaName": "avenue"
+  },
+  {
+    "x": 290,
+    "y": 325,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 320,
+    "y": 293,
+    "kind": "branch",
+    "areaName": "avenue"
+  },
+  {
+    "x": 353,
+    "y": 326,
+    "kind": "stone",
+    "areaName": "avenue"
+  },
+  {
+    "x": 375,
+    "y": 342,
+    "kind": "branch",
+    "areaName": "avenue"
+  },
+  {
+    "x": 398,
+    "y": 334,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 389,
+    "y": 306,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 382,
+    "y": 313,
+    "kind": "carp",
+    "areaName": "avenue"
+  },
+  {
+    "x": 375,
+    "y": 310,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 394,
+    "y": 306,
+    "kind": "branch",
+    "areaName": "avenue"
+  },
+  {
+    "x": 415,
+    "y": 285,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 382,
+    "y": 298,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 376,
+    "y": 293,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 386,
+    "y": 281,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 396,
+    "y": 271,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 391,
+    "y": 265,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 388,
+    "y": 263,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 438,
+    "y": 270,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 452,
+    "y": 254,
+    "kind": "stone",
+    "areaName": "avenue"
+  },
+  {
+    "x": 496,
+    "y": 245,
+    "kind": "branch",
+    "areaName": "avenue"
+  },
+  {
+    "x": 401,
+    "y": 229,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 417,
+    "y": 217,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 400,
+    "y": 190,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 388,
+    "y": 189,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 424,
+    "y": 164,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 439,
+    "y": 168,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 367,
+    "y": 157,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 380,
+    "y": 222,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 416,
+    "y": 216,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 411,
+    "y": 238,
+    "kind": "security console",
+    "areaName": "avenue"
+  },
+  {
+    "x": 444,
+    "y": 329,
+    "kind": "branch",
+    "areaName": "pond"
+  },
+  {
+    "x": 451,
+    "y": 328,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 431,
+    "y": 338,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 441,
+    "y": 342,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 455,
+    "y": 348,
+    "kind": "water",
+    "areaName": "pond"
+  },
+  {
+    "x": 460,
+    "y": 346,
+    "kind": "water",
+    "areaName": "pond"
+  },
+  {
+    "x": 468,
+    "y": 340,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 472,
+    "y": 338,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 475,
+    "y": 336,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 493,
+    "y": 351,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 491,
+    "y": 356,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 412,
+    "y": 354,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 422,
+    "y": 381,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 461,
+    "y": 404,
+    "kind": "security console",
+    "areaName": "pond"
+  },
+  {
+    "x": 447,
+    "y": 409,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 448,
+    "y": 390,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 472,
+    "y": 418,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 480,
+    "y": 451,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 486,
+    "y": 438,
+    "kind": "stone",
+    "areaName": "pond"
+  },
+  {
+    "x": 483,
+    "y": 403,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 500,
+    "y": 384,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 497,
+    "y": 387,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 512,
+    "y": 368,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 506,
+    "y": 349,
+    "kind": "stone",
+    "areaName": "pond"
+  },
+  {
+    "x": 512,
+    "y": 359,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 520,
+    "y": 342,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 508,
+    "y": 331,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 477,
+    "y": 326,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 482,
+    "y": 321,
+    "kind": "stone",
+    "areaName": "pond"
+  },
+  {
+    "x": 513,
+    "y": 319,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 514,
+    "y": 313,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 519,
+    "y": 309,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 543,
+    "y": 338,
+    "kind": "branch",
+    "areaName": "pond"
+  },
+  {
+    "x": 568,
+    "y": 343,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 530,
+    "y": 348,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 569,
+    "y": 367,
+    "kind": "branch",
+    "areaName": "pond"
+  },
+  {
+    "x": 586,
+    "y": 317,
+    "kind": "branch",
+    "areaName": "pond"
+  },
+  {
+    "x": 576,
+    "y": 362,
+    "kind": "stone",
+    "areaName": "pond"
+  },
+  {
+    "x": 572,
+    "y": 353,
+    "kind": "branch",
+    "areaName": "pond"
+  },
+  {
+    "x": 561,
+    "y": 362,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 539,
+    "y": 369,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 533,
+    "y": 371,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 595,
+    "y": 387,
+    "kind": "branch",
+    "areaName": "hospital"
+  },
+  {
+    "x": 588,
+    "y": 409,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 598,
+    "y": 399,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 601,
+    "y": 402,
+    "kind": "water",
+    "areaName": "hospital"
+  },
+  {
+    "x": 576,
+    "y": 409,
+    "kind": "stone",
+    "areaName": "hospital"
+  },
+  {
+    "x": 607,
+    "y": 409,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 612,
+    "y": 413,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 626,
+    "y": 427,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 616,
+    "y": 449,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 598,
+    "y": 455,
+    "kind": "branch",
+    "areaName": "hospital"
+  },
+  {
+    "x": 620,
+    "y": 468,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 599,
+    "y": 474,
+    "kind": "branch",
+    "areaName": "hospital"
+  },
+  {
+    "x": 586,
+    "y": 474,
+    "kind": "security console",
+    "areaName": "hospital"
+  },
+  {
+    "x": 596,
+    "y": 495,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 575,
+    "y": 498,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 569,
+    "y": 491,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 564,
+    "y": 488,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 580,
+    "y": 501,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 553,
+    "y": 499,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 563,
+    "y": 509,
+    "kind": "stone",
+    "areaName": "hospital"
+  },
+  {
+    "x": 532,
+    "y": 475,
+    "kind": "branch",
+    "areaName": "hospital"
+  },
+  {
+    "x": 523,
+    "y": 477,
+    "kind": "stone",
+    "areaName": "hospital"
+  },
+  {
+    "x": 540,
+    "y": 470,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 527,
+    "y": 453,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 530,
+    "y": 450,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 576,
+    "y": 433,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 564,
+    "y": 420,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 549,
+    "y": 433,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 567,
+    "y": 442,
+    "kind": "stone",
+    "areaName": "hospital"
+  },
+  {
+    "x": 563,
+    "y": 446,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 536,
+    "y": 443,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 520,
+    "y": 511,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 526,
+    "y": 521,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 537,
+    "y": 532,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 515,
+    "y": 538,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 529,
+    "y": 541,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 508,
+    "y": 549,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 492,
+    "y": 546,
+    "kind": "stone",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 493,
+    "y": 563,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 499,
+    "y": 571,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 486,
+    "y": 561,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 471,
+    "y": 574,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 477,
+    "y": 579,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 462,
+    "y": 554,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 460,
+    "y": 530,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 471,
+    "y": 540,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 480,
+    "y": 532,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 469,
+    "y": 521,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 437,
+    "y": 530,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 441,
+    "y": 533,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 429,
+    "y": 520,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 491,
+    "y": 533,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 497,
+    "y": 509,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 491,
+    "y": 507,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 505,
+    "y": 495,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 494,
+    "y": 485,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 485,
+    "y": 494,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 469,
+    "y": 486,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 450,
+    "y": 497,
+    "kind": "stone",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 431,
+    "y": 496,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 414,
+    "y": 491,
+    "kind": "security console",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 406,
+    "y": 545,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 403,
+    "y": 520,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 363,
+    "y": 499,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 381,
+    "y": 482,
+    "kind": "tree of life",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 380,
+    "y": 490,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 390,
+    "y": 492,
+    "kind": "stone",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 371,
+    "y": 466,
+    "kind": "water",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 370,
+    "y": 470,
+    "kind": "water",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 368,
+    "y": 477,
+    "kind": "water",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 367,
+    "y": 482,
+    "kind": "water",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 406,
+    "y": 482,
+    "kind": "branch",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 405,
+    "y": 454,
+    "kind": "carp",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 407,
+    "y": 456,
+    "kind": "carp",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 387,
+    "y": 457,
+    "kind": "stone",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 372,
+    "y": 432,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 368,
+    "y": 449,
+    "kind": "item",
+    "areaName": "cemetery"
+  },
+  {
+    "x": 350,
+    "y": 510,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 341,
+    "y": 516,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 326,
+    "y": 530,
+    "kind": "branch",
+    "areaName": "chapel"
+  },
+  {
+    "x": 307,
+    "y": 515,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 312,
+    "y": 521,
+    "kind": "branch",
+    "areaName": "forest"
+  },
+  {
+    "x": 314,
+    "y": 550,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 330,
+    "y": 552,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 325,
+    "y": 563,
+    "kind": "stone",
+    "areaName": "chapel"
+  },
+  {
+    "x": 332,
+    "y": 570,
+    "kind": "branch",
+    "areaName": "chapel"
+  },
+  {
+    "x": 338,
+    "y": 576,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 330,
+    "y": 580,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 359,
+    "y": 597,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 378,
+    "y": 615,
+    "kind": "stone",
+    "areaName": "chapel"
+  },
+  {
+    "x": 373,
+    "y": 623,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 388,
+    "y": 625,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 373,
+    "y": 634,
+    "kind": "branch",
+    "areaName": "chapel"
+  },
+  {
+    "x": 395,
+    "y": 635,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 404,
+    "y": 639,
+    "kind": "water",
+    "areaName": "chapel"
+  },
+  {
+    "x": 412,
+    "y": 640,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 417,
+    "y": 644,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 440,
+    "y": 627,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 418,
+    "y": 611,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 411,
+    "y": 603,
+    "kind": "carp",
+    "areaName": "chapel"
+  },
+  {
+    "x": 433,
+    "y": 610,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 444,
+    "y": 599,
+    "kind": "stone",
+    "areaName": "chapel"
+  },
+  {
+    "x": 433,
+    "y": 587,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 413,
+    "y": 595,
+    "kind": "branch",
+    "areaName": "chapel"
+  },
+  {
+    "x": 410,
+    "y": 586,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 409,
+    "y": 565,
+    "kind": "security console",
+    "areaName": "chapel"
+  },
+  {
+    "x": 392,
+    "y": 572,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 423,
+    "y": 552,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 397,
+    "y": 546,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 379,
+    "y": 528,
+    "kind": "stone",
+    "areaName": "chapel"
+  },
+  {
+    "x": 376,
+    "y": 541,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 378,
+    "y": 556,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 363,
+    "y": 556,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 310,
+    "y": 509,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 310,
+    "y": 492,
+    "kind": "item",
+    "areaName": "forest"
+  },
+  {
+    "x": 91,
+    "y": 362,
+    "kind": "security console",
+    "areaName": "hotel"
+  },
+  {
+    "x": 90,
+    "y": 334,
+    "kind": "item",
+    "areaName": "hotel"
+  },
+  {
+    "x": 211,
+    "y": 164,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 295,
+    "y": 81,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 334,
+    "y": 135,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 375,
+    "y": 113,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 371,
+    "y": 124,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 341,
+    "y": 142,
+    "kind": "stone",
+    "areaName": "alley"
+  },
+  {
+    "x": 285,
+    "y": 162,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 270,
+    "y": 183,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 271,
+    "y": 155,
+    "kind": "branch",
+    "areaName": "alley"
+  },
+  {
+    "x": 241,
+    "y": 132,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 271,
+    "y": 100,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 189,
+    "y": 641,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 184,
+    "y": 637,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 169,
+    "y": 645,
+    "kind": "branch",
+    "areaName": "uptown"
+  },
+  {
+    "x": 176,
+    "y": 651,
+    "kind": "carp",
+    "areaName": "uptown"
+  },
+  {
+    "x": 181,
+    "y": 655,
+    "kind": "carp",
+    "areaName": "uptown"
+  },
+  {
+    "x": 168,
+    "y": 635,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 157,
+    "y": 631,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 159,
+    "y": 620,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 139,
+    "y": 618,
+    "kind": "carp",
+    "areaName": "uptown"
+  },
+  {
+    "x": 140,
+    "y": 614,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 137,
+    "y": 607,
+    "kind": "carp",
+    "areaName": "uptown"
+  },
+  {
+    "x": 142,
+    "y": 601,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 157,
+    "y": 608,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 146,
+    "y": 580,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 156,
+    "y": 570,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 167,
+    "y": 545,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 160,
+    "y": 539,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 157,
+    "y": 549,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 175,
+    "y": 529,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 197,
+    "y": 531,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 206,
+    "y": 538,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 240,
+    "y": 590,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 234,
+    "y": 586,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 224,
+    "y": 592,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 236,
+    "y": 599,
+    "kind": "stone",
+    "areaName": "uptown"
+  },
+  {
+    "x": 212,
+    "y": 583,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 200,
+    "y": 582,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 192,
+    "y": 568,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 182,
+    "y": 603,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 176,
+    "y": 609,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 169,
+    "y": 616,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 196,
+    "y": 615,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 203,
+    "y": 621,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 190,
+    "y": 625,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 228,
+    "y": 661,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 228,
+    "y": 637,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 247,
+    "y": 649,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 261,
+    "y": 636,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 327,
+    "y": 640,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 317,
+    "y": 643,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 315,
+    "y": 651,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 328,
+    "y": 654,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 323,
+    "y": 666,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 313,
+    "y": 667,
+    "kind": "stone",
+    "areaName": "dock"
+  },
+  {
+    "x": 302,
+    "y": 677,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 288,
+    "y": 692,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 301,
+    "y": 694,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 307,
+    "y": 695,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 322,
+    "y": 703,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 325,
+    "y": 700,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 334,
+    "y": 709,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 337,
+    "y": 706,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 337,
+    "y": 714,
+    "kind": "stone",
+    "areaName": "dock"
+  },
+  {
+    "x": 337,
+    "y": 725,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 314,
+    "y": 724,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 349,
+    "y": 719,
+    "kind": "stone",
+    "areaName": "dock"
+  },
+  {
+    "x": 341,
+    "y": 740,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 355,
+    "y": 755,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 338,
+    "y": 746,
+    "kind": "carp",
+    "areaName": "dock"
+  },
+  {
+    "x": 340,
+    "y": 748,
+    "kind": "carp",
+    "areaName": "dock"
+  },
+  {
+    "x": 342,
+    "y": 750,
+    "kind": "carp",
+    "areaName": "dock"
+  },
+  {
+    "x": 353,
+    "y": 760,
+    "kind": "carp",
+    "areaName": "dock"
+  },
+  {
+    "x": 355,
+    "y": 767,
+    "kind": "carp",
+    "areaName": "dock"
+  },
+  {
+    "x": 382,
+    "y": 747,
+    "kind": "branch",
+    "areaName": "dock"
+  },
+  {
+    "x": 373,
+    "y": 725,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 376,
+    "y": 732,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 359,
+    "y": 728,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 359,
+    "y": 718,
+    "kind": "security console",
+    "areaName": "dock"
+  },
+  {
+    "x": 358,
+    "y": 712,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 372,
+    "y": 712,
+    "kind": "branch",
+    "areaName": "dock"
+  },
+  {
+    "x": 349,
+    "y": 701,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 337,
+    "y": 689,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 332,
+    "y": 693,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 342,
+    "y": 693,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 361,
+    "y": 696,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 368,
+    "y": 690,
+    "kind": "branch",
+    "areaName": "dock"
+  },
+  {
+    "x": 395,
+    "y": 674,
+    "kind": "branch",
+    "areaName": "dock"
+  },
+  {
+    "x": 384,
+    "y": 662,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 378,
+    "y": 657,
+    "kind": "stone",
+    "areaName": "dock"
+  },
+  {
+    "x": 374,
+    "y": 651,
+    "kind": "branch",
+    "areaName": "dock"
+  },
+  {
+    "x": 429,
+    "y": 698,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 444,
+    "y": 681,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 473,
+    "y": 644,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 482,
+    "y": 654,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 479,
+    "y": 650,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 459,
+    "y": 641,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 503,
+    "y": 668,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 511,
+    "y": 678,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 502,
+    "y": 693,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 519,
+    "y": 685,
+    "kind": "stone",
+    "areaName": "factory"
+  },
+  {
+    "x": 535,
+    "y": 695,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 528,
+    "y": 698,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 524,
+    "y": 678,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 517,
+    "y": 710,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 531,
+    "y": 679,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 554,
+    "y": 648,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 554,
+    "y": 664,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 540,
+    "y": 660,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 533,
+    "y": 651,
+    "kind": "stone",
+    "areaName": "factory"
+  },
+  {
+    "x": 563,
+    "y": 634,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 570,
+    "y": 641,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 576,
+    "y": 654,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 546,
+    "y": 634,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 537,
+    "y": 636,
+    "kind": "security console",
+    "areaName": "factory"
+  },
+  {
+    "x": 515,
+    "y": 641,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 524,
+    "y": 651,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 532,
+    "y": 658,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 502,
+    "y": 653,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 519,
+    "y": 612,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 522,
+    "y": 618,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 566,
+    "y": 610,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 590,
+    "y": 613,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 581,
+    "y": 592,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 573,
+    "y": 581,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 539,
+    "y": 591,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 575,
+    "y": 557,
+    "kind": "stone",
+    "areaName": "factory"
+  },
+  {
+    "x": 561,
+    "y": 564,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 550,
+    "y": 548,
+    "kind": "branch",
+    "areaName": "factory"
+  },
+  {
+    "x": 587,
+    "y": 538,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 505,
+    "y": 582,
+    "kind": "stone",
+    "areaName": "factory"
+  },
+  {
+    "x": 474,
+    "y": 611,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 492,
+    "y": 621,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 459,
+    "y": 626,
+    "kind": "item",
+    "areaName": "factory"
+  },
+  {
+    "x": 183,
+    "y": 517,
+    "kind": "item",
+    "areaName": "uptown"
+  },
+  {
+    "x": 534,
+    "y": 225,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 538,
+    "y": 229,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 515,
+    "y": 206,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 517,
+    "y": 196,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 163,
+    "y": 222,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 131,
+    "y": 226,
+    "kind": "item",
+    "areaName": "archery-range"
+  },
+  {
+    "x": 420,
+    "y": 556,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 403,
+    "y": 614,
+    "kind": "item",
+    "areaName": "chapel"
+  },
+  {
+    "x": 551,
+    "y": 522,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 555,
+    "y": 236,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 198,
+    "y": 237,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 264,
+    "y": 240,
+    "kind": "stone",
+    "areaName": "school"
+  },
+  {
+    "x": 291,
+    "y": 241,
+    "kind": "stone",
+    "areaName": "school"
+  },
+  {
+    "x": 341,
+    "y": 252,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 348,
+    "y": 268,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 370,
+    "y": 257,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 231,
+    "y": 621,
+    "kind": "security console",
+    "areaName": "uptown"
+  },
+  {
+    "x": 413,
+    "y": 704,
+    "kind": "item",
+    "areaName": "dock"
+  },
+  {
+    "x": 433,
+    "y": 242,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 441,
+    "y": 243,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 447,
+    "y": 250,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 320,
+    "y": 207,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 315,
+    "y": 274,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 557,
+    "y": 426,
+    "kind": "item",
+    "areaName": "hospital"
+  },
+  {
+    "x": 233,
+    "y": 206,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 288,
+    "y": 261,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 274,
+    "y": 256,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 356,
+    "y": 221,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 402,
+    "y": 270,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 454,
+    "y": 128,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 525,
+    "y": 384,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 488,
+    "y": 300,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 496,
+    "y": 291,
+    "kind": "potato",
+    "areaName": "pond"
+  },
+  {
+    "x": 499,
+    "y": 287,
+    "kind": "potato",
+    "areaName": "pond"
+  },
+  {
+    "x": 515,
+    "y": 282,
+    "kind": "potato",
+    "areaName": "pond"
+  },
+  {
+    "x": 513,
+    "y": 279,
+    "kind": "potato",
+    "areaName": "pond"
+  },
+  {
+    "x": 516,
+    "y": 286,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 513,
+    "y": 293,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 511,
+    "y": 296,
+    "kind": "carp",
+    "areaName": "pond"
+  },
+  {
+    "x": 500,
+    "y": 281,
+    "kind": "item",
+    "areaName": "pond"
+  },
+  {
+    "x": 482,
+    "y": 265,
+    "kind": "item",
+    "areaName": "avenue"
+  },
+  {
+    "x": 489,
+    "y": 220,
+    "kind": "item",
+    "areaName": "temple"
+  },
+  {
+    "x": 524,
+    "y": 217,
+    "kind": "stone",
+    "areaName": "temple"
+  },
+  {
+    "x": 525,
+    "y": 231,
+    "kind": "branch",
+    "areaName": "temple"
+  },
+  {
+    "x": 491,
+    "y": 177,
+    "kind": "potato",
+    "areaName": "temple"
+  },
+  {
+    "x": 269,
+    "y": 285,
+    "kind": "item",
+    "areaName": "school"
+  },
+  {
+    "x": 354,
+    "y": 242,
+    "kind": "stone",
+    "areaName": "avenue"
+  },
+  {
+    "x": 303,
+    "y": 150,
+    "kind": "item",
+    "areaName": "alley"
+  },
+  {
+    "x": 292,
+    "y": 176,
+    "kind": "item",
+    "areaName": "alley"
+  }
+]
