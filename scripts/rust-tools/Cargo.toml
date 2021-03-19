@@ -1,0 +1,13 @@
+[package]
+name = "rust-tools"
+version = "0.1.0"
+authors = ["Fumiaki MATSUSHIMA <mtsmfm@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pathfinding = "2.1.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+indicatif = "0.15"
