@@ -3,3888 +3,3888 @@
     "x": 614,
     "y": 299,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 613,
     "y": 270,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 612,
     "y": 269,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 589,
     "y": 250,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 600,
     "y": 239,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 582,
     "y": 294,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 601,
     "y": 285,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 602,
     "y": 287,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 604,
     "y": 289,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 599,
     "y": 287,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 590,
     "y": 271,
     "kind": "stone",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 574,
     "y": 264,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 576,
     "y": 242,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 565,
     "y": 226,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 567,
     "y": 223,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 571,
     "y": 220,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 592,
     "y": 225,
     "kind": "branch",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 583,
     "y": 217,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 607,
     "y": 220,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 614,
     "y": 226,
     "kind": "branch",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 591,
     "y": 207,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 582,
     "y": 204,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 567,
     "y": 210,
     "kind": "stone",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 552,
     "y": 205,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 534,
     "y": 198,
     "kind": "security console",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 568,
     "y": 197,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 541,
     "y": 170,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 533,
     "y": 171,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 517,
     "y": 168,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 526,
     "y": 184,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 520,
     "y": 183,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 509,
     "y": 174,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 506,
     "y": 171,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 500,
     "y": 165,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 485,
     "y": 142,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 481,
     "y": 146,
     "kind": "hyperloop",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 474,
     "y": 149,
     "kind": "stone",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 465,
     "y": 139,
     "kind": "branch",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 435,
     "y": 134,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 453,
     "y": 126,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 426,
     "y": 110,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 443,
     "y": 109,
     "kind": "stone",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 410,
     "y": 98,
     "kind": "branch",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 398,
     "y": 81,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 373,
     "y": 67,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 353,
     "y": 90,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 340,
     "y": 87,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 331,
     "y": 85,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 323,
     "y": 93,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 307,
     "y": 87,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 327,
     "y": 108,
     "kind": "security console",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 296,
     "y": 99,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 287,
     "y": 92,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 291,
     "y": 64,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 258,
     "y": 84,
     "kind": "stone",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 254,
     "y": 93,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 246,
     "y": 83,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 232,
     "y": 86,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 235,
     "y": 84,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 227,
     "y": 96,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 235,
     "y": 113,
     "kind": "branch",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 214,
     "y": 99,
     "kind": "potato",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 210,
     "y": 101,
     "kind": "potato",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 217,
     "y": 100,
     "kind": "potato",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 219,
     "y": 102,
     "kind": "potato",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 221,
     "y": 105,
     "kind": "water",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 208,
     "y": 111,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 194,
     "y": 113,
     "kind": "branch",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 204,
     "y": 122,
     "kind": "stone",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 211,
     "y": 140,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 194,
     "y": 157,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 191,
     "y": 181,
     "kind": "stone",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 174,
     "y": 179,
     "kind": "stone",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 166,
     "y": 171,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 161,
     "y": 177,
     "kind": "security console",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 150,
     "y": 159,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 168,
     "y": 189,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 146,
     "y": 188,
     "kind": "branch",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 144,
     "y": 157,
     "kind": "stone",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 131,
     "y": 172,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 131,
     "y": 178,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 123,
     "y": 179,
     "kind": "branch",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 113,
     "y": 187,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 134,
     "y": 190,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 141,
     "y": 215,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 102,
     "y": 199,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 107,
     "y": 206,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 113,
     "y": 221,
     "kind": "branch",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 111,
     "y": 231,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 133,
     "y": 224,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 142,
     "y": 239,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 154,
     "y": 229,
     "kind": "stone",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 129,
     "y": 253,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 153,
     "y": 253,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 159,
     "y": 217,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 156,
     "y": 214,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 151,
     "y": 210,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 153,
     "y": 224,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 180,
     "y": 198,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 183,
     "y": 212,
     "kind": "branch",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 219,
     "y": 196,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 215,
     "y": 199,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 237,
     "y": 200,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 251,
     "y": 206,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 249,
     "y": 213,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 253,
     "y": 216,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 259,
     "y": 214,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 185,
     "y": 251,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 192,
     "y": 244,
     "kind": "branch",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 242,
     "y": 248,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 233,
     "y": 243,
     "kind": "stone",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 196,
     "y": 283,
     "kind": "security console",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 201,
     "y": 294,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 214,
     "y": 305,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 222,
     "y": 285,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 182,
     "y": 308,
     "kind": "branch",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 206,
     "y": 320,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 214,
     "y": 328,
     "kind": "stone",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 204,
     "y": 336,
     "kind": "branch",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 248,
     "y": 339,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 251,
     "y": 319,
     "kind": "stone",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 226,
     "y": 319,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 236,
     "y": 308,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 232,
     "y": 301,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 238,
     "y": 294,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 254,
     "y": 274,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 278,
     "y": 311,
     "kind": "branch",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 267,
     "y": 307,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 283,
     "y": 286,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 271,
     "y": 267,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 289,
     "y": 266,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 301,
     "y": 261,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 285,
     "y": 248,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 321,
     "y": 252,
     "kind": "branch",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 311,
     "y": 243,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 299,
     "y": 231,
     "kind": "branch",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 197,
     "y": 353,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 164,
     "y": 360,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 169,
     "y": 365,
     "kind": "branch",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 178,
     "y": 377,
     "kind": "stone",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 148,
     "y": 377,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 169,
     "y": 401,
     "kind": "tree of life",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 135,
     "y": 405,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 128,
     "y": 398,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 141,
     "y": 415,
     "kind": "branch",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 94,
     "y": 406,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 83,
     "y": 402,
     "kind": "water",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 86,
     "y": 389,
     "kind": "stone",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 103,
     "y": 389,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 104,
     "y": 391,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 64,
     "y": 384,
     "kind": "water",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 50,
     "y": 392,
     "kind": "water",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 59,
     "y": 381,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 65,
     "y": 374,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 69,
     "y": 369,
     "kind": "branch",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 64,
     "y": 349,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 69,
     "y": 342,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 61,
     "y": 351,
     "kind": "stone",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 72,
     "y": 355,
     "kind": "branch",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 71,
     "y": 340,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 78,
     "y": 333,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 75,
     "y": 336,
     "kind": "water",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 83,
     "y": 343,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 108,
     "y": 315,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 103,
     "y": 321,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 101,
     "y": 323,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 108,
     "y": 330,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 109,
     "y": 343,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 116,
     "y": 336,
     "kind": "stone",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 105,
     "y": 287,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 122,
     "y": 346,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 132,
     "y": 360,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 101,
     "y": 347,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 140,
     "y": 379,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 84,
     "y": 429,
     "kind": "stone",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 68,
     "y": 423,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 61,
     "y": 417,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 93,
     "y": 440,
     "kind": "branch",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 58,
     "y": 438,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 58,
     "y": 450,
     "kind": "branch",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 50,
     "y": 458,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 45,
     "y": 464,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 42,
     "y": 471,
     "kind": "water",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 43,
     "y": 474,
     "kind": "water",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 49,
     "y": 479,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 50,
     "y": 482,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 71,
     "y": 489,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 93,
     "y": 496,
     "kind": "branch",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 57,
     "y": 498,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 49,
     "y": 488,
     "kind": "water",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 51,
     "y": 492,
     "kind": "water",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 81,
     "y": 495,
     "kind": "stone",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 74,
     "y": 506,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 96,
     "y": 535,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 84,
     "y": 519,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 107,
     "y": 524,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 100,
     "y": 539,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 107,
     "y": 540,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 118,
     "y": 541,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 124,
     "y": 536,
     "kind": "branch",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 143,
     "y": 535,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 107,
     "y": 504,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 125,
     "y": 490,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 143,
     "y": 500,
     "kind": "branch",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 154,
     "y": 500,
     "kind": "stone",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 152,
     "y": 479,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 170,
     "y": 474,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 125,
     "y": 475,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 190,
     "y": 470,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 200,
     "y": 481,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 196,
     "y": 464,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 130,
     "y": 454,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 122,
     "y": 463,
     "kind": "stone",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 103,
     "y": 449,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 105,
     "y": 451,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 92,
     "y": 462,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 100,
     "y": 490,
     "kind": "item",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 107,
     "y": 491,
     "kind": "security console",
-    "areaName": "beach"
+    "areaCode": 3
   },
   {
     "x": 174,
     "y": 552,
     "kind": "water",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 164,
     "y": 561,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 227,
     "y": 546,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 246,
     "y": 555,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 251,
     "y": 536,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 252,
     "y": 584,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 288,
     "y": 611,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 252,
     "y": 644,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 228,
     "y": 653,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 212,
     "y": 646,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 270,
     "y": 535,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 252,
     "y": 497,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 254,
     "y": 502,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 257,
     "y": 509,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 267,
     "y": 510,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 283,
     "y": 525,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 286,
     "y": 506,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 265,
     "y": 503,
     "kind": "tree of life",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 281,
     "y": 500,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 253,
     "y": 491,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 254,
     "y": 489,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 258,
     "y": 488,
     "kind": "stone",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 287,
     "y": 495,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 287,
     "y": 482,
     "kind": "security console",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 280,
     "y": 474,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 277,
     "y": 464,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 265,
     "y": 471,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 262,
     "y": 465,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 275,
     "y": 456,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 286,
     "y": 445,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 269,
     "y": 432,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 263,
     "y": 439,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 257,
     "y": 433,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 243,
     "y": 451,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 248,
     "y": 451,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 234,
     "y": 468,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 216,
     "y": 450,
     "kind": "water",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 221,
     "y": 452,
     "kind": "water",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 209,
     "y": 455,
     "kind": "carp",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 224,
     "y": 471,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 220,
     "y": 471,
     "kind": "stone",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 206,
     "y": 456,
     "kind": "carp",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 201,
     "y": 454,
     "kind": "water",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 166,
     "y": 445,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 156,
     "y": 432,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 189,
     "y": 426,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 185,
     "y": 430,
     "kind": "stone",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 201,
     "y": 415,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 217,
     "y": 418,
     "kind": "stone",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 228,
     "y": 428,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 246,
     "y": 420,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 249,
     "y": 422,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 236,
     "y": 405,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 215,
     "y": 401,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 223,
     "y": 393,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 208,
     "y": 379,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 245,
     "y": 371,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 272,
     "y": 316,
     "kind": "stone",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 290,
     "y": 325,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 320,
     "y": 293,
     "kind": "branch",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 353,
     "y": 326,
     "kind": "stone",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 375,
     "y": 342,
     "kind": "branch",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 398,
     "y": 334,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 389,
     "y": 306,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 382,
     "y": 313,
     "kind": "carp",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 375,
     "y": 310,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 394,
     "y": 306,
     "kind": "branch",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 415,
     "y": 285,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 382,
     "y": 298,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 376,
     "y": 293,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 386,
     "y": 281,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 396,
     "y": 271,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 391,
     "y": 265,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 388,
     "y": 263,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 438,
     "y": 270,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 452,
     "y": 254,
     "kind": "stone",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 496,
     "y": 245,
     "kind": "branch",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 401,
     "y": 229,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 417,
     "y": 217,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 400,
     "y": 190,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 388,
     "y": 189,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 424,
     "y": 164,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 439,
     "y": 168,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 367,
     "y": 157,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 380,
     "y": 222,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 416,
     "y": 216,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 411,
     "y": 238,
     "kind": "security console",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 444,
     "y": 329,
     "kind": "branch",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 451,
     "y": 328,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 431,
     "y": 338,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 441,
     "y": 342,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 455,
     "y": 348,
     "kind": "water",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 460,
     "y": 346,
     "kind": "water",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 468,
     "y": 340,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 472,
     "y": 338,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 475,
     "y": 336,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 493,
     "y": 351,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 491,
     "y": 356,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 412,
     "y": 354,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 422,
     "y": 381,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 461,
     "y": 404,
     "kind": "security console",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 447,
     "y": 409,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 448,
     "y": 390,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 472,
     "y": 418,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 480,
     "y": 451,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 486,
     "y": 438,
     "kind": "stone",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 483,
     "y": 403,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 500,
     "y": 384,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 497,
     "y": 387,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 512,
     "y": 368,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 506,
     "y": 349,
     "kind": "stone",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 512,
     "y": 359,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 520,
     "y": 342,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 508,
     "y": 331,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 477,
     "y": 326,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 482,
     "y": 321,
     "kind": "stone",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 513,
     "y": 319,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 514,
     "y": 313,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 519,
     "y": 309,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 543,
     "y": 338,
     "kind": "branch",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 568,
     "y": 343,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 530,
     "y": 348,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 569,
     "y": 367,
     "kind": "branch",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 586,
     "y": 317,
     "kind": "branch",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 576,
     "y": 362,
     "kind": "stone",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 572,
     "y": 353,
     "kind": "branch",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 561,
     "y": 362,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 539,
     "y": 369,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 533,
     "y": 371,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 595,
     "y": 387,
     "kind": "branch",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 588,
     "y": 409,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 598,
     "y": 399,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 601,
     "y": 402,
     "kind": "water",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 576,
     "y": 409,
     "kind": "stone",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 607,
     "y": 409,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 612,
     "y": 413,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 626,
     "y": 427,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 616,
     "y": 449,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 598,
     "y": 455,
     "kind": "branch",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 620,
     "y": 468,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 599,
     "y": 474,
     "kind": "branch",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 586,
     "y": 474,
     "kind": "security console",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 596,
     "y": 495,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 575,
     "y": 498,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 569,
     "y": 491,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 564,
     "y": 488,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 580,
     "y": 501,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 553,
     "y": 499,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 563,
     "y": 509,
     "kind": "stone",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 532,
     "y": 475,
     "kind": "branch",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 523,
     "y": 477,
     "kind": "stone",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 540,
     "y": 470,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 527,
     "y": 453,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 530,
     "y": 450,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 576,
     "y": 433,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 564,
     "y": 420,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 549,
     "y": 433,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 567,
     "y": 442,
     "kind": "stone",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 563,
     "y": 446,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 536,
     "y": 443,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 520,
     "y": 511,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 526,
     "y": 521,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 537,
     "y": 532,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 515,
     "y": 538,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 529,
     "y": 541,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 508,
     "y": 549,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 492,
     "y": 546,
     "kind": "stone",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 493,
     "y": 563,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 499,
     "y": 571,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 486,
     "y": 561,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 471,
     "y": 574,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 477,
     "y": 579,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 462,
     "y": 554,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 460,
     "y": 530,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 471,
     "y": 540,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 480,
     "y": 532,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 469,
     "y": 521,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 437,
     "y": 530,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 441,
     "y": 533,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 429,
     "y": 520,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 491,
     "y": 533,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 497,
     "y": 509,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 491,
     "y": 507,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 505,
     "y": 495,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 494,
     "y": 485,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 485,
     "y": 494,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 469,
     "y": 486,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 450,
     "y": 497,
     "kind": "stone",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 431,
     "y": 496,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 414,
     "y": 491,
     "kind": "security console",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 406,
     "y": 545,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 403,
     "y": 520,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 363,
     "y": 499,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 381,
     "y": 482,
     "kind": "tree of life",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 380,
     "y": 490,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 390,
     "y": 492,
     "kind": "stone",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 371,
     "y": 466,
     "kind": "water",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 370,
     "y": 470,
     "kind": "water",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 368,
     "y": 477,
     "kind": "water",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 367,
     "y": 482,
     "kind": "water",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 406,
     "y": 482,
     "kind": "branch",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 405,
     "y": 454,
     "kind": "carp",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 407,
     "y": 456,
     "kind": "carp",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 387,
     "y": 457,
     "kind": "stone",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 372,
     "y": 432,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 368,
     "y": 449,
     "kind": "item",
-    "areaName": "cemetery"
+    "areaCode": 11
   },
   {
     "x": 350,
     "y": 510,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 341,
     "y": 516,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 326,
     "y": 530,
     "kind": "branch",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 307,
     "y": 515,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 312,
     "y": 521,
     "kind": "branch",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 314,
     "y": 550,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 330,
     "y": 552,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 325,
     "y": 563,
     "kind": "stone",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 332,
     "y": 570,
     "kind": "branch",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 338,
     "y": 576,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 330,
     "y": 580,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 359,
     "y": 597,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 378,
     "y": 615,
     "kind": "stone",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 373,
     "y": 623,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 388,
     "y": 625,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 373,
     "y": 634,
     "kind": "branch",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 395,
     "y": 635,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 404,
     "y": 639,
     "kind": "water",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 412,
     "y": 640,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 417,
     "y": 644,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 440,
     "y": 627,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 418,
     "y": 611,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 411,
     "y": 603,
     "kind": "carp",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 433,
     "y": 610,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 444,
     "y": 599,
     "kind": "stone",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 433,
     "y": 587,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 413,
     "y": 595,
     "kind": "branch",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 410,
     "y": 586,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 409,
     "y": 565,
     "kind": "security console",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 392,
     "y": 572,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 423,
     "y": 552,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 397,
     "y": 546,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 379,
     "y": 528,
     "kind": "stone",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 376,
     "y": 541,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 378,
     "y": 556,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 363,
     "y": 556,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 310,
     "y": 509,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 310,
     "y": 492,
     "kind": "item",
-    "areaName": "forest"
+    "areaCode": 12
   },
   {
     "x": 91,
     "y": 362,
     "kind": "security console",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 90,
     "y": 334,
     "kind": "item",
-    "areaName": "hotel"
+    "areaCode": 6
   },
   {
     "x": 211,
     "y": 164,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 295,
     "y": 81,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 334,
     "y": 135,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 375,
     "y": 113,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 371,
     "y": 124,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 341,
     "y": 142,
     "kind": "stone",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 285,
     "y": 162,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 270,
     "y": 183,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 271,
     "y": 155,
     "kind": "branch",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 241,
     "y": 132,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 271,
     "y": 100,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 189,
     "y": 641,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 184,
     "y": 637,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 169,
     "y": 645,
     "kind": "branch",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 176,
     "y": 651,
     "kind": "carp",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 181,
     "y": 655,
     "kind": "carp",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 168,
     "y": 635,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 157,
     "y": 631,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 159,
     "y": 620,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 139,
     "y": 618,
     "kind": "carp",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 140,
     "y": 614,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 137,
     "y": 607,
     "kind": "carp",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 142,
     "y": 601,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 157,
     "y": 608,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 146,
     "y": 580,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 156,
     "y": 570,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 167,
     "y": 545,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 160,
     "y": 539,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 157,
     "y": 549,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 175,
     "y": 529,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 197,
     "y": 531,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 206,
     "y": 538,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 240,
     "y": 590,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 234,
     "y": 586,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 224,
     "y": 592,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 236,
     "y": 599,
     "kind": "stone",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 212,
     "y": 583,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 200,
     "y": 582,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 192,
     "y": 568,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 182,
     "y": 603,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 176,
     "y": 609,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 169,
     "y": 616,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 196,
     "y": 615,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 203,
     "y": 621,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 190,
     "y": 625,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 228,
     "y": 661,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 228,
     "y": 637,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 247,
     "y": 649,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 261,
     "y": 636,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 327,
     "y": 640,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 317,
     "y": 643,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 315,
     "y": 651,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 328,
     "y": 654,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 323,
     "y": 666,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 313,
     "y": 667,
     "kind": "stone",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 302,
     "y": 677,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 288,
     "y": 692,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 301,
     "y": 694,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 307,
     "y": 695,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 322,
     "y": 703,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 325,
     "y": 700,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 334,
     "y": 709,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 337,
     "y": 706,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 337,
     "y": 714,
     "kind": "stone",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 337,
     "y": 725,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 314,
     "y": 724,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 349,
     "y": 719,
     "kind": "stone",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 341,
     "y": 740,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 355,
     "y": 755,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 338,
     "y": 746,
     "kind": "carp",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 340,
     "y": 748,
     "kind": "carp",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 342,
     "y": 750,
     "kind": "carp",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 353,
     "y": 760,
     "kind": "carp",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 355,
     "y": 767,
     "kind": "carp",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 382,
     "y": 747,
     "kind": "branch",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 373,
     "y": 725,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 376,
     "y": 732,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 359,
     "y": 728,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 359,
     "y": 718,
     "kind": "security console",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 358,
     "y": 712,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 372,
     "y": 712,
     "kind": "branch",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 349,
     "y": 701,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 337,
     "y": 689,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 332,
     "y": 693,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 342,
     "y": 693,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 361,
     "y": 696,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 368,
     "y": 690,
     "kind": "branch",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 395,
     "y": 674,
     "kind": "branch",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 384,
     "y": 662,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 378,
     "y": 657,
     "kind": "stone",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 374,
     "y": 651,
     "kind": "branch",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 429,
     "y": 698,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 444,
     "y": 681,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 473,
     "y": 644,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 482,
     "y": 654,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 479,
     "y": 650,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 459,
     "y": 641,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 503,
     "y": 668,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 511,
     "y": 678,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 502,
     "y": 693,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 519,
     "y": 685,
     "kind": "stone",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 535,
     "y": 695,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 528,
     "y": 698,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 524,
     "y": 678,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 517,
     "y": 710,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 531,
     "y": 679,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 554,
     "y": 648,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 554,
     "y": 664,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 540,
     "y": 660,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 533,
     "y": 651,
     "kind": "stone",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 563,
     "y": 634,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 570,
     "y": 641,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 576,
     "y": 654,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 546,
     "y": 634,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 537,
     "y": 636,
     "kind": "security console",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 515,
     "y": 641,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 524,
     "y": 651,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 532,
     "y": 658,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 502,
     "y": 653,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 519,
     "y": 612,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 522,
     "y": 618,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 566,
     "y": 610,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 590,
     "y": 613,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 581,
     "y": 592,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 573,
     "y": 581,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 539,
     "y": 591,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 575,
     "y": 557,
     "kind": "stone",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 561,
     "y": 564,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 550,
     "y": 548,
     "kind": "branch",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 587,
     "y": 538,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 505,
     "y": 582,
     "kind": "stone",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 474,
     "y": 611,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 492,
     "y": 621,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 459,
     "y": 626,
     "kind": "item",
-    "areaName": "factory"
+    "areaCode": 13
   },
   {
     "x": 183,
     "y": 517,
     "kind": "item",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 534,
     "y": 225,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 538,
     "y": 229,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 515,
     "y": 206,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 517,
     "y": 196,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 163,
     "y": 222,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 131,
     "y": 226,
     "kind": "item",
-    "areaName": "archery-range"
+    "areaCode": 10
   },
   {
     "x": 420,
     "y": 556,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 403,
     "y": 614,
     "kind": "item",
-    "areaName": "chapel"
+    "areaCode": 14
   },
   {
     "x": 551,
     "y": 522,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 555,
     "y": 236,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 198,
     "y": 237,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 264,
     "y": 240,
     "kind": "stone",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 291,
     "y": 241,
     "kind": "stone",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 341,
     "y": 252,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 348,
     "y": 268,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 370,
     "y": 257,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 231,
     "y": 621,
     "kind": "security console",
-    "areaName": "uptown"
+    "areaCode": 4
   },
   {
     "x": 413,
     "y": 704,
     "kind": "item",
-    "areaName": "dock"
+    "areaCode": 1
   },
   {
     "x": 433,
     "y": 242,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 441,
     "y": 243,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 447,
     "y": 250,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 320,
     "y": 207,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 315,
     "y": 274,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 557,
     "y": 426,
     "kind": "item",
-    "areaName": "hospital"
+    "areaCode": 8
   },
   {
     "x": 233,
     "y": 206,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 288,
     "y": 261,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 274,
     "y": 256,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 356,
     "y": 221,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 402,
     "y": 270,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 454,
     "y": 128,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 525,
     "y": 384,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 488,
     "y": 300,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 496,
     "y": 291,
     "kind": "potato",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 499,
     "y": 287,
     "kind": "potato",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 515,
     "y": 282,
     "kind": "potato",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 513,
     "y": 279,
     "kind": "potato",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 516,
     "y": 286,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 513,
     "y": 293,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 511,
     "y": 296,
     "kind": "carp",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 500,
     "y": 281,
     "kind": "item",
-    "areaName": "pond"
+    "areaCode": 2
   },
   {
     "x": 482,
     "y": 265,
     "kind": "item",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 489,
     "y": 220,
     "kind": "item",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 524,
     "y": 217,
     "kind": "stone",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 525,
     "y": 231,
     "kind": "branch",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 491,
     "y": 177,
     "kind": "potato",
-    "areaName": "temple"
+    "areaCode": 9
   },
   {
     "x": 269,
     "y": 285,
     "kind": "item",
-    "areaName": "school"
+    "areaCode": 15
   },
   {
     "x": 354,
     "y": 242,
     "kind": "stone",
-    "areaName": "avenue"
+    "areaCode": 7
   },
   {
     "x": 303,
     "y": 150,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   },
   {
     "x": 292,
     "y": 176,
     "kind": "item",
-    "areaName": "alley"
+    "areaCode": 5
   }
 ]

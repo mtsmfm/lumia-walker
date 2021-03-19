@@ -48,7 +48,7 @@ struct ObjectLocation {
     x: u32,
     y: u32,
     kind: String,
-    area_name: String,
+    area_code: u32,
 }
 
 fn load_object_locations() -> Result<Vec<ObjectLocation>, Box<dyn Error>> {

@@ -148,9 +148,24 @@ map_dir.join('object_locations.json').write(
         x: l.x,
         y: l.y,
         kind: l.kind,
-        areaName: area_borders.find {|ab|
-          ab.polygon.contains?(l.lat_lng)
-        }.name
+        areaCode:
+          %w(
+            dock
+            pond
+            beach
+            uptown
+            alley
+            hotel
+            avenue
+            hospital
+            temple
+            archery-range
+            cemetery
+            forest
+            factory
+            chapel
+            school
+          ).find_index(area_borders.find {|ab| ab.polygon.contains?(l.lat_lng) }.name) + 1
       }
     }
   )
