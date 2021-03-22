@@ -1,0 +1,400 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+end
+
+require 'pathname'
+require 'json'
+require 'csv'
+
+class LumiaIsland
+  def initialize(item_codes_by_location, distance_data)
+    @item_codes_by_location = item_codes_by_location
+    @distance_data = distance_data
+  end
+
+  def distance(i, j)
+    loc_i = locations.fetch(i)
+    loc_j = locations.fetch(j)
+
+    @distance_data.fetch([*loc_i, *loc_j])
+  end
+
+  def check_items(i)
+    loc = locations.fetch(i)
+    @item_codes_by_location.fetch(loc)
+  end
+
+  def find_locations_by_item_code(code)
+    locations_by_item_code.fetch(code)
+  end
+
+  def locations_count
+    locations.count
+  end
+
+  private
+
+  def locations
+    @locations ||= @item_codes_by_location.keys
+  end
+
+  def inspect
+    "#<LumiaIsland>"
+  end
+  def locations_by_item_code
+    @locations_by_item_code ||= @item_codes_by_location.values.each.with_index.with_object({}) {|(codes, i), hash|
+      codes.each {|c|
+        hash[c] ||= {}
+        hash[c][i] ||= 0
+        hash[c][i] += 1
+      }
+    }
+  end
+end
+
+class LumiaIslandGenerator
+  def generate
+    item_codes_by_location = {}
+
+    item_box_count_by_area_code.each do |area_code, item_box_count|
+      item_codes = item_drop_data_by_area_code[area_code].flat_map {|x, n| [x] * n }
+      boxes = slice_evenly(item_codes.shuffle, item_box_count)
+
+      until boxes.all? {|xs| xs.tally.each_value.max <= 2 }
+        boxes = slice_evenly(item_codes.shuffle, item_box_count)
+      end
+
+      object_locations_by_area_code[area_code].each do |loc|
+        x_y = loc.fetch_values('x', 'y')
+
+        item_codes_by_location[x_y] =
+          case loc['kind']
+          when 'item'
+            boxes.shift
+          when 'potato'
+            [302102]
+          when 'stone'
+            [112101]
+          when 'branch'
+            [108101]
+          when 'security console'
+            []
+          when 'hyperloop'
+            []
+          when 'water'
+            [301203]
+          when 'tree of life'
+            [401208]
+          when 'carp'
+            [302109]
+          else
+            raise
+          end
+      end
+    end
+
+    LumiaIsland.new(item_codes_by_location, distance_data)
+  end
+
+  private
+
+  def slice_evenly(xs, count)
+    count.times.map {|i| xs.values_at(*xs.size.times.select {|x| x % count == i }) }
+  end
+
+  def distance_data
+    @distance_data ||= {}.tap do |d|
+      CSV.foreach(map_dir.join('distance.csv')) do |start_x, start_y, goal_x, goal_y, cost|
+        d[[start_x.to_i, start_y.to_i, goal_x.to_i, goal_y.to_i]] = cost.to_i
+      end
+    end
+  end
+
+  def walls
+    @walls ||= JSON.parse(map_dir.join('walls.json').read)
+  end
+
+  def object_locations
+    @object_locations ||= JSON.parse(map_dir.join('object_locations.json').read)
+  end
+
+  def data_dir
+    @data_dir ||= Pathname.new(__dir__).join('../data')
+  end
+
+  def map_dir
+    @map_dir ||= Pathname.new(__dir__).join('../map')
+  end
+
+  def item_spawn
+    @item_spawn ||= JSON.parse(data_dir.join('item_spawn.json').read)
+  end
+
+  def object_locations_by_area_code
+    @object_locations_by_area_code ||= object_locations.group_by { _1['areaCode'] }
+  end
+
+  def item_box_count_by_area_code
+    @item_box_count_by_area_code ||= object_locations.select { _1['kind'] == 'item' }.group_by { _1['areaCode'] }.transform_values(&:count)
+  end
+
+  def item_drop_data_by_area_code
+    @item_drop_data_by_area_code ||= item_spawn.group_by { _1['areaCode'] }.transform_values {|xs| xs.map { [_1['itemCode'], _1['dropCount']] }.to_h }
+  end
+end
+
+class ItemBuildGuide
+  def find_item_code_by_name(name)
+    en_locale_common['items'].find {|_, v| v == name }[0].to_i
+  end
+
+  def build_requirements(code)
+    return {code => 1} if item_build_tree[code] == [0, 0]
+
+    x, y = item_build_tree[code]
+
+    build_requirements(x).merge(build_requirements(y)) do |key, self_val, other_val|
+      self_val + other_val
+    end
+  end
+
+  private
+
+  def item_data
+    @item_data ||= Pathname.new(__dir__).glob('../data/item_*.json').reject {|x| x.to_s.include?('spawn') }.flat_map {|x| JSON.parse(x.read) }
+  end
+
+  def item_build_tree
+    @item_build_tree ||= item_data.map {|h| [h['code'], h.fetch_values('makeMaterial1', 'makeMaterial2')] }.to_h
+  end
+
+  def en_locale_common
+    @en_locale_common ||= JSON.parse(Pathname.new(__dir__).join('../public/locales/en/common.json').read)
+  end
+end
+
+class LpGen
+  INFINITY = Float::INFINITY
+
+  module HasMembers
+    def set_coefficient(var, x)
+      members << Member.new(var, x)
+    end
+
+    def members
+      @members ||= []
+    end
+  end
+
+  class Member < Struct.new(:var, :x)
+    def to_s
+      "#{x} #{var.to_s}"
+    end
+  end
+
+  class Objective
+    include HasMembers
+
+    attr_reader :type
+
+    def set_maximization
+      @type = :max
+    end
+
+    def set_minimization
+      @type = :min
+    end
+
+    def to_s
+      <<~LP
+        #{type == :min ? "Minimize" : "Maximize"}
+         obj: #{members.join(" + ")}
+      LP
+    end
+
+    def inspect
+      to_s
+    end
+  end
+
+  class Constraint
+    attr_reader :min, :max
+
+    include HasMembers
+
+    def self.rhs(min, max)
+      case
+      when min == max
+        "= #{min}"
+      when min == -INFINITY
+        "<= #{max}"
+      when max == INFINITY
+        ">= #{min}"
+      else
+        raise
+      end
+    end
+
+    def initialize(min, max, i)
+      @min = min
+      @max = max
+      @i = i
+    end
+
+    def to_s
+      <<~LP
+        c#{@i}: #{members.join(" + ")} #{Constraint.rhs(min, max)}
+      LP
+    end
+
+    def inspect
+      to_s
+    end
+  end
+
+  class BoolVar < Struct.new(:name)
+    def to_s
+      "B#{name.tr(",.", "_")}"
+    end
+  end
+
+  class IntVar < Struct.new(:min, :max, :name)
+    def to_s
+      "I#{name.tr(",.", "_")}"
+    end
+
+    def bound
+      "#{to_s} #{Constraint.rhs(min, max)}"
+    end
+  end
+
+  def objective
+    @objective ||= Objective.new
+  end
+
+  def constraint(min, max)
+    Constraint.new(min, max, constraints.size).tap do |c|
+      constraints << c
+    end
+  end
+
+  def constraints
+    @constraints ||= []
+  end
+
+  def infinity
+    INFINITY
+  end
+
+  def bool_var(*args)
+    BoolVar.new(*args).tap do |v|
+      bool_vars << v
+    end
+  end
+
+  def int_var(*args)
+    IntVar.new(*args).tap do |v|
+      int_vars << v
+    end
+  end
+
+  def bool_vars
+    @bool_vars ||= Set.new
+  end
+
+  def int_vars
+    @int_vars ||= Set.new
+  end
+
+  def to_s
+    <<~LP
+      #{objective.to_s}
+      Subject to
+      #{constraints.map {|c| " #{c.to_s}" }.join()}
+
+      Bounds
+       #{int_vars.map(&:bound).join("\n")}
+
+      Binary
+       #{bool_vars.map(&:to_s).join(" ")}
+
+      End
+    LP
+  end
+
+  def inspect
+    to_s
+  end
+end
+
+lumia_island = LumiaIslandGenerator.new.generate
+item_build_guide = ItemBuildGuide.new
+
+target_item_codes = [
+  'Mistilteinn',
+  'Imperial Burgonet',
+  'Amazoness Armor',
+  'Burnished Aegis',
+  'EOD Boots',
+  'White Crane Fan'
+].reduce({}) {|acc, n|
+  c = item_build_guide.find_item_code_by_name(n)
+  acc.merge(item_build_guide.build_requirements(c)) do |_, self_val, other_val|
+    self_val + other_val
+  end
+}
+
+solver = LpGen.new
+
+edges = lumia_island.locations_count.times.flat_map do |i|
+  lumia_island.locations_count.times.map {|j|
+    [[i, j], solver.bool_var("#{i},#{j}")] unless i == j
+  }.compact
+end.to_h
+
+nodes = lumia_island.locations_count.times.map do |i|
+  solver.int_var(0, solver.infinity, "#{i}")
+end
+
+solver.objective.tap do |objective|
+  edges.each do |(i, j), e|
+    objective.set_coefficient(e, -lumia_island.distance(i, j))
+  end
+  objective.set_maximization
+end
+
+open_end_constraints = lumia_island.locations_count.times.map do |i|
+  solver.constraint(0, 0)
+end
+
+item_constraints = target_item_codes.reject {|c, _| c == 401103 }.map {|code, needed_count|
+  [code, solver.constraint(needed_count, solver.infinity)]
+}.to_h
+
+edges.each do |(i, j), e|
+  open_end_constraints[i].set_coefficient(e, 1)
+  open_end_constraints[j].set_coefficient(e, -1)
+
+  lumia_island.check_items(i).each do |code|
+    item_constraints[code]&.set_coefficient(e, 1)
+  end
+end
+
+BIG_M = nodes.count ** 2
+
+edges.each do |(i, j), e|
+  if j > 0
+    constraint = solver.constraint(-solver.infinity, BIG_M - 1)
+    constraint.set_coefficient(nodes[i], 1)
+    constraint.set_coefficient(nodes[j], -1)
+    constraint.set_coefficient(e, BIG_M)
+  end
+end
+
+File.write('a.lp', solver.to_s)
