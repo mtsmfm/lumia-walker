@@ -186,7 +186,7 @@
     "areaCode": 2,
     "itemCode": 201102,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 1104,
@@ -231,7 +231,7 @@
     "areaCode": 2,
     "itemCode": 205103,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1109,
@@ -240,7 +240,7 @@
     "areaCode": 2,
     "itemCode": 502102,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 4
   },
   {
     "code": 1110,
@@ -654,7 +654,7 @@
     "areaCode": 5,
     "itemCode": 205110,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1406,
@@ -663,7 +663,7 @@
     "areaCode": 5,
     "itemCode": 204102,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 1407,
@@ -699,7 +699,7 @@
     "areaCode": 5,
     "itemCode": 203104,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1411,
@@ -708,7 +708,7 @@
     "areaCode": 5,
     "itemCode": 119101,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 1412,
@@ -717,7 +717,7 @@
     "areaCode": 5,
     "itemCode": 301101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1413,
@@ -771,7 +771,7 @@
     "areaCode": 6,
     "itemCode": 401113,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 1503,
@@ -789,7 +789,7 @@
     "areaCode": 6,
     "itemCode": 401106,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 1505,
@@ -825,7 +825,7 @@
     "areaCode": 6,
     "itemCode": 301107,
     "dropPoint": "Fixed",
-    "dropCount": 5
+    "dropCount": 6
   },
   {
     "code": 1509,
@@ -933,7 +933,7 @@
     "areaCode": 7,
     "itemCode": 401110,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 1604,
@@ -942,7 +942,7 @@
     "areaCode": 7,
     "itemCode": 401101,
     "dropPoint": "Fixed",
-    "dropCount": 9
+    "dropCount": 10
   },
   {
     "code": 1605,
@@ -951,7 +951,7 @@
     "areaCode": 7,
     "itemCode": 203101,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 7
   },
   {
     "code": 1606,
@@ -960,7 +960,7 @@
     "areaCode": 7,
     "itemCode": 401120,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 5
   },
   {
     "code": 1607,
@@ -1023,7 +1023,7 @@
     "areaCode": 7,
     "itemCode": 113102,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 7
   },
   {
     "code": 1614,
@@ -1041,7 +1041,7 @@
     "areaCode": 7,
     "itemCode": 205105,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 1616,
@@ -1077,7 +1077,7 @@
     "areaCode": 8,
     "itemCode": 204101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1703,
@@ -1104,7 +1104,7 @@
     "areaCode": 8,
     "itemCode": 502101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 5
   },
   {
     "code": 1706,
@@ -1149,7 +1149,7 @@
     "areaCode": 8,
     "itemCode": 203102,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1711,
@@ -1158,7 +1158,7 @@
     "areaCode": 8,
     "itemCode": 401111,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 5
   },
   {
     "code": 1712,
@@ -1194,7 +1194,7 @@
     "areaCode": 8,
     "itemCode": 401106,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1716,
@@ -1203,7 +1203,7 @@
     "areaCode": 8,
     "itemCode": 110102,
     "dropPoint": "Fixed",
-    "dropCount": 3
+    "dropCount": 4
   },
   {
     "code": 1717,
@@ -1212,7 +1212,7 @@
     "areaCode": 8,
     "itemCode": 205101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1801,
@@ -1248,7 +1248,7 @@
     "areaCode": 9,
     "itemCode": 302113,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 5
   },
   {
     "code": 1805,
@@ -1266,7 +1266,7 @@
     "areaCode": 9,
     "itemCode": 205106,
     "dropPoint": "Fixed",
-    "dropCount": 9
+    "dropCount": 10
   },
   {
     "code": 1807,
@@ -1275,7 +1275,7 @@
     "areaCode": 9,
     "itemCode": 107101,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 5
   },
   {
     "code": 1808,
@@ -1284,7 +1284,7 @@
     "areaCode": 9,
     "itemCode": 401117,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 1809,
@@ -1311,7 +1311,7 @@
     "areaCode": 9,
     "itemCode": 401114,
     "dropPoint": "Fixed",
-    "dropCount": 9
+    "dropCount": 10
   },
   {
     "code": 1812,
@@ -1365,7 +1365,7 @@
     "areaCode": 10,
     "itemCode": 401112,
     "dropPoint": "Fixed",
-    "dropCount": 5
+    "dropCount": 6
   },
   {
     "code": 1902,
@@ -1374,7 +1374,7 @@
     "areaCode": 10,
     "itemCode": 204102,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1903,
@@ -1410,7 +1410,7 @@
     "areaCode": 10,
     "itemCode": 401117,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 1907,
@@ -1419,7 +1419,7 @@
     "areaCode": 10,
     "itemCode": 114101,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 3
   },
   {
     "code": 1908,
@@ -1437,7 +1437,7 @@
     "areaCode": 10,
     "itemCode": 201102,
     "dropPoint": "Fixed",
-    "dropCount": 5
+    "dropCount": 6
   },
   {
     "code": 1910,
@@ -1446,7 +1446,7 @@
     "areaCode": 10,
     "itemCode": 502102,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 3
   },
   {
     "code": 1911,
@@ -1455,7 +1455,7 @@
     "areaCode": 10,
     "itemCode": 112103,
     "dropPoint": "Fixed",
-    "dropCount": 5
+    "dropCount": 6
   },
   {
     "code": 1912,
@@ -1491,7 +1491,7 @@
     "areaCode": 10,
     "itemCode": 302119,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 5
   },
   {
     "code": 1916,
@@ -1509,7 +1509,7 @@
     "areaCode": 10,
     "itemCode": 102101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2001,
@@ -1905,7 +1905,7 @@
     "areaCode": 13,
     "itemCode": 203102,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2212,
@@ -1923,7 +1923,7 @@
     "areaCode": 13,
     "itemCode": 117101,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 3
   },
   {
     "code": 2214,
@@ -1968,7 +1968,7 @@
     "areaCode": 14,
     "itemCode": 301104,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 3
   },
   {
     "code": 2303,
@@ -1995,7 +1995,7 @@
     "areaCode": 14,
     "itemCode": 205105,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2306,
@@ -2013,7 +2013,7 @@
     "areaCode": 14,
     "itemCode": 112104,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2308,
@@ -2022,50 +2022,50 @@
     "areaCode": 14,
     "itemCode": 114101,
     "dropPoint": "Fixed",
-    "dropCount": 4
+    "dropCount": 3
   },
   {
     "code": 2309,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 502102,
+    "itemCode": 205109,
     "dropPoint": "Fixed",
-    "dropCount": 3
+    "dropCount": 10
   },
   {
     "code": 2310,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 205109,
+    "itemCode": 102101,
     "dropPoint": "Fixed",
-    "dropCount": 9
+    "dropCount": 5
   },
   {
     "code": 2311,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 102101,
+    "itemCode": 205108,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 11
   },
   {
     "code": 2312,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 205108,
+    "itemCode": 502104,
     "dropPoint": "Fixed",
-    "dropCount": 9
+    "dropCount": 8
   },
   {
     "code": 2313,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 502104,
+    "itemCode": 201104,
     "dropPoint": "Fixed",
     "dropCount": 7
   },
@@ -2074,36 +2074,27 @@
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 201104,
+    "itemCode": 113104,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 5
   },
   {
     "code": 2315,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 113104,
+    "itemCode": 205107,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2316,
     "name": "성당",
     "areaType": "Church",
     "areaCode": 14,
-    "itemCode": 205107,
-    "dropPoint": "Fixed",
-    "dropCount": 6
-  },
-  {
-    "code": 2317,
-    "name": "성당",
-    "areaType": "Church",
-    "areaCode": 14,
     "itemCode": 113101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 5
   },
   {
     "code": 2401,
@@ -2130,7 +2121,7 @@
     "areaCode": 15,
     "itemCode": 203102,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2404,
@@ -2139,7 +2130,7 @@
     "areaCode": 15,
     "itemCode": 101102,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2405,
@@ -2157,7 +2148,7 @@
     "areaCode": 15,
     "itemCode": 101101,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2407,
@@ -2175,7 +2166,7 @@
     "areaCode": 15,
     "itemCode": 302110,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2409,
@@ -2184,7 +2175,7 @@
     "areaCode": 15,
     "itemCode": 401107,
     "dropPoint": "Fixed",
-    "dropCount": 8
+    "dropCount": 9
   },
   {
     "code": 2410,
@@ -2193,7 +2184,7 @@
     "areaCode": 15,
     "itemCode": 205103,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2411,
@@ -2202,7 +2193,7 @@
     "areaCode": 15,
     "itemCode": 113101,
     "dropPoint": "Fixed",
-    "dropCount": 6
+    "dropCount": 7
   },
   {
     "code": 2412,
@@ -2229,7 +2220,7 @@
     "areaCode": 15,
     "itemCode": 201104,
     "dropPoint": "Fixed",
-    "dropCount": 7
+    "dropCount": 8
   },
   {
     "code": 2415,
@@ -2238,7 +2229,7 @@
     "areaCode": 15,
     "itemCode": 401111,
     "dropPoint": "Fixed",
-    "dropCount": 5
+    "dropCount": 6
   },
   {
     "code": 2416,
