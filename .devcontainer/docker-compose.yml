@@ -11,6 +11,8 @@ services:
       - ..:/app:cached
       - dotconfig:/home/app/.config
       - vendor:/vendor
+    cap_add:
+      - SYS_ADMIN
 
 volumes:
   app:

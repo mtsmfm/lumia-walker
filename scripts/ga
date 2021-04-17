@@ -19,6 +19,8 @@ class LumiaIsland
   end
 
   def distance(i, j)
+    return 0 if i == j
+
     loc_i = locations.fetch(i)
     loc_j = locations.fetch(j)
 
@@ -34,6 +36,10 @@ class LumiaIsland
     locations.count
   end
 
+  def find_locations_tally_by_item_code(code)
+    locations_tally_by_item_code.fetch(code)
+  end
+
   private
 
   def locations
@@ -44,8 +50,8 @@ class LumiaIsland
     "#<LumiaIsland>"
   end
 
-  def locations_by_item_code
-    @locations_by_item_code ||= @item_codes_by_location.values.each.with_index.with_object({}) {|(codes, i), hash|
+  def locations_tally_by_item_code
+    @locations_tally_by_item_code ||= @item_codes_by_location.values.each.with_index.with_object({}) {|(codes, i), hash|
       codes.each {|c|
         hash[c] ||= {}
         hash[c][i] ||= 0
@@ -56,15 +62,15 @@ class LumiaIsland
 end
 
 class LumiaIslandGenerator
-  def generate
+  def generate(random: Random.new)
     item_codes_by_location = {}
 
     item_box_count_by_area_code.each do |area_code, item_box_count|
       item_codes = item_drop_data_by_area_code[area_code].flat_map {|x, n| [x] * n }
-      boxes = slice_evenly(item_codes.shuffle, item_box_count)
+      boxes = slice_evenly(item_codes.shuffle(random: random), item_box_count)
 
       until boxes.all? {|xs| xs.tally.each_value.max <= 2 }
-        boxes = slice_evenly(item_codes.shuffle, item_box_count)
+        boxes = slice_evenly(item_codes.shuffle(random: random), item_box_count)
       end
 
       object_locations_by_area_code[area_code].each do |loc|
@@ -178,123 +184,151 @@ end
 
 class GA
   class Generation
-    def initialize(organisms)
-      @organisms = organisms
-      @population_count = organisms.count
+    def initialize(&sample_organism_block)
+      @sample_organism_block = sample_organism_block
+      @local_organisms = [sample_organism_block.call]
     end
 
-    def step(elite_ratio: 0.1, mutation_ratio: 0.01)
-      elite_count = (@population_count * elite_ratio).floor
-      mutation_count = (@population_count * mutation_ratio).floor
-      crossover_count = @population_count - elite_count - mutation_count
-
-      next_organisms = []
-
-      next_organisms += @organisms[0, elite_count]
-      next_organisms += @organisms.sample(mutation_count).map(&:mutate)
-
-      children = []
-      while children.count < crossover_count
-        p1, p2 = @organisms.sample(2)
-        children += p1.crossover(p2)
+    def step
+      if @local_organisms.size == 1
+        @local_organisms << sample_organism
       end
 
-      next_organisms += children.sample(crossover_count)
+      parents = 2.times.map {
+        i = rand(@local_organisms.size)
+        @local_organisms.slice!(i)
+      }.sort_by(&:fitness)
 
-      @organisms = next_organisms.sort_by(&:fitness)
+      children = parents[0].crossover(parents[1])
+
+      children.sample.mutate
+
+      children.sort_by!(&:fitness)
+
+      if children[1].fitness <= parents[0].fitness
+        @local_organisms << parents[0]
+        @local_organisms += children
+      elsif children[0].fitness > parents[1].fitness
+        @local_organisms << parents[0]
+      elsif children[0].fitness > parents[0].fitness
+        @local_organisms << parents[0]
+        @local_organisms << children[0]
+      else
+        @local_organisms << children[0]
+        @local_organisms << sample_organism
+      end
     end
 
     def best_organism
-      @organisms[0]
+      @local_organisms.min_by(&:fitness)
+    end
+
+    private
+
+    def sample_organism
+      @sample_organism_block.call
     end
   end
 
   class Organism
     attr_reader :genes
 
-    def initialize(lumia_island, target_item_codes, genes)
+    def initialize(lumia_island, target_item_codes_tally, genes)
       @lumia_island = lumia_island
-      @target_item_codes = target_item_codes
+      @target_item_codes_tally = target_item_codes_tally
       @genes = genes
     end
 
     def fitness
-      return @fitness if defined?(@fitness)
-
-      item_codes = @genes.flat_map {|g|
-        @lumia_island.check_items(g).select {|c| @target_item_codes.key?(c) }
-      }.tally
-
-      @fitness =
-        if @target_item_codes.any? {|c, count| (item_codes[c] || 0) < count }
-          Float::INFINITY
-        else
-          @genes.each_cons(2).sum {|a, b| @lumia_island.distance(a, b) }
-        end
+      @fitness ||= @genes.each_cons(2).sum {|a, b| @lumia_island.distance(a.value, b.value) }
     end
 
     def crossover(other)
       size = [genes.size, other.genes.size].min
-      a = rand(0...size)
-      b = rand(a...size)
 
-      children = [dup, other.dup]
+      n = 0
 
-      (a..b).each do |x|
-        v1 = genes[x]
-        v2 = other.genes[x]
+      loop do
+        children = [dup, other.dup]
 
-        children.each do |c|
-          i = c.genes.find_index(v1)
-          j = c.genes.find_index(v2)
+        cut_count = rand(size / 2)
 
-          if i && j
-            c.genes[i], c.genes[j] = v2, v1
+        cut_count.times do
+          a = rand(size)
+          b = rand(size - a) + a
+
+          (a..b).each do |x|
+            g1 = genes[x]
+            g2 = other.genes[x]
+
+            children.each do |c|
+              i = c.genes.find_index {|g| g.candidates == g1.candidates }
+              j = c.genes.find_index {|g| g.candidates == g2.candidates }
+
+              c.genes[i], c.genes[j] = g2.dup, g1.dup
+            end
           end
         end
-      end
 
-      u1 = (genes - other.genes).sample
-      if u1
-        c = dup
-        c.genes.delete(u1)
-        children << c
+        return children if children.all?(&:valid?)
       end
-
-      u2 = (other.genes - genes).sample
-      if u2
-        c = other.dup
-        c.genes.delete(u2)
-        children << c
-      end
-
-      children
     end
 
     def mutate
-      dup.tap do |o|
-        n = rand(0...@lumia_island.locations_count)
-        i = rand(0...o.genes.size)
-        o.genes[i] = n unless o.genes.delete(n)
+      loop do
+        count = rand(genes.size)
+
+        genes.sample(count).each(&:mutate)
+
+        break if valid?
       end
     end
 
     def dup
-      Organism.new(@lumia_island, @target_item_codes, genes.dup)
+      Organism.new(@lumia_island, @target_item_codes_tally, genes.map(&:dup))
+    end
+
+    def valid?
+      item_codes_tally = @genes.map(&:value).uniq.flat_map {|v| @lumia_island.check_items(v) }.tally
+
+      if @target_item_codes_tally.all? {|c, count| (item_codes_tally[c] || 0) >= count }
+        true
+      else
+        false
+      end
+    end
+  end
+
+  class Gene
+    attr_reader :value, :candidates
+
+    def initialize(candidates, value = nil)
+      @candidates = candidates
+      @value = value
+    end
+
+    def mutate
+      @value = @candidates.sample
+    end
+
+    def dup
+      Gene.new(@candidates, value.dup)
     end
   end
 end
 
-lumia_island = LumiaIslandGenerator.new.generate
+lumia_island = LumiaIslandGenerator.new.generate(random: Random.new(0))
 item_build_guide = ItemBuildGuide.new
 
-target_item_codes = [
+target_item_codes_tally = [
   'Mistilteinn',
   'Imperial Burgonet',
   'Amazoness Armor',
   'Burnished Aegis',
   'EOD Boots',
-  'White Crane Fan'
+  'White Crane Fan',
+  # 'Scissors',
+  # 'Iron Ore'
 ].reduce({}) {|acc, n|
   c = item_build_guide.find_item_code_by_name(n)
   acc.merge(item_build_guide.build_requirements(c)) do |_, self_val, other_val|
@@ -302,18 +336,30 @@ target_item_codes = [
   end
 }.except(401103)
 
-locations_contain_items = (0...lumia_island.locations_count).select do |i|
-  lumia_island.check_items(i).any? {|code| target_item_codes.key?(code) }
+location_indexes_contain_items = (0...lumia_island.locations_count).select do |i|
+  lumia_island.check_items(i).any? {|code| target_item_codes_tally.key?(code) }
 end
 
-ga = GA::Generation.new(Array.new(1000) {
-  GA::Organism.new(lumia_island, target_item_codes, locations_contain_items.shuffle)
-})
+genes_master = target_item_codes_tally.flat_map do |code, count|
+  count.times.map do
+    GA::Gene.new(lumia_island.find_locations_tally_by_item_code(code).keys)
+  end
+end
 
-2000.times do |i|
-  p i
+ga = GA::Generation.new do
+  loop do
+    o = GA::Organism.new(lumia_island, target_item_codes_tally, genes_master.shuffle.map {|g| g.dup.tap(&:mutate) })
+    break o if o.valid?
+  end
+end
+
+200.times do |i|
+  $i = i
   ga.step
-  p ga.best_organism.fitness
+
+  # if (i + 1) % 1000 == 0
+    best = ga.best_organism
+    p [i, best.fitness, ga.instance_variable_get(:@local_organisms).count]
+    # p best.genes.map(&:value)
+  # end
 end
-binding.pry
-binding.pry
