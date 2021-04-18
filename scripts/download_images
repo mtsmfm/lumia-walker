@@ -108,3 +108,20 @@ xml.xpath('//span[@class="toctext"]').each.with_index do |toc_text_span, i|
     file.write(html_client.get(src))
   end
 end
+
+character_names = JSON.parse(root_dir.join('data/character.json').read).map {|x| x['name'] }
+xml = Oga.parse_xml(html_client.get("https://eternalreturn.fandom.com/wiki/Character"))
+xml.xpath('//td/a[img]').each do |a_tag|
+  name = a_tag['title'].gsub(' ', '')
+
+  unless character_names.include?(name)
+    logger.warn("Character #{name} not found")
+  end
+
+  file = images_dir.join("characters/#{name}.png")
+  src = a_tag.at_xpath('img')['src']
+  unless file.exist?
+    logger.info("Character #{name} saved")
+    file.write(html_client.get(src))
+  end
+end
