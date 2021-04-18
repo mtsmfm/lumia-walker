@@ -1,0 +1,365 @@
+#! /usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'pry-byebug'
+end
+
+require 'pathname'
+require 'json'
+require 'csv'
+
+class LumiaIsland
+  def initialize(item_codes_by_location, distance_data)
+    @item_codes_by_location = item_codes_by_location
+    @distance_data = distance_data
+  end
+
+  def distance(i, j)
+    return 0 if i == j
+
+    loc_i = locations.fetch(i)
+    loc_j = locations.fetch(j)
+
+    @distance_data.fetch([*loc_i, *loc_j])
+  end
+
+  def check_items(i)
+    loc = locations.fetch(i)
+    @item_codes_by_location.fetch(loc)
+  end
+
+  def locations_count
+    locations.count
+  end
+
+  def find_locations_tally_by_item_code(code)
+    locations_tally_by_item_code.fetch(code)
+  end
+
+  private
+
+  def locations
+    @locations ||= @item_codes_by_location.keys
+  end
+
+  def inspect
+    "#<LumiaIsland>"
+  end
+
+  def locations_tally_by_item_code
+    @locations_tally_by_item_code ||= @item_codes_by_location.values.each.with_index.with_object({}) {|(codes, i), hash|
+      codes.each {|c|
+        hash[c] ||= {}
+        hash[c][i] ||= 0
+        hash[c][i] += 1
+      }
+    }
+  end
+end
+
+class LumiaIslandGenerator
+  def generate(random: Random.new)
+    item_codes_by_location = {}
+
+    item_box_count_by_area_code.each do |area_code, item_box_count|
+      item_codes = item_drop_data_by_area_code[area_code].flat_map {|x, n| [x] * n }
+      boxes = slice_evenly(item_codes.shuffle(random: random), item_box_count)
+
+      until boxes.all? {|xs| xs.tally.each_value.max <= 2 }
+        boxes = slice_evenly(item_codes.shuffle(random: random), item_box_count)
+      end
+
+      object_locations_by_area_code[area_code].each do |loc|
+        x_y = loc.fetch_values('x', 'y')
+
+        item_codes_by_location[x_y] =
+          case loc['kind']
+          when 'item'
+            boxes.shift
+          when 'potato'
+            [302102]
+          when 'stone'
+            [112101]
+          when 'branch'
+            [108101]
+          when 'security console'
+            []
+          when 'hyperloop'
+            []
+          when 'water'
+            [301203]
+          when 'tree of life'
+            [401208]
+          when 'carp'
+            [302109]
+          else
+            raise
+          end
+      end
+    end
+
+    LumiaIsland.new(item_codes_by_location, distance_data)
+  end
+
+  private
+
+  def slice_evenly(xs, count)
+    count.times.map {|i| xs.values_at(*xs.size.times.select {|x| x % count == i }) }
+  end
+
+  def distance_data
+    @distance_data ||= {}.tap do |d|
+      CSV.foreach(map_dir.join('distance.csv')) do |start_x, start_y, goal_x, goal_y, cost|
+        d[[start_x.to_i, start_y.to_i, goal_x.to_i, goal_y.to_i]] = cost.to_i
+      end
+    end
+  end
+
+  def walls
+    @walls ||= JSON.parse(map_dir.join('walls.json').read)
+  end
+
+  def object_locations
+    @object_locations ||= JSON.parse(map_dir.join('object_locations.json').read)
+  end
+
+  def data_dir
+    @data_dir ||= Pathname.new(__dir__).join('../data')
+  end
+
+  def map_dir
+    @map_dir ||= Pathname.new(__dir__).join('../map')
+  end
+
+  def item_spawn
+    @item_spawn ||= JSON.parse(data_dir.join('item_spawn.json').read)
+  end
+
+  def object_locations_by_area_code
+    @object_locations_by_area_code ||= object_locations.group_by { _1['areaCode'] }
+  end
+
+  def item_box_count_by_area_code
+    @item_box_count_by_area_code ||= object_locations.select { _1['kind'] == 'item' }.group_by { _1['areaCode'] }.transform_values(&:count)
+  end
+
+  def item_drop_data_by_area_code
+    @item_drop_data_by_area_code ||= item_spawn.group_by { _1['areaCode'] }.transform_values {|xs| xs.map { [_1['itemCode'], _1['dropCount']] }.to_h }
+  end
+end
+
+class ItemBuildGuide
+  def find_item_code_by_name(name)
+    en_locale_common['items'].find {|_, v| v == name }[0].to_i
+  end
+
+  def build_requirements(code)
+    return {code => 1} if item_build_tree[code] == [0, 0]
+
+    x, y = item_build_tree[code]
+
+    build_requirements(x).merge(build_requirements(y)) do |key, self_val, other_val|
+      self_val + other_val
+    end
+  end
+
+  private
+
+  def item_data
+    @item_data ||= Pathname.new(__dir__).glob('../data/item_*.json').reject {|x| x.to_s.include?('spawn') }.flat_map {|x| JSON.parse(x.read) }
+  end
+
+  def item_build_tree
+    @item_build_tree ||= item_data.map {|h| [h['code'], h.fetch_values('makeMaterial1', 'makeMaterial2')] }.to_h
+  end
+
+  def en_locale_common
+    @en_locale_common ||= JSON.parse(Pathname.new(__dir__).join('../public/locales/en/common.json').read)
+  end
+end
+
+class GA
+  class Generation
+    def initialize(&sample_organism_block)
+      @sample_organism_block = sample_organism_block
+      @local_organisms = [sample_organism_block.call]
+    end
+
+    def step
+      if @local_organisms.size == 1
+        @local_organisms << sample_organism
+      end
+
+      parents = 2.times.map {
+        i = rand(@local_organisms.size)
+        @local_organisms.slice!(i)
+      }.sort_by(&:fitness)
+
+      children = parents[0].crossover(parents[1])
+
+      children.sample.mutate
+
+      children.sort_by!(&:fitness)
+
+      if children[1].fitness <= parents[0].fitness
+        @local_organisms << parents[0]
+        @local_organisms += children
+      elsif children[0].fitness > parents[1].fitness
+        @local_organisms << parents[0]
+      elsif children[0].fitness > parents[0].fitness
+        @local_organisms << parents[0]
+        @local_organisms << children[0]
+      else
+        @local_organisms << children[0]
+        @local_organisms << sample_organism
+      end
+    end
+
+    def best_organism
+      @local_organisms.min_by(&:fitness)
+    end
+
+    private
+
+    def sample_organism
+      @sample_organism_block.call
+    end
+  end
+
+  class Organism
+    attr_reader :genes
+
+    def initialize(lumia_island, target_item_codes_tally, genes)
+      @lumia_island = lumia_island
+      @target_item_codes_tally = target_item_codes_tally
+      @genes = genes
+    end
+
+    def fitness
+      @fitness ||= @genes.each_cons(2).sum {|a, b| @lumia_island.distance(a.value, b.value) }
+    end
+
+    def crossover(other)
+      size = [genes.size, other.genes.size].min
+
+      n = 0
+
+      loop do
+        children = [dup, other.dup]
+
+        cut_count = rand(size / 2)
+
+        cut_count.times do
+          a = rand(size)
+          b = rand(size - a) + a
+
+          (a..b).each do |x|
+            g1 = genes[x]
+            g2 = other.genes[x]
+
+            children.each do |c|
+              i = c.genes.find_index {|g| g.candidates == g1.candidates }
+              j = c.genes.find_index {|g| g.candidates == g2.candidates }
+
+              c.genes[i], c.genes[j] = g2.dup, g1.dup
+            end
+          end
+        end
+
+        return children if children.all?(&:valid?)
+      end
+    end
+
+    def mutate
+      loop do
+        count = rand(genes.size)
+
+        genes.sample(count).each(&:mutate)
+
+        break if valid?
+      end
+    end
+
+    def dup
+      Organism.new(@lumia_island, @target_item_codes_tally, genes.map(&:dup))
+    end
+
+    def valid?
+      item_codes_tally = @genes.map(&:value).uniq.flat_map {|v| @lumia_island.check_items(v) }.tally
+
+      if @target_item_codes_tally.all? {|c, count| (item_codes_tally[c] || 0) >= count }
+        true
+      else
+        false
+      end
+    end
+  end
+
+  class Gene
+    attr_reader :value, :candidates
+
+    def initialize(candidates, value = nil)
+      @candidates = candidates
+      @value = value
+    end
+
+    def mutate
+      @value = @candidates.sample
+    end
+
+    def dup
+      Gene.new(@candidates, value.dup)
+    end
+  end
+end
+
+lumia_island = LumiaIslandGenerator.new.generate(random: Random.new(0))
+item_build_guide = ItemBuildGuide.new
+
+target_item_codes_tally = [
+  'Mistilteinn',
+  'Imperial Burgonet',
+  'Amazoness Armor',
+  'Burnished Aegis',
+  'EOD Boots',
+  'White Crane Fan',
+  # 'Scissors',
+  # 'Iron Ore'
+].reduce({}) {|acc, n|
+  c = item_build_guide.find_item_code_by_name(n)
+  acc.merge(item_build_guide.build_requirements(c)) do |_, self_val, other_val|
+    self_val + other_val
+  end
+}.except(401103)
+
+location_indexes_contain_items = (0...lumia_island.locations_count).select do |i|
+  lumia_island.check_items(i).any? {|code| target_item_codes_tally.key?(code) }
+end
+
+genes_master = target_item_codes_tally.flat_map do |code, count|
+  count.times.map do
+    GA::Gene.new(lumia_island.find_locations_tally_by_item_code(code).keys)
+  end
+end
+
+ga = GA::Generation.new do
+  loop do
+    o = GA::Organism.new(lumia_island, target_item_codes_tally, genes_master.shuffle.map {|g| g.dup.tap(&:mutate) })
+    break o if o.valid?
+  end
+end
+
+200.times do |i|
+  $i = i
+  ga.step
+
+  # if (i + 1) % 1000 == 0
+    best = ga.best_organism
+    p [i, best.fitness, ga.instance_variable_get(:@local_organisms).count]
+    # p best.genes.map(&:value)
+  # end
+end
