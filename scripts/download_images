@@ -76,19 +76,21 @@ logger = Logger.new(STDOUT)
 html_client = HtmlClient.new(root_dir.join('tmp'))
 
 %w(Weapon Armor Consumable Special Material).each do |category|
-  xml = Oga.parse_xml(html_client.get("https://eternalreturn.gamepedia.com/#{category}"))
-  xml.xpath('//table//td[a[@title and .//img]]').each do |td_tag|
-    title = td_tag.xpath('a').last.text
+  xml = Oga.parse_xml(html_client.get("https://eternalreturn.fandom.com/wiki/#{category}"))
+  xml.xpath('//table//td[.//a[@title and .//img]]').each do |td_tag|
+    title = td_tag.xpath('.//a').last.text
     item = item_master.find_by_name(title)
 
     unless item
-      logger.warn("Item #{title} not found")
+      logger.warn("Item #{title} (#{category}) not found")
       next
     end
 
     src = td_tag.at_xpath('.//img')['src']
     file = images_dir.join("items/#{item.code}.png")
     unless file.exist?
+      logger.info("Item #{title} saved")
+
       file.write(html_client.get(src))
     end
   end
@@ -96,7 +98,7 @@ end
 
 weapon_types = JSON.parse(root_dir.join('public/locales/en/common.json').read)['weaponTypes']
 
-xml = Oga.parse_xml(html_client.get("https://eternalreturn.gamepedia.com/Weapon"))
+xml = Oga.parse_xml(html_client.get("https://eternalreturn.fandom.com/wiki/Weapon"))
 xml.xpath('//span[@class="toctext"]').each.with_index do |toc_text_span, i|
   en_weapon_type = toc_text_span.text
   weapon_type, _ = weapon_types.find {|k, v| v == en_weapon_type }
