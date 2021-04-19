@@ -578,6 +578,24 @@
     "502501": "Remote Mine",
     "502502": "Smart Bomb"
   },
+  "areas": {
+    "1": "Dock",
+    "2": "Pond",
+    "3": "Beach",
+    "4": "Uptown",
+    "5": "Alley",
+    "6": "Hotel",
+    "7": "Avenue",
+    "8": "Hospital",
+    "9": "Temple",
+    "10": "Archery Range",
+    "11": "Cemetery",
+    "12": "Forest",
+    "13": "Factory",
+    "14": "Chapel",
+    "15": "School",
+    "16": "Research Center"
+  },
   "stats": {
     "attackPower": "Attack Power",
     "defense": "Defense",
