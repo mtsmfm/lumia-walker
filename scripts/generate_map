@@ -140,6 +140,27 @@ if object_locations.any? {|l| walls.wall?(x: l.x, y: l.y) }
   raise 'Object must not be in walls'
 end
 
+AREA_CODE_BY_NAME = %w(
+  dock
+  pond
+  beach
+  uptown
+  alley
+  hotel
+  avenue
+  hospital
+  temple
+  archery-range
+  cemetery
+  forest
+  factory
+  chapel
+  school
+  research-center
+).map.with_index {|n, i|
+  [n, i + 1]
+}.to_h
+
 map_dir.join('walls.json').write(walls.to_json)
 map_dir.join('object_locations.json').write(
   JSON.pretty_generate(
@@ -148,24 +169,18 @@ map_dir.join('object_locations.json').write(
         x: l.x,
         y: l.y,
         kind: l.kind,
-        areaCode:
-          %w(
-            dock
-            pond
-            beach
-            uptown
-            alley
-            hotel
-            avenue
-            hospital
-            temple
-            archery-range
-            cemetery
-            forest
-            factory
-            chapel
-            school
-          ).find_index(area_borders.find {|ab| ab.polygon.contains?(l.lat_lng) }.name) + 1
+        areaCode: AREA_CODE_BY_NAME.fetch(area_borders.find {|ab| ab.polygon.contains?(l.lat_lng) }.name)
+      }
+    }
+  )
+)
+map_dir.join('area_centroids.json').write(
+  JSON.pretty_generate(
+    area_borders.map {|ab|
+      {
+        x: ab.polygon.centroid.lat.round,
+        y: ab.polygon.centroid.lng.round,
+        areaCode: AREA_CODE_BY_NAME.fetch(ab.name)
       }
     }
   )
