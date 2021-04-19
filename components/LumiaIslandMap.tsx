@@ -4,11 +4,15 @@ import { useTranslation } from "next-i18next";
 
 interface Props {
   route?: number[];
+  drawRouteLine?: boolean;
 }
 
 const RATIO = 120 / 25.4;
 
-export const LumiaIslandMap: React.FC<Props> = ({ route = [] }) => {
+export const LumiaIslandMap: React.FC<Props> = ({
+  route = [],
+  drawRouteLine = false,
+}) => {
   const { t } = useTranslation();
 
   const routeCentroids = route.map((r) =>
@@ -29,7 +33,7 @@ export const LumiaIslandMap: React.FC<Props> = ({ route = [] }) => {
         <circle key={i} cx={l.x / RATIO} cy={l.y / RATIO} r={2} fill="cyan" />
       ))}
 
-      {route.length > 1 && (
+      {drawRouteLine && route.length > 1 && (
         <path
           d={`M ${routeCentroids
             .flatMap((c) => [c.x / RATIO, c.y / RATIO])
