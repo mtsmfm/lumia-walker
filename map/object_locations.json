@@ -392,7 +392,7 @@
   {
     "x": 221,
     "y": 105,
-    "kind": "water",
+    "kind": "hyperloop",
     "areaCode": 5
   },
   {
@@ -968,7 +968,7 @@
   {
     "x": 75,
     "y": 336,
-    "kind": "water",
+    "kind": "hyperloop",
     "areaCode": 6
   },
   {
@@ -1310,7 +1310,7 @@
   {
     "x": 174,
     "y": 552,
-    "kind": "water",
+    "kind": "hyperloop",
     "areaCode": 4
   },
   {
@@ -1694,7 +1694,7 @@
   {
     "x": 382,
     "y": 313,
-    "kind": "carp",
+    "kind": "hyperloop",
     "areaCode": 7
   },
   {
@@ -2102,7 +2102,7 @@
   {
     "x": 601,
     "y": 402,
-    "kind": "water",
+    "kind": "hyperloop",
     "areaCode": 8
   },
   {
@@ -2678,7 +2678,7 @@
   {
     "x": 411,
     "y": 603,
-    "kind": "carp",
+    "kind": "hyperloop",
     "areaCode": 14
   },
   {
