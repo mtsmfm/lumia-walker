@@ -47,11 +47,6 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Lumia Walker</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <Container maxWidth="xl">
           <Grid container>
