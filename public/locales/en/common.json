@@ -620,9 +620,7 @@
     "increaseSkillDamage": "Skill Damage Increase",
     "preventSkillDamaged": "Prevent Skill Damaged",
     "increaseSkillDamageRatio": "Increase Skill Damage Ratio",
-    "preventSkillDamagedRatio": "Prevent Skill Damaged Ratio",
-    "decreaseRecoveryToBasicAttack": "Healing Reduction (Normal Attacks)",
-    "decreaseRecoveryToSkill": "Healing Reduction (Skills)"
+    "preventSkillDamagedRatio": "Prevent Skill Damaged Ratio"
   },
   "footer": {
     "copyright": "Eternal Return: Black Survival and its contents are trademarks and copyrights of Nimble Neuron, inc"

@@ -175,8 +175,6 @@ export const statsFieldNames = (item: Item) => {
       "increaseBasicAttackDamage",
       "increaseSkillDamage",
       "increaseSkillDamageRatio",
-      "decreaseRecoveryToBasicAttack",
-      "decreaseRecoveryToSkill",
     ];
   } else if (isArmorItem(item)) {
     return [
@@ -204,8 +202,6 @@ export const statsFieldNames = (item: Item) => {
       "preventSkillDamaged",
       "increaseSkillDamageRatio",
       "preventSkillDamagedRatio",
-      "decreaseRecoveryToBasicAttack",
-      "decreaseRecoveryToSkill",
     ];
   } else {
     return [];
