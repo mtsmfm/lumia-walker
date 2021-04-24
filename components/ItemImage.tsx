@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 import React from "react";
-import { findItemByCode, statsFieldNames } from "../utils/item";
+import { findItemByCode, statsFieldNames } from "../utils/lumiaIsland";
 import { useTranslation } from "next-i18next";
 import { ItemBuildTree } from "./ItemBuildTree";
 

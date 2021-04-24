@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "js-combinatorics": "^1.4.5",
     "next": "10.0.7",
     "next-i18next": "^8.0.6",
     "react": "17.0.1",

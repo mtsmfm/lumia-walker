@@ -1,5 +1,5 @@
 import React from "react";
-import { findItemByCode } from "../utils/item";
+import { findItemByCode } from "../utils/lumiaIsland";
 import { ItemImage } from "./ItemImage";
 import { Tree } from "./Tree";
 
