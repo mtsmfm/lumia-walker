@@ -155,6 +155,10 @@ export class Item {
     return this.data.itemGrade as ItemGrade;
   }
 
+  get stackable() {
+    return this.data.stackable;
+  }
+
   get stats() {
     const fieldNames = [
       "attackPower",

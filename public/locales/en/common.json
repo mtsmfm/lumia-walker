@@ -622,6 +622,9 @@
     "increaseSkillDamageRatio": "Increase Skill Damage Ratio",
     "preventSkillDamagedRatio": "Prevent Skill Damaged Ratio"
   },
+  "itemDescription": {
+    "stackable": "Stackable"
+  },
   "footer": {
     "copyright": "Eternal Return: Black Survival and its contents are trademarks and copyrights of Nimble Neuron, inc"
   }

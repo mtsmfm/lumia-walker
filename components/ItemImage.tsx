@@ -66,6 +66,11 @@ export const ItemImage: React.FC<{
               </Table>
             </TableContainer>
             <ItemBuildTree code={code} />
+            {item.stackable > 1 && (
+              <Typography variant="body2">
+                {t("itemDescription.stackable")}:{item.stackable}
+              </Typography>
+            )}
             <Typography variant="body2">
               {[...item.areaItemCounts].map(([areaCode, count]) => {
                 return (
