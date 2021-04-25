@@ -1,12 +1,12 @@
 import React from "react";
-import { findItemByCode } from "../utils/lumiaIsland";
+import { Item } from "../utils/lumiaIsland";
 import { ItemImage } from "./ItemImage";
 import { Tree } from "./Tree";
 
 export const ItemBuildTree: React.FC<{
   code: number;
 }> = ({ code }) => {
-  const item = findItemByCode(code);
+  const item = Item.findByCode(code);
 
   if (item.makeMaterial1 !== 0) {
     return (

@@ -1,81 +1,15 @@
-import itemSpawnData from "../data/item_spawn.json";
-import weaponData from "../data/item_weapon.json";
-import armorData from "../data/item_armor.json";
-import consumableData from "../data/item_consumable.json";
-import miscData from "../data/item_misc.json";
-import specialData from "../data/item_special.json";
-import { Combination } from "js-combinatorics/commonjs/combinatorics";
-import characterData from "../data/character.json";
-import characterAttributesData from "../data/character_attributes.json";
+import rawItemSpawnData from "../data/item_spawn.json";
+import rawItemWeaponData from "../data/item_weapon.json";
+import rawItemArmorData from "../data/item_armor.json";
+import rawItemConsumableData from "../data/item_consumable.json";
+import rawItemMiscData from "../data/item_misc.json";
+import rawItemSpecialData from "../data/item_special.json";
+import rawCharacterData from "../data/character.json";
+import rawCharacterAttributesData from "../data/character_attributes.json";
 
-export const AREA_CODES = [...new Set(itemSpawnData.map((d) => d.areaCode))];
+export const AREA_CODES = [...new Set(rawItemSpawnData.map((d) => d.areaCode))];
 
-const COMMON_ITEM_SPAWN = {
-  401103: 1, // Leather
-  108101: 1, // Branch
-  301102: 2, // Water
-  112101: 2, // Stone
-  302102: 2, // Potato
-  302104: 2, // Cod
-  302111: 1, // Meat
-  302109: 2, // Carp
-};
-
-export interface ItemCounts {
-  [code: number]: number;
-}
-
-export const filterItemCodesByAreaCode = (
-  itemCodes: number[],
-  areaCode: number
-): number[] => {
-  const result = itemCodes.filter((itemCode) => {
-    return itemSpawnData.some(
-      (data) => data.areaCode === areaCode && data.itemCode === itemCode
-    );
-  });
-  return result;
-};
-
-export const satisfies = (
-  itemCounts: ItemCounts,
-  areaCodes: number[],
-  possibilities: number[] = []
-) => {
-  const dropCounts = areaCodes.reduce(
-    (acc, areaCode, i) => {
-      const possibility = possibilities[i] === undefined ? 1 : possibilities[i];
-
-      itemSpawnData.forEach((d) => {
-        if (d.areaCode === areaCode && itemCounts[d.itemCode]) {
-          acc[d.itemCode] += Math.floor(
-            findItemByCode(d.itemCode).initialCount * d.dropCount * possibility
-          );
-        }
-      });
-
-      return acc;
-    },
-    Object.keys(itemCounts).reduce((acc, code) => ({ ...acc, [code]: 0 }), {})
-  );
-
-  return Object.keys(itemCounts).every(
-    (code) => COMMON_ITEM_SPAWN[code] || dropCounts[code] >= itemCounts[code]
-  );
-};
-
-const possibleAreaCombinations = [
-  ...Array(AREA_CODES.length - 1),
-].flatMap((_, i) => [...Combination.of(AREA_CODES, i + 1)]);
-
-export const findRoutes = (
-  itemCounts: ItemCounts,
-  possibilities: number[] = []
-) => {
-  return possibleAreaCombinations.filter((route) =>
-    satisfies(itemCounts, route, possibilities)
-  );
-};
+export type ItemCounts = Map<number, number>;
 
 export const EQUIPMENT_TYPES = [
   "Weapon",
@@ -120,64 +54,102 @@ export const ITEM_GRADE = [
 ] as const;
 export type ItemGrade = typeof ITEM_GRADE[number];
 
+const ITEM_TYPE = ["Weapon", "Armor", "Consume", "Misc", "Special"] as const;
+type ItemType = typeof ITEM_TYPE[number];
+
 const allItemsData = [
-  ...weaponData,
-  ...armorData,
-  ...consumableData,
-  ...miscData,
-  ...specialData,
+  ...rawItemWeaponData,
+  ...rawItemArmorData,
+  ...rawItemConsumableData,
+  ...rawItemMiscData,
+  ...rawItemSpecialData,
 ];
 
-export const findItemByCode = (code: number) => {
-  return allItemsData.find((d) => d.code === code);
-};
+type RawItemData = typeof allItemsData[number];
+type RawWeaponItemData = typeof rawItemWeaponData[number];
+type RawArmorItemData = typeof rawItemArmorData[number];
+export class Item {
+  static ALL_ITEMS = allItemsData.reduce((map, data) => {
+    const item = new Item(data);
+    return map.set(item.code, item);
+  }, new Map<number, Item>());
 
-export type Item = typeof allItemsData[number];
-type WeaponItem = typeof weaponData[number];
-type ArmorItem = typeof armorData[number];
-
-export const isWeaponItem = (item: Item): item is WeaponItem => {
-  return item.itemType === "Weapon";
-};
-
-export const isArmorItem = (item: Item): item is ArmorItem => {
-  return item.itemType === "Armor";
-};
-
-const equipmentTypeFor = (item: Item): EquipmentType | undefined => {
-  if (isWeaponItem(item)) {
-    return "Weapon";
-  } else if (isArmorItem(item)) {
-    return item.armorType as EquipmentType;
+  static findByCode(code: number): Item {
+    return Item.ALL_ITEMS.get(code);
   }
 
-  return undefined;
-};
+  static where(conditions: {
+    equipmentType?: EquipmentType;
+    areaCode?: number;
+  }): Item[] {
+    return [...Item.ALL_ITEMS.values()].filter(
+      (item) =>
+        (conditions.equipmentType === undefined ||
+          item.equipmentType === conditions.equipmentType) &&
+        (conditions.areaCode === undefined ||
+          item.areaCodes.includes(conditions.areaCode))
+    );
+  }
 
-export const statsFieldNames = (item: Item) => {
-  if (isWeaponItem(item)) {
-    return [
-      "attackPower",
-      "defense",
-      "maxHp",
-      "hpRegenRatio",
-      "hpRegen",
-      "spRegenRatio",
-      "spRegen",
-      "attackSpeedRatio",
-      "criticalStrikeChance",
-      "criticalStrikeDamage",
-      "cooldownReduction",
-      "lifeSteal",
-      "moveSpeed",
-      "sightRange",
-      "attackRange",
-      "increaseBasicAttackDamage",
-      "increaseSkillDamage",
-      "increaseSkillDamageRatio",
-    ];
-  } else if (isArmorItem(item)) {
-    return [
+  constructor(private data: RawItemData) {}
+
+  get code() {
+    return this.data.code;
+  }
+
+  get areaCodes() {
+    return rawItemSpawnData
+      .filter((d) => d.itemCode === this.code)
+      .map((d) => d.areaCode);
+  }
+
+  get itemType() {
+    return this.data.itemType as ItemType;
+  }
+
+  get equipmentType(): EquipmentType | undefined {
+    switch (this.itemType) {
+      case "Weapon": {
+        return "Weapon" as EquipmentType;
+      }
+      case "Armor": {
+        return (this.data as RawArmorItemData).armorType as EquipmentType;
+      }
+      default: {
+        return undefined;
+      }
+    }
+  }
+
+  get weaponType(): WeaponType | undefined {
+    switch (this.itemType) {
+      case "Weapon": {
+        return (this.data as RawWeaponItemData).weaponType as WeaponType;
+      }
+      default: {
+        return undefined;
+      }
+    }
+  }
+
+  get makeMaterial1() {
+    return this.data.makeMaterial1;
+  }
+
+  get makeMaterial2() {
+    return this.data.makeMaterial2;
+  }
+
+  get initialCount() {
+    return this.data.initialCount;
+  }
+
+  get itemGrade() {
+    return this.data.itemGrade as ItemGrade;
+  }
+
+  get stats() {
+    const fieldNames = [
       "attackPower",
       "defense",
       "maxHp",
@@ -203,71 +175,32 @@ export const statsFieldNames = (item: Item) => {
       "increaseSkillDamageRatio",
       "preventSkillDamagedRatio",
     ];
-  } else {
-    return [];
-  }
-};
-
-const RARE_MATERIAL_CODES = [
-  401208, // Tree of Life
-  401209, // Meteorite
-  401304, // Mithril
-  401401, // VF Blood Sample
-];
-
-export const isFinalItemInSameType = (item: Item) => {
-  if (item.makeMaterial1 === 0) {
-    return false;
+    return fieldNames.reduce((acc, name) => {
+      if (this.data[name]) {
+        return {
+          ...acc,
+          [name]: this.data[name],
+        };
+      } else {
+        return acc;
+      }
+    }, {});
   }
 
-  return !allItemsData.some(
-    (i) =>
-      (i.makeMaterial1 === item.code || i.makeMaterial2 === item.code) &&
-      equipmentTypeFor(i) === equipmentTypeFor(item)
-  );
-};
-
-export const isFinalNonRareItemInSameType = (item: Item) => {
-  if (item.makeMaterial1 === 0) {
-    return false;
+  get imageUrl() {
+    return `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/items/${this.code}.png`;
   }
-
-  if (requiresRareMaterial(item)) {
-    return false;
-  }
-
-  return !allItemsData.some(
-    (i) =>
-      (i.makeMaterial1 === item.code || i.makeMaterial2 === item.code) &&
-      equipmentTypeFor(i) === equipmentTypeFor(item) &&
-      !requiresRareMaterial(i)
-  );
-};
+}
 
 const visitItemBuildTree = (
   item: Item,
   visitor: (i: Item) => "skip" | void
 ) => {
   if (visitor(item) !== "skip" && item.makeMaterial1 !== 0) {
-    visitItemBuildTree(findItemByCode(item.makeMaterial1), visitor);
-    visitItemBuildTree(findItemByCode(item.makeMaterial2), visitor);
+    visitItemBuildTree(Item.findByCode(item.makeMaterial1), visitor);
+    visitItemBuildTree(Item.findByCode(item.makeMaterial2), visitor);
   }
 };
-
-export const requiresRareMaterial = (item: Item) => {
-  let result = false;
-  visitItemBuildTree(item, (i) => {
-    if (RARE_MATERIAL_CODES.includes(i.code)) {
-      result = true;
-    }
-  });
-
-  return result;
-};
-
-export const allNonRareFinalEquipments = allItemsData.filter(
-  (i) => (isWeaponItem(i) || isArmorItem(i)) && isFinalNonRareItemInSameType(i)
-);
 
 export const calcMakeMaterials = (items: Item[]) => {
   const materials: Item[] = [];
@@ -296,50 +229,48 @@ export const calcMakeMaterials = (items: Item[]) => {
     });
   });
 
-  const itemCounts: ItemCounts = materials.reduce(
-    (acc, item) => ({ ...acc, [item.code]: (acc[item.code] || 0) + 1 }),
-    {}
-  );
+  const itemCounts: ItemCounts = materials.reduce((acc, item) => {
+    return acc.set(item.code, (acc.get(item.code) || 0) + 1);
+  }, new Map<number, number>());
 
   return itemCounts;
 };
 
-export function findItemsByEquipmentType(equipmentType: EquipmentType): Item[] {
-  if (equipmentType === "Weapon") {
-    return weaponData;
-  } else {
-    return armorData.filter((d) => d.armorType === equipmentType);
-  }
-}
-
 export const sumStats = (codes: number[]) => {
-  const items = codes.map((c) => findItemByCode(c));
+  const items = codes.map((c) => Item.findByCode(c));
 
   return EQUIPMENT_TYPES.reduce((acc, type) => {
-    const item = items.find((i) => equipmentTypeFor(i) === type);
+    const item = items.find((i) => i.equipmentType === type);
     if (item) {
-      statsFieldNames(item).forEach((f) => {
-        if (item[f] !== 0) {
-          acc[f] ||= 0;
-          acc[f] = Number((acc[f] + item[f]).toFixed(5));
-        }
+      Object.entries(item.stats).map(([k, v]) => {
+        acc[k] ||= 0;
+        acc[k] = Number((acc[k] + v).toFixed(5));
       });
     }
     return acc;
   }, {});
 };
 
-export type Character = typeof characterData[number];
-export const CHARACTERS = characterData;
+export class Character {
+  static ALL_CHARACTERS = rawCharacterData.map((d) => new Character(d));
 
-export const findCharacterByCode = (code: number) => {
-  return characterData.find((c) => c.code === code);
-};
-export const findCharacterByName = (name: string) => {
-  return characterData.find((c) => c.name === name);
-};
-export const findWeaponTypesByCharacterCode = (code: number) => {
-  return characterAttributesData
-    .filter((a) => a.characterCode === code)
-    .map((a) => a.mastery as WeaponType);
-};
+  constructor(private data: typeof rawCharacterData[number]) {}
+
+  static findByCode(code: number) {
+    return Character.ALL_CHARACTERS.find((c) => c.code === code);
+  }
+
+  get code() {
+    return this.data.code;
+  }
+
+  get name() {
+    return this.data.name;
+  }
+
+  get imageUrl() {
+    return `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/characters/${this.name}.png`;
+  }
+}
+
+export const CHARACTERS = rawCharacterData;

@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 import React from "react";
-import { findItemByCode, statsFieldNames } from "../utils/lumiaIsland";
+import { Item } from "../utils/lumiaIsland";
 import { useTranslation } from "next-i18next";
 import { ItemBuildTree } from "./ItemBuildTree";
 
@@ -24,7 +24,7 @@ export const ItemImage: React.FC<{
   const { t } = useTranslation();
   let color: string;
 
-  const item = findItemByCode(code);
+  const item = Item.findByCode(code);
 
   switch (item.itemGrade) {
     case "Common":
@@ -52,16 +52,14 @@ export const ItemImage: React.FC<{
             <TableContainer>
               <Table size="small">
                 <TableBody>
-                  {statsFieldNames(item)
-                    .filter((f) => item[f] !== 0)
-                    .map((f) => {
-                      return (
-                        <TableRow key={f}>
-                          <TableCell>{t(`stats.${f}`)}</TableCell>
-                          <TableCell>{item[f]}</TableCell>
-                        </TableRow>
-                      );
-                    })}
+                  {Object.entries(item.stats).map(([k, v]) => {
+                    return (
+                      <TableRow key={k}>
+                        <TableCell>{t(`stats.${k}`)}</TableCell>
+                        <TableCell>{v}</TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -71,7 +69,7 @@ export const ItemImage: React.FC<{
       }
     >
       <img
-        src={`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/items/${code}.png`}
+        src={item.imageUrl}
         style={{
           display: "block",
           width,

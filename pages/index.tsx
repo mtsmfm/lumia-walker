@@ -4,13 +4,13 @@ import React, { useEffect, useReducer } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ItemButton } from "../components/ItemButton";
-import { findItemByCode, calcMakeMaterials } from "../utils/lumiaIsland";
+import { Item, calcMakeMaterials } from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import { LumiaIslandMap } from "../components/LumiaIslandMap";
 import { ItemImage } from "../components/ItemImage";
 import { ItemBadge } from "../components/ItemBadge";
 import { CharacterImage } from "../components/CharacterImage";
-import { filterItemCodesByAreaCode, ItemCounts } from "../utils/lumiaIsland";
+import { ItemCounts } from "../utils/lumiaIsland";
 import Dialog from "@material-ui/core/Dialog";
 import { CharacterSelectorForm } from "../components/CharacterSelectorForm";
 import Button from "@material-ui/core/Button";
@@ -82,10 +82,10 @@ type Action =
 const calcItemCounts = (users: State["users"]) => {
   const allTargetItems = users
     .flatMap((u) => u.selectedItemsCodes)
-    .map((code) => findItemByCode(code));
+    .map((code) => Item.findByCode(code));
 
   const requiredItemCounts = calcMakeMaterials(allTargetItems);
-  const missingItemCounts = users.reduce((acc, u) => u.selectedRoute, {});
+  const missingItemCounts = requiredItemCounts;
 
   return {
     requiredItemCounts,
@@ -228,8 +228,8 @@ const DUMMY_USERS_DATA = [
 
 const initialState: State = {
   users: [],
-  requiredItemCounts: {},
-  missingItemCounts: {},
+  requiredItemCounts: new Map(),
+  missingItemCounts: new Map(),
   characterSelectForm: {
     open: false,
     userIndex: 0,
@@ -340,7 +340,7 @@ export default function Home() {
                 )}
               </Grid>
               <Grid container alignItems="center">
-                {Object.entries(requiredItemCounts).map(([code, count]) => (
+                {[...requiredItemCounts].map(([code, count]) => (
                   <ItemBadge key={code} badgeContent={count} color="primary">
                     <ItemImage width={60} key={code} code={Number(code)} />
                   </ItemBadge>
@@ -368,20 +368,20 @@ export default function Home() {
                       <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
 
                       <Grid container>
-                        {filterItemCodesByAreaCode(
-                          Object.keys(requiredItemCounts).map((c) => Number(c)),
-                          r
-                        ).map((itemCode) => (
-                          <Grid key={`${i}-${itemCode}`} item>
-                            <ItemBadge
-                              key={`${i}-${itemCode}`}
-                              badgeContent={requiredItemCounts[itemCode]}
-                              color="primary"
-                            >
-                              <ItemImage width={60} code={itemCode} />
-                            </ItemBadge>
-                          </Grid>
-                        ))}
+                        {[...requiredItemCounts.keys()]
+                          .map((c) => Item.findByCode(c))
+                          .filter(({ areaCodes }) => areaCodes.includes(r))
+                          .map(({ code }) => (
+                            <Grid key={`${i}-${code}`} item>
+                              <ItemBadge
+                                key={`${i}-${code}`}
+                                badgeContent={requiredItemCounts.get(code)}
+                                color="primary"
+                              >
+                                <ItemImage width={60} code={code} />
+                              </ItemBadge>
+                            </Grid>
+                          ))}
                       </Grid>
                     </div>
                   ))}

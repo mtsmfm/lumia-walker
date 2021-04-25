@@ -7,8 +7,7 @@ import { useTranslation } from "next-i18next";
 import { ItemButton } from "../components/ItemButton";
 import {
   EQUIPMENT_TYPES,
-  findItemsByEquipmentType,
-  isWeaponItem,
+  Item,
   sumStats,
   WeaponType,
   WEAPON_TYPES,
@@ -172,11 +171,11 @@ export const BuildSelectForm: React.FC<Props> = ({
                 </>
               )}
 
-              {findItemsByEquipmentType(et)
+              {Item.where({ equipmentType: et })
                 .filter(
                   (i) =>
                     i.itemGrade !== "Common" &&
-                    (!isWeaponItem(i) || i.weaponType === selectedWeaponType)
+                    (et !== "Weapon" || i.weaponType === selectedWeaponType)
                 )
                 .map((item) => (
                   <Grid container key={item.code}>

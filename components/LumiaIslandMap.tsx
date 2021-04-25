@@ -2,7 +2,7 @@ import AREA_CENTROIDS from "../map/area_centroids.json";
 import OBJECT_LOCATIONS from "../map/object_locations.json";
 import { useTranslation } from "next-i18next";
 import { COLORS } from "../utils/colors";
-import { findCharacterByCode } from "../utils/lumiaIsland";
+import { Character } from "../utils/lumiaIsland";
 import { useEffect, useReducer } from "react";
 
 interface Props {
@@ -120,9 +120,7 @@ export const LumiaIslandMap: React.FC<Props> = ({
           x={5}
           y={i * 8}
           width="5"
-          href={`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/characters/${
-            findCharacterByCode(u).name
-          }.png`}
+          href={Character.findByCode(u).imageUrl}
           style={{ cursor: "pointer" }}
           onClick={() => dispatch({ type: "SELECT_USER", userIndex: i })}
         />
