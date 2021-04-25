@@ -98,9 +98,16 @@ export class Item {
   }
 
   get areaCodes() {
+    return [...this.areaItemCounts.keys()];
+  }
+
+  get areaItemCounts() {
     return rawItemSpawnData
       .filter((d) => d.itemCode === this.code)
-      .map((d) => d.areaCode);
+      .reduce(
+        (acc, data) => acc.set(data.areaCode, data.dropCount),
+        new Map<number, number>()
+      );
   }
 
   get itemType() {

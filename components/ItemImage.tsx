@@ -10,6 +10,7 @@ import React from "react";
 import { Item } from "../utils/lumiaIsland";
 import { useTranslation } from "next-i18next";
 import { ItemBuildTree } from "./ItemBuildTree";
+import Typography from "@material-ui/core/Typography";
 
 const CustomTooltip = withStyles(() => ({
   tooltip: {
@@ -49,6 +50,7 @@ export const ItemImage: React.FC<{
       title={
         <React.Fragment>
           <Paper>
+            <Typography variant="h6">{t(`items.${item.code}`)}</Typography>
             <TableContainer>
               <Table size="small">
                 <TableBody>
@@ -64,6 +66,15 @@ export const ItemImage: React.FC<{
               </Table>
             </TableContainer>
             <ItemBuildTree code={code} />
+            <Typography variant="body2">
+              {[...item.areaItemCounts].map(([areaCode, count]) => {
+                return (
+                  <React.Fragment key={areaCode}>
+                    {t(`areas.${areaCode}`)}({count})
+                  </React.Fragment>
+                );
+              })}
+            </Typography>
           </Paper>
         </React.Fragment>
       }
