@@ -17,6 +17,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { useRouter } from "next/router";
 import AddIcon from "@material-ui/icons/Add";
+import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
 import { BuildSelectForm } from "../components/BuildSelectForm";
 
@@ -85,7 +86,16 @@ const calcItemCounts = (users: State["users"]) => {
     .map((code) => Item.findByCode(code));
 
   const requiredItemCounts = calcMakeMaterials(allTargetItems);
-  const missingItemCounts = requiredItemCounts;
+  const allAreaCodes = new Set(users.flatMap((u) => u.selectedRoute));
+  const missingItemCounts = [...requiredItemCounts]
+    .filter(
+      ([itemCode, _]) =>
+        !Item.findByCode(itemCode).areaCodes.some((c) => allAreaCodes.has(c))
+    )
+    .reduce(
+      (acc, [code, count]) => acc.set(code, count),
+      new Map<number, number>()
+    );
 
   return {
     requiredItemCounts,
@@ -194,11 +204,13 @@ const reducer = (state: State, action: Action): State => {
       };
     }
     case "CHANGE_ROUTES": {
+      const nextUsers = state.users.map((u, i) => {
+        return { ...u, selectedRoute: action.routes[i] || [] };
+      });
       return {
         ...state,
-        users: state.users.map((u, i) => {
-          return { ...u, selectedRoute: action.routes[i] || [] };
-        }),
+        ...calcItemCounts(nextUsers),
+        users: nextUsers,
       };
     }
     default: {
@@ -244,7 +256,13 @@ export default function Home() {
   const { t } = useTranslation();
 
   const [
-    { users, requiredItemCounts, characterSelectForm, buildSelectForm },
+    {
+      users,
+      requiredItemCounts,
+      characterSelectForm,
+      buildSelectForm,
+      missingItemCounts,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
 
@@ -341,6 +359,14 @@ export default function Home() {
               </Grid>
               <Grid container alignItems="center">
                 {[...requiredItemCounts].map(([code, count]) => (
+                  <ItemBadge key={code} badgeContent={count} color="primary">
+                    <ItemImage width={60} key={code} code={Number(code)} />
+                  </ItemBadge>
+                ))}
+              </Grid>
+              <HelpIcon />
+              <Grid container alignItems="center">
+                {[...missingItemCounts].map(([code, count]) => (
                   <ItemBadge key={code} badgeContent={count} color="primary">
                     <ItemImage width={60} key={code} code={Number(code)} />
                   </ItemBadge>
