@@ -30,7 +30,92 @@ data_dir = Pathname.new(__dir__).join('../data')
 
 client = BserClient.new
 
-%w(ItemWeapon ItemArmor ItemConsumable ItemMisc ItemSpecial ItemSpawn Character CharacterAttributes).each do |category|
+%w(
+  ActionCost
+  Area
+  AreaSound
+  BotAiModel
+  BotCraft
+  BotMastery
+  BotNickName
+  BotSkillBuild
+  BulletCapacity
+  Character
+  CharacterAttributes
+  CharacterExp
+  CharacterLevelUpStat
+  CharacterMastery
+  CharacterModeModifier
+  CharacterSkillVideos
+  CharacterSkin
+  CharacterState
+  CharacterStateGroup
+  CharacterVoice
+  CharacterVoiceRandomCount
+  Collectible
+  ControlTypeUse
+  CriticalChance
+  DropGroup
+  EffectAndSound
+  Emotion
+  FootStep
+  GameRankExp
+  HookLineProjectile
+  HowToFindItem
+  ItemArmor
+  ItemConsumable
+  ItemMisc
+  ItemSearchOption
+  ItemSpawn
+  ItemSpecial
+  ItemWeapon
+  KeyText
+  Level
+  LoadingTip
+  MasteryExp
+  MasteryLevel
+  MatchingQueueTier
+  Mission
+  ModRestrictedArea
+  Monster
+  MonsterLevelUpStat
+  MonsterSpawnLevel
+  NaviCollectAndHunt
+  NearByArea
+  Noise
+  PreMadeTeamTierRestrict
+  ProductAsset
+  ProductCharacter
+  ProductInstant
+  ProjectileSetting
+  RecommendedArea
+  RecommendedItemList
+  RecommendedList
+  RestrictedArea
+  Reward
+  RewardItem
+  Season
+  SeasonOutPlayers
+  SecurityConsolEvent
+  ServerRegion
+  ShopProduct
+  ShopProductItem
+  Skill
+  SkillEvolution
+  SkillEvolutionPoint
+  SkillExtension
+  SkillGroup
+  SoundGroup
+  StartItem
+  SummonObject
+  SummonObjectStat
+  TimeOfDay
+  TutorialReward
+  WeaponAnimatorLayers
+  WeaponMount
+  WeaponRoute
+  WeaponTypeInfo
+).each do |category|
   json = client.get("v1/data/#{category}")
   data_dir.join("#{category.underscore}.json").write(JSON.pretty_generate(json['data']))
 end

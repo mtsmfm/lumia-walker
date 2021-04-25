@@ -1,0 +1,74 @@
+[
+  {
+    "code": 1,
+    "characterCode": 8,
+    "conditionType": "WEAPON_CRAFT",
+    "conditionValue1": "Guitar",
+    "conditionValue2": "Uncommon",
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  },
+  {
+    "code": 2,
+    "characterCode": 8,
+    "conditionType": "WEAPON_CRAFT",
+    "conditionValue1": "Guitar",
+    "conditionValue2": "Rare",
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  },
+  {
+    "code": 3,
+    "characterCode": 8,
+    "conditionType": "WEAPON_CRAFT",
+    "conditionValue1": "Guitar",
+    "conditionValue2": "Epic",
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  },
+  {
+    "code": 221,
+    "characterCode": 22,
+    "conditionType": "STATE_STACK",
+    "conditionValue1": 1022100,
+    "conditionValue2": 10,
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  },
+  {
+    "code": 222,
+    "characterCode": 22,
+    "conditionType": "STATE_STACK",
+    "conditionValue1": 1022100,
+    "conditionValue2": 30,
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  },
+  {
+    "code": 223,
+    "characterCode": 22,
+    "conditionType": "STATE_STACK",
+    "conditionValue1": 1022100,
+    "conditionValue2": 50,
+    "conditionValue3": "",
+    "conditionValue4": "",
+    "pointType": "CharacterSkill",
+    "point": 1,
+    "limitPoint": 1
+  }
+]
