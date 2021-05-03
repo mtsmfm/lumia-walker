@@ -28,7 +28,7 @@ export const CharacterSelectorForm: React.FC<Props> = ({
               <Button
                 key={c.code}
                 onClick={() => {
-                  onSelect(c.code, c.weaponTypes[0]);
+                  onSelect(c.code, c.startWeaponTypes[0]);
                 }}
                 style={{
                   opacity: isSelected ? "" : "0.1",
