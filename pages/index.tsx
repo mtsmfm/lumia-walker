@@ -458,10 +458,8 @@ export default function Home() {
             open={buildSelectForm.open}
           >
             <BuildSelectForm
-              defaultItemCodes={
-                users[buildSelectForm.userIndex]
-                  ? users[buildSelectForm.userIndex].selectedItemsCodes
-                  : []
+              itemCodes={
+                users[buildSelectForm.userIndex]?.selectedItemsCodes || []
               }
               onSelectedItemCodesChange={(itemCodes) => {
                 dispatch({

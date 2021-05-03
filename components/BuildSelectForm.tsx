@@ -23,7 +23,7 @@ import { WeaponTypeButton } from "./WeaponTypeButton";
 interface State {
   selectedEquipmentTypeIndex: number;
   selectedWeaponType: WeaponType;
-  selectedItemCodes: number[];
+  nextSelectedItemCodes: number[];
 }
 
 type Action =
@@ -38,6 +38,7 @@ type Action =
   | {
       type: "TOGGLE_ITEM";
       itemCode: number;
+      currentItemCodes: number[];
     };
 
 const reducer = (state: State, action: Action): State => {
@@ -55,9 +56,9 @@ const reducer = (state: State, action: Action): State => {
     case "TOGGLE_ITEM":
       return {
         ...state,
-        selectedItemCodes: state.selectedItemCodes.includes(action.itemCode)
-          ? state.selectedItemCodes.filter((c) => c !== action.itemCode)
-          : [...state.selectedItemCodes, action.itemCode],
+        nextSelectedItemCodes: action.currentItemCodes.includes(action.itemCode)
+          ? action.currentItemCodes.filter((c) => c !== action.itemCode)
+          : [...action.currentItemCodes, action.itemCode],
       };
     default:
       const exhaustiveCheck: never = action;
@@ -68,33 +69,35 @@ const reducer = (state: State, action: Action): State => {
 const initialState: State = {
   selectedEquipmentTypeIndex: 0,
   selectedWeaponType: WEAPON_TYPES[0],
-  selectedItemCodes: [],
+  nextSelectedItemCodes: [],
 };
 
 interface Props {
-  defaultItemCodes: number[];
+  itemCodes: number[];
   onSelectedItemCodesChange: (itemCodes: number[]) => void;
 }
 
 export const BuildSelectForm: React.FC<Props> = ({
-  defaultItemCodes,
+  itemCodes,
   onSelectedItemCodesChange,
 }) => {
   const [
-    { selectedEquipmentTypeIndex, selectedWeaponType, selectedItemCodes },
+    { selectedEquipmentTypeIndex, selectedWeaponType, nextSelectedItemCodes },
     dispatch,
   ] = useReducer(reducer, {
     ...initialState,
-    selectedItemCodes: defaultItemCodes,
+    nextSelectedItemCodes: itemCodes,
   });
 
   const { t } = useTranslation();
 
-  const stats = sumStats(selectedItemCodes);
+  const stats = sumStats(itemCodes);
 
   useEffect(() => {
-    onSelectedItemCodesChange(selectedItemCodes);
-  }, [selectedItemCodes]);
+    if (nextSelectedItemCodes !== itemCodes) {
+      onSelectedItemCodesChange(nextSelectedItemCodes);
+    }
+  }, [nextSelectedItemCodes, itemCodes]);
 
   return (
     <Grid container>
@@ -113,7 +116,7 @@ export const BuildSelectForm: React.FC<Props> = ({
             </TableBody>
           </Table>
         </TableContainer>
-        {selectedItemCodes.map((code) => (
+        {itemCodes.map((code) => (
           <ItemButton
             key={code}
             code={code}
@@ -121,6 +124,7 @@ export const BuildSelectForm: React.FC<Props> = ({
               dispatch({
                 type: "TOGGLE_ITEM",
                 itemCode: code,
+                currentItemCodes: itemCodes,
               })
             }
           />
@@ -185,9 +189,10 @@ export const BuildSelectForm: React.FC<Props> = ({
                         dispatch({
                           type: "TOGGLE_ITEM",
                           itemCode: item.code,
+                          currentItemCodes: itemCodes,
                         });
                       }}
-                      selected={selectedItemCodes.includes(item.code)}
+                      selected={itemCodes.includes(item.code)}
                     />
                   </Grid>
                 ))}
