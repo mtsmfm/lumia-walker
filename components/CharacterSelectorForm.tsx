@@ -1,38 +1,57 @@
-import { CHARACTERS } from "../utils/lumiaIsland";
+import { Character, WeaponType } from "../utils/lumiaIsland";
 import Button from "@material-ui/core/Button";
 import { CharacterImage } from "../components/CharacterImage";
 import Grid from "@material-ui/core/Grid";
+import { WeaponTypeButton } from "./WeaponTypeButton";
 
 interface Props {
   selectedCharacterCode: number | undefined;
-  onSelect: (c: number) => void;
-  onUnselect: (c: number) => void;
+  selectedWeaponType: WeaponType | undefined;
+  onSelect: (characterCode: number, weaponType: WeaponType) => void;
 }
 
 export const CharacterSelectorForm: React.FC<Props> = ({
   selectedCharacterCode,
+  selectedWeaponType,
   onSelect,
-  onUnselect,
 }) => {
-  return (
-    <Grid container justify="space-evenly">
-      {CHARACTERS.map((c) => {
-        const isSelected = selectedCharacterCode === c.code;
+  const selectedCharacter = Character.findByCode(selectedCharacterCode);
 
-        return (
-          <Button
-            key={c.code}
+  return (
+    <Grid container>
+      <Grid item xs={8}>
+        <Grid container justify="space-evenly">
+          {Character.all().map((c) => {
+            const isSelected = selectedCharacterCode === c.code;
+
+            return (
+              <Button
+                key={c.code}
+                onClick={() => {
+                  onSelect(c.code, c.weaponTypes[0]);
+                }}
+                style={{
+                  opacity: isSelected ? "" : "0.1",
+                }}
+              >
+                <CharacterImage code={c.code} />
+              </Button>
+            );
+          })}
+        </Grid>
+      </Grid>
+      <Grid item xs={4}>
+        {selectedCharacter.weaponTypes.map((wt) => (
+          <WeaponTypeButton
+            key={wt}
+            weaponType={wt}
             onClick={() => {
-              isSelected ? onUnselect(c.code) : onSelect(c.code);
+              onSelect(selectedCharacter.code, wt);
             }}
-            style={{
-              opacity: isSelected ? "" : "0.1",
-            }}
-          >
-            <CharacterImage code={c.code} />
-          </Button>
-        );
-      })}
+            selected={selectedWeaponType === wt}
+          />
+        ))}
+      </Grid>
     </Grid>
   );
 };

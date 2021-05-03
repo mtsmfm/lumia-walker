@@ -267,6 +267,10 @@ export class Character {
 
   constructor(private data: typeof rawCharacterData[number]) {}
 
+  static all() {
+    return Character.ALL_CHARACTERS;
+  }
+
   static findByCode(code: number) {
     return Character.ALL_CHARACTERS.find((c) => c.code === code);
   }
@@ -282,6 +286,10 @@ export class Character {
   get imageUrl() {
     return `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/characters/${this.name}.png`;
   }
-}
 
-export const CHARACTERS = rawCharacterData;
+  get weaponTypes() {
+    return rawCharacterAttributesData
+      .filter((d) => d.characterCode === this.code)
+      .map((d) => d.mastery as WeaponType);
+  }
+}

@@ -4,7 +4,12 @@ import React, { useEffect, useReducer } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ItemButton } from "../components/ItemButton";
-import { Item, calcMakeMaterials } from "../utils/lumiaIsland";
+import {
+  Item,
+  calcMakeMaterials,
+  WeaponType,
+  Character,
+} from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import { LumiaIslandMap } from "../components/LumiaIslandMap";
 import { ItemImage } from "../components/ItemImage";
@@ -20,6 +25,7 @@ import AddIcon from "@material-ui/icons/Add";
 import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
 import { BuildSelectForm } from "../components/BuildSelectForm";
+import { WeaponTypeImage } from "../components/WeaponTypeImage";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -30,6 +36,7 @@ export const getStaticProps = async ({ locale }) => ({
 interface State {
   users: Array<{
     selectedCharacterCode: number;
+    selectedWeaponType: WeaponType;
     selectedItemsCodes: number[];
     selectedRoute: number[];
   }>;
@@ -53,6 +60,7 @@ type Action =
   | {
       type: "SELECT_CHARACTER";
       characterCode: number;
+      weaponType: WeaponType;
     }
   | {
       type: "OPEN_CHARACTER_SELECT_FORM";
@@ -115,12 +123,12 @@ const reducer = (state: State, action: Action): State => {
     case "SELECT_CHARACTER": {
       return {
         ...state,
-        characterSelectForm: { ...state.characterSelectForm, open: false },
         users: state.users.map((u, i) => {
           if (i == state.characterSelectForm.userIndex) {
             return {
               ...u,
               selectedCharacterCode: action.characterCode,
+              selectedWeaponType: action.weaponType,
             };
           } else {
             return u;
@@ -148,12 +156,15 @@ const reducer = (state: State, action: Action): State => {
       };
     }
     case "ADD_NEW_USER": {
+      const c = Character.all()[0];
+
       return {
         ...state,
         users: [
           ...state.users,
           {
-            selectedCharacterCode: 1,
+            selectedCharacterCode: c.code,
+            selectedWeaponType: c.weaponTypes[0],
             selectedItemsCodes: [],
             selectedRoute: [],
           },
@@ -388,6 +399,7 @@ export default function Home() {
                     }}
                   >
                     <CharacterImage code={u.selectedCharacterCode} />
+                    <WeaponTypeImage weaponType={u.selectedWeaponType} />
                   </Button>
                   {u.selectedRoute.map((r, j) => (
                     <div key={`${i}-${j}`}>
@@ -425,13 +437,16 @@ export default function Home() {
               selectedCharacterCode={
                 users[characterSelectForm.userIndex]?.selectedCharacterCode
               }
-              onSelect={(characterCode) => {
+              onSelect={(characterCode, weaponType) => {
                 dispatch({
                   type: "SELECT_CHARACTER",
                   characterCode,
+                  weaponType,
                 });
               }}
-              onUnselect={() => {}}
+              selectedWeaponType={
+                users[characterSelectForm.userIndex]?.selectedWeaponType
+              }
             />
           </Dialog>
           <Dialog
