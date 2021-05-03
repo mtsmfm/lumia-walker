@@ -458,6 +458,7 @@ export default function Home() {
             open={buildSelectForm.open}
           >
             <BuildSelectForm
+              weaponType={users[buildSelectForm.userIndex]?.selectedWeaponType}
               itemCodes={
                 users[buildSelectForm.userIndex]?.selectedItemsCodes || []
               }

@@ -10,7 +10,6 @@ import {
   Item,
   sumStats,
   WeaponType,
-  WEAPON_TYPES,
 } from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -18,11 +17,10 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
-import { WeaponTypeButton } from "./WeaponTypeButton";
+import { WeaponTypeImage } from "./WeaponTypeImage";
 
 interface State {
   selectedEquipmentTypeIndex: number;
-  selectedWeaponType: WeaponType;
   nextSelectedItemCodes: number[];
 }
 
@@ -30,10 +28,6 @@ type Action =
   | {
       type: "SELECT_EQUIPMENT_TYPE";
       equipmentTypeIndex: number;
-    }
-  | {
-      type: "SELECT_WEAPON_TYPE";
-      weaponType: WeaponType;
     }
   | {
       type: "TOGGLE_ITEM";
@@ -47,11 +41,6 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         selectedEquipmentTypeIndex: action.equipmentTypeIndex,
-      };
-    case "SELECT_WEAPON_TYPE":
-      return {
-        ...state,
-        selectedWeaponType: action.weaponType,
       };
     case "TOGGLE_ITEM":
       return {
@@ -68,21 +57,22 @@ const reducer = (state: State, action: Action): State => {
 
 const initialState: State = {
   selectedEquipmentTypeIndex: 0,
-  selectedWeaponType: WEAPON_TYPES[0],
   nextSelectedItemCodes: [],
 };
 
 interface Props {
   itemCodes: number[];
+  weaponType: WeaponType;
   onSelectedItemCodesChange: (itemCodes: number[]) => void;
 }
 
 export const BuildSelectForm: React.FC<Props> = ({
   itemCodes,
+  weaponType,
   onSelectedItemCodesChange,
 }) => {
   const [
-    { selectedEquipmentTypeIndex, selectedWeaponType, nextSelectedItemCodes },
+    { selectedEquipmentTypeIndex, nextSelectedItemCodes },
     dispatch,
   ] = useReducer(reducer, {
     ...initialState,
@@ -148,28 +138,7 @@ export const BuildSelectForm: React.FC<Props> = ({
               {et === "Weapon" && (
                 <>
                   <Grid container>
-                    {WEAPON_TYPES.map((wt) => (
-                      <Grid
-                        key={wt}
-                        item
-                        xs={6}
-                        sm={4}
-                        md={3}
-                        lg={2}
-                        style={{ display: "flex" }}
-                      >
-                        <WeaponTypeButton
-                          weaponType={wt}
-                          onClick={() =>
-                            dispatch({
-                              type: "SELECT_WEAPON_TYPE",
-                              weaponType: wt,
-                            })
-                          }
-                          selected={selectedWeaponType === wt}
-                        />
-                      </Grid>
-                    ))}
+                    <WeaponTypeImage weaponType={weaponType} />
                   </Grid>
                   <Divider />
                 </>
@@ -179,7 +148,7 @@ export const BuildSelectForm: React.FC<Props> = ({
                 .filter(
                   (i) =>
                     i.itemGrade !== "Common" &&
-                    (et !== "Weapon" || i.weaponType === selectedWeaponType)
+                    (et !== "Weapon" || i.weaponType === weaponType)
                 )
                 .map((item) => (
                   <Grid container key={item.code}>
