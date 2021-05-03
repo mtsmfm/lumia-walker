@@ -387,6 +387,8 @@ export default function Home() {
           </Grid>
           <Grid container>
             {users.map((u, i) => {
+              const character = Character.findByCode(u.selectedCharacterCode);
+
               return (
                 <Grid item xs={4} key={i}>
                   <Button
@@ -401,6 +403,19 @@ export default function Home() {
                     <CharacterImage code={u.selectedCharacterCode} />
                     <WeaponTypeImage weaponType={u.selectedWeaponType} />
                   </Button>
+                  <Grid container>
+                    {[...character.startItemCounts(u.selectedWeaponType)].map(
+                      ([code, count]) => (
+                        <ItemBadge
+                          key={code}
+                          badgeContent={count}
+                          color="primary"
+                        >
+                          <ItemImage width={60} code={code} />
+                        </ItemBadge>
+                      )
+                    )}
+                  </Grid>
                   {u.selectedRoute.map((r, j) => (
                     <div key={`${i}-${j}`}>
                       <Typography gutterBottom>{t(`areas.${r}`)}</Typography>

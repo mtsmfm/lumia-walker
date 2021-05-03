@@ -6,6 +6,8 @@ import rawItemMiscData from "../data/item_misc.json";
 import rawItemSpecialData from "../data/item_special.json";
 import rawCharacterData from "../data/character.json";
 import rawCharacterAttributesData from "../data/character_attributes.json";
+import rawStartItemData from "../data/start_item.json";
+import rawRecommendedListData from "../data/recommended_list.json";
 
 export const AREA_CODES = [...new Set(rawItemSpawnData.map((d) => d.areaCode))];
 
@@ -264,6 +266,10 @@ export const sumStats = (codes: number[]) => {
 
 export class Character {
   static ALL_CHARACTERS = rawCharacterData.map((d) => new Character(d));
+  static COMMON_START_ITEM_COUNTS = rawStartItemData.reduce(
+    (acc, d) => acc.set(d.itemCode, d.count),
+    new Map<number, number>()
+  );
 
   constructor(private data: typeof rawCharacterData[number]) {}
 
@@ -291,5 +297,16 @@ export class Character {
     return rawCharacterAttributesData
       .filter((d) => d.characterCode === this.code)
       .map((d) => d.mastery as WeaponType);
+  }
+
+  startItemCounts(wt: WeaponType): ItemCounts {
+    const result = new Map(Character.COMMON_START_ITEM_COUNTS);
+    const startWeaponCode = rawRecommendedListData.find(
+      (d) => d.characterCode === this.code && d.mastery === wt
+    ).startWeapon;
+
+    result.set(startWeaponCode, 1);
+
+    return result;
   }
 }
