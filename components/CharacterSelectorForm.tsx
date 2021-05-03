@@ -41,7 +41,7 @@ export const CharacterSelectorForm: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Grid item xs={4}>
-        {selectedCharacter.weaponTypes.map((wt) => (
+        {selectedCharacter.startWeaponTypes.map((wt) => (
           <WeaponTypeButton
             key={wt}
             weaponType={wt}

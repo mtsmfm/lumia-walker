@@ -36,7 +36,7 @@ export const getStaticProps = async ({ locale }) => ({
 interface State {
   users: Array<{
     selectedCharacterCode: number;
-    selectedWeaponType: WeaponType;
+    selectedStartWeaponType: WeaponType;
     selectedItemsCodes: number[];
     selectedRoute: number[];
   }>;
@@ -128,7 +128,7 @@ const reducer = (state: State, action: Action): State => {
             return {
               ...u,
               selectedCharacterCode: action.characterCode,
-              selectedWeaponType: action.weaponType,
+              selectedStartWeaponType: action.weaponType,
             };
           } else {
             return u;
@@ -164,7 +164,7 @@ const reducer = (state: State, action: Action): State => {
           ...state.users,
           {
             selectedCharacterCode: c.code,
-            selectedWeaponType: c.weaponTypes[0],
+            selectedStartWeaponType: c.weaponTypes[0],
             selectedItemsCodes: [],
             selectedRoute: [],
           },
@@ -401,20 +401,20 @@ export default function Home() {
                     }}
                   >
                     <CharacterImage code={u.selectedCharacterCode} />
-                    <WeaponTypeImage weaponType={u.selectedWeaponType} />
+                    <WeaponTypeImage weaponType={u.selectedStartWeaponType} />
                   </Button>
                   <Grid container>
-                    {[...character.startItemCounts(u.selectedWeaponType)].map(
-                      ([code, count]) => (
-                        <ItemBadge
-                          key={code}
-                          badgeContent={count}
-                          color="primary"
-                        >
-                          <ItemImage width={60} code={code} />
-                        </ItemBadge>
-                      )
-                    )}
+                    {[
+                      ...character.startItemCounts(u.selectedStartWeaponType),
+                    ].map(([code, count]) => (
+                      <ItemBadge
+                        key={code}
+                        badgeContent={count}
+                        color="primary"
+                      >
+                        <ItemImage width={60} code={code} />
+                      </ItemBadge>
+                    ))}
                   </Grid>
                   {u.selectedRoute.map((r, j) => (
                     <div key={`${i}-${j}`}>
@@ -460,7 +460,7 @@ export default function Home() {
                 });
               }}
               selectedWeaponType={
-                users[characterSelectForm.userIndex]?.selectedWeaponType
+                users[characterSelectForm.userIndex]?.selectedStartWeaponType
               }
             />
           </Dialog>
@@ -473,7 +473,13 @@ export default function Home() {
             open={buildSelectForm.open}
           >
             <BuildSelectForm
-              weaponType={users[buildSelectForm.userIndex]?.selectedWeaponType}
+              weaponTypes={
+                users[buildSelectForm.userIndex]
+                  ? Character.findByCode(
+                      users[buildSelectForm.userIndex].selectedCharacterCode
+                    ).weaponTypes
+                  : []
+              }
               itemCodes={
                 users[buildSelectForm.userIndex]?.selectedItemsCodes || []
               }

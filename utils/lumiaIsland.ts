@@ -299,6 +299,12 @@ export class Character {
       .map((d) => d.mastery as WeaponType);
   }
 
+  get startWeaponTypes() {
+    return rawRecommendedListData
+      .filter((d) => d.characterCode === this.code)
+      .map((d) => d.mastery as WeaponType);
+  }
+
   startItemCounts(wt: WeaponType): ItemCounts {
     const result = new Map(Character.COMMON_START_ITEM_COUNTS);
     const startWeaponCode = rawRecommendedListData.find(
