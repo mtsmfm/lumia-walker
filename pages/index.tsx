@@ -422,10 +422,8 @@ export default function Home() {
             open={characterSelectForm.open}
           >
             <CharacterSelectorForm
-              selectedCharacterCodes={
-                users[characterSelectForm.userIndex]
-                  ? [users[characterSelectForm.userIndex].selectedCharacterCode]
-                  : []
+              selectedCharacterCode={
+                users[characterSelectForm.userIndex]?.selectedCharacterCode
               }
               onSelect={(characterCode) => {
                 dispatch({

@@ -4,20 +4,20 @@ import { CharacterImage } from "../components/CharacterImage";
 import Grid from "@material-ui/core/Grid";
 
 interface Props {
-  selectedCharacterCodes: number[];
+  selectedCharacterCode: number | undefined;
   onSelect: (c: number) => void;
   onUnselect: (c: number) => void;
 }
 
 export const CharacterSelectorForm: React.FC<Props> = ({
-  selectedCharacterCodes,
+  selectedCharacterCode,
   onSelect,
   onUnselect,
 }) => {
   return (
     <Grid container justify="space-evenly">
       {CHARACTERS.map((c) => {
-        const isSelected = selectedCharacterCodes.includes(c.code);
+        const isSelected = selectedCharacterCode === c.code;
 
         return (
           <Button
