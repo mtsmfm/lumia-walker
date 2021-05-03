@@ -1,4 +1,22 @@
 {
+  "itemTypes": {
+    "Weapon": "Weapon",
+    "Armor": "Armor",
+    "Consume": "Consume",
+    "Misc": "Misc",
+    "Special": "Special"
+  },
+  "armorTypes": {
+    "Head": "Head",
+    "Chest": "Chest",
+    "Arm": "Arm",
+    "Leg": "Leg",
+    "Trinket": "Accessory"
+  },
+  "consumableTypes": {
+    "Food": "Food",
+    "Beverage": "Beverage"
+  },
   "equipmentTypes": {
     "Weapon": "Weapon",
     "Head": "Head",

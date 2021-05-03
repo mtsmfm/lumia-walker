@@ -56,8 +56,20 @@ export const ITEM_GRADE = [
 ] as const;
 export type ItemGrade = typeof ITEM_GRADE[number];
 
-const ITEM_TYPE = ["Weapon", "Armor", "Consume", "Misc", "Special"] as const;
-type ItemType = typeof ITEM_TYPE[number];
+export const ITEM_TYPES = [
+  "Weapon",
+  "Armor",
+  "Consume",
+  "Misc",
+  "Special",
+] as const;
+export type ItemType = typeof ITEM_TYPES[number];
+
+export const ARMOR_TYPES = ["Head", "Chest", "Arm", "Leg", "Trinket"] as const;
+export type ArmorType = typeof ARMOR_TYPES[number];
+
+export const CONSUMABLE_TYPES = ["Food", "Beverage"] as const;
+export type ConsumableType = typeof CONSUMABLE_TYPES[number];
 
 const allItemsData = [
   ...rawItemWeaponData,
@@ -70,6 +82,7 @@ const allItemsData = [
 type RawItemData = typeof allItemsData[number];
 type RawWeaponItemData = typeof rawItemWeaponData[number];
 type RawArmorItemData = typeof rawItemArmorData[number];
+type RawConsumableItemData = typeof rawItemConsumableData[number];
 export class Item {
   static ALL_ITEMS = allItemsData.reduce((map, data) => {
     const item = new Item(data);
@@ -83,13 +96,25 @@ export class Item {
   static where(conditions: {
     equipmentType?: EquipmentType;
     areaCode?: number;
+    itemType?: ItemType;
+    weaponType?: WeaponType;
+    armorType?: ArmorType;
+    consumableType?: ConsumableType;
   }): Item[] {
     return [...Item.ALL_ITEMS.values()].filter(
       (item) =>
         (conditions.equipmentType === undefined ||
           item.equipmentType === conditions.equipmentType) &&
         (conditions.areaCode === undefined ||
-          item.areaCodes.includes(conditions.areaCode))
+          item.areaCodes.includes(conditions.areaCode)) &&
+        (conditions.itemType === undefined ||
+          item.itemType === conditions.itemType) &&
+        (conditions.weaponType === undefined ||
+          item.weaponType === conditions.weaponType) &&
+        (conditions.armorType === undefined ||
+          item.armorType === conditions.armorType) &&
+        (conditions.consumableType === undefined ||
+          item.consumableType === conditions.consumableType)
     );
   }
 
@@ -134,6 +159,29 @@ export class Item {
     switch (this.itemType) {
       case "Weapon": {
         return (this.data as RawWeaponItemData).weaponType as WeaponType;
+      }
+      default: {
+        return undefined;
+      }
+    }
+  }
+
+  get armorType(): ArmorType | undefined {
+    switch (this.itemType) {
+      case "Armor": {
+        return (this.data as RawArmorItemData).armorType as ArmorType;
+      }
+      default: {
+        return undefined;
+      }
+    }
+  }
+
+  get consumableType(): ConsumableType | undefined {
+    switch (this.itemType) {
+      case "Consume": {
+        return (this.data as RawConsumableItemData)
+          .consumableType as ConsumableType;
       }
       default: {
         return undefined;
