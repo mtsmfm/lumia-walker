@@ -70,7 +70,7 @@ const reducer = (state: State, action: Action): State => {
     }
     default: {
       const exhaustiveCheck: never = action;
-      throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
+      throw new Error(`Unhandled case: ${exhaustiveCheck}`);
     }
   }
 };
