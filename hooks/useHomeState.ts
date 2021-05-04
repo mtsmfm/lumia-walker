@@ -31,7 +31,7 @@ interface State {
 
 type Action =
   | {
-      type: "INIT";
+      type: "LOAD";
       users: State["users"];
     }
   | {
@@ -92,7 +92,7 @@ const calcItemCounts = (users: State["users"]) => {
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case "INIT": {
+    case "LOAD": {
       return {
         ...state,
         ...calcItemCounts(action.users),
@@ -252,9 +252,7 @@ const calcAllItemCounts = (users: State["users"]) => {
 
 const initialState: State = {
   users: [],
-  requiredItemCounts: new Map(),
-  missingItemCounts: new Map(),
-  allItemCounts: new Map(),
+  ...calcItemCounts([]),
   characterSelectForm: {
     open: false,
     userIndex: 0,

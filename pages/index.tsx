@@ -1,6 +1,6 @@
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ItemButton } from "../components/ItemButton";
@@ -14,13 +14,13 @@ import Dialog from "@material-ui/core/Dialog";
 import { CharacterSelectorForm } from "../components/CharacterSelectorForm";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { useRouter } from "next/router";
 import AddIcon from "@material-ui/icons/Add";
 import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
 import { BuildSelectForm } from "../components/BuildSelectForm";
 import { WeaponTypeImage } from "../components/WeaponTypeImage";
 import { useHomeState } from "../hooks/useHomeState";
+import { useQueryParamStore } from "../hooks/useQueryParamStore";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -43,27 +43,9 @@ export default function Home() {
     dispatch,
   ] = useHomeState();
 
-  const router = useRouter();
-
-  const usersJson = JSON.stringify(users);
-
-  useEffect(() => {
-    if (router.query.data) {
-      const queryUsersJson = decodeURIComponent(router.query.data as string);
-      if (queryUsersJson !== usersJson) {
-        const users = router.query.data ? JSON.parse(queryUsersJson) : [];
-        dispatch({ type: "INIT", users });
-      }
-    } else {
-      dispatch({ type: "INIT", users: [] });
-    }
-  }, [router.query.data]);
-
-  useEffect(() => {
-    if (users.length > 0) {
-      router.push(`?data=${encodeURIComponent(usersJson)}`);
-    }
-  }, [usersJson]);
+  useQueryParamStore(users, (newUsers) =>
+    dispatch({ type: "LOAD", users: newUsers })
+  );
 
   return (
     <div>
