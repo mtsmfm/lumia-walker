@@ -49,6 +49,8 @@ interface State {
   buildSelectForm: {
     open: boolean;
     userIndex: number;
+    showCommon: boolean;
+    onlyFinal: boolean;
   };
 }
 
@@ -86,6 +88,12 @@ type Action =
   | {
       type: "CHANGE_ROUTES";
       routes: number[][];
+    }
+  | {
+      type: "TOGGLE_SHOW_COMMON";
+    }
+  | {
+      type: "TOGGLE_ONLY_FINAL";
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -224,6 +232,24 @@ const reducer = (state: State, action: Action): State => {
         users: nextUsers,
       };
     }
+    case "TOGGLE_SHOW_COMMON": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          showCommon: !state.buildSelectForm.showCommon,
+        },
+      };
+    }
+    case "TOGGLE_ONLY_FINAL": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          onlyFinal: !state.buildSelectForm.onlyFinal,
+        },
+      };
+    }
     default: {
       const exhaustiveCheck: never = action;
       throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
@@ -260,6 +286,8 @@ const initialState: State = {
   buildSelectForm: {
     open: false,
     userIndex: 0,
+    showCommon: false,
+    onlyFinal: true,
   },
 };
 
@@ -488,6 +516,14 @@ export default function Home() {
                   type: "SELECT_ITEMS",
                   itemCodes,
                 });
+              }}
+              onlyFinal={buildSelectForm.onlyFinal}
+              showCommon={buildSelectForm.showCommon}
+              onToggleOnlyFinal={() => {
+                dispatch({ type: "TOGGLE_ONLY_FINAL" });
+              }}
+              onToggleShowCommon={() => {
+                dispatch({ type: "TOGGLE_SHOW_COMMON" });
               }}
             />
           </Dialog>

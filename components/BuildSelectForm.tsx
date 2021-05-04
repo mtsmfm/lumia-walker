@@ -20,6 +20,9 @@ import TableBody from "@material-ui/core/TableBody";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import { WeaponTypeButton } from "./WeaponTypeButton";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 
 interface State {
   selectedTabIndex: number;
@@ -96,16 +99,27 @@ interface Props {
   itemCodes: number[];
   weaponTypes: WeaponType[];
   onSelectedItemCodesChange: (itemCodes: number[]) => void;
+  showCommon: boolean;
+  onlyFinal: boolean;
+  onToggleShowCommon: () => void;
+  onToggleOnlyFinal: () => void;
 }
 
-const itemsFor = (state: State, tabType: TabType) => {
+const itemsFor = (
+  tabType: TabType,
+  {
+    onlyFinal,
+    showCommon,
+    selectedWeaponType,
+  }: Pick<Props, "showCommon" | "onlyFinal"> & Pick<State, "selectedWeaponType">
+) => {
   let items: Item[];
 
   switch (tabType.itemType) {
     case "Weapon":
       items = Item.where({
         itemType: tabType.itemType,
-        weaponType: state.selectedWeaponType,
+        weaponType: selectedWeaponType,
       });
       break;
     case "Armor":
@@ -122,7 +136,15 @@ const itemsFor = (state: State, tabType: TabType) => {
       throw new Error(`Unhandled case: ${exhaustiveCheck}`);
   }
 
-  return items.filter((i) => i.itemGrade !== "Common");
+  if (!showCommon) {
+    items = items.filter((i) => i.itemGrade !== "Common");
+  }
+
+  if (onlyFinal) {
+    items = items.filter((i) => i.isFinalItemInSameType);
+  }
+
+  return items;
 };
 
 const labelI18nKeyFor = (tabType: TabType) => {
@@ -145,14 +167,19 @@ export const BuildSelectForm: React.FC<Props> = ({
   itemCodes,
   weaponTypes,
   onSelectedItemCodesChange,
+  showCommon,
+  onlyFinal,
+  onToggleShowCommon,
+  onToggleOnlyFinal,
 }) => {
-  const [state, dispatch] = useReducer(reducer, {
+  const [
+    { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType },
+    dispatch,
+  ] = useReducer(reducer, {
     ...initialState,
     selectedWeaponType: weaponTypes[0],
     nextSelectedItemCodes: itemCodes,
   });
-
-  const { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType } = state;
 
   const { t } = useTranslation();
 
@@ -198,6 +225,20 @@ export const BuildSelectForm: React.FC<Props> = ({
         ))}
       </Grid>
       <Grid item xs={9}>
+        <FormGroup row>
+          <FormControlLabel
+            control={
+              <Checkbox checked={showCommon} onClick={onToggleShowCommon} />
+            }
+            label={t("buildSelectForm.filters.showCommon")}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox checked={onlyFinal} onClick={onToggleOnlyFinal} />
+            }
+            label={t("buildSelectForm.filters.onlyFinal")}
+          />
+        </FormGroup>
         <Tabs
           value={selectedTabIndex}
           onChange={(_, v) => dispatch({ type: "SELECT_TAB", tabIndex: v })}
@@ -239,7 +280,11 @@ export const BuildSelectForm: React.FC<Props> = ({
               </>
             )}
 
-            {itemsFor(state, selectedTabType).map((item) => (
+            {itemsFor(selectedTabType, {
+              selectedWeaponType,
+              showCommon,
+              onlyFinal,
+            }).map((item) => (
               <Grid container key={item.code}>
                 <ItemButton
                   code={item.code}

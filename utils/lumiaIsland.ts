@@ -251,6 +251,48 @@ export class Item {
   get imageUrl() {
     return `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/items/${this.code}.png`;
   }
+
+  get isFinalItemInSameType(): boolean {
+    let items: Item[];
+
+    switch (this.itemType) {
+      case "Weapon": {
+        items = Item.where({
+          itemType: this.itemType,
+          weaponType: this.weaponType,
+        });
+        break;
+      }
+      case "Armor": {
+        items = Item.where({
+          itemType: this.itemType,
+          armorType: this.armorType,
+        });
+        break;
+      }
+      case "Consume": {
+        items = Item.where({
+          itemType: this.itemType,
+          armorType: this.armorType,
+        });
+        break;
+      }
+      case "Special": {
+        items = Item.where({
+          itemType: this.itemType,
+          armorType: this.armorType,
+        });
+        break;
+      }
+      default: {
+        return true;
+      }
+    }
+
+    return !items.some(
+      (i) => i.makeMaterial1 === this.code || i.makeMaterial2 === this.code
+    );
+  }
 }
 
 const visitItemBuildTree = (
