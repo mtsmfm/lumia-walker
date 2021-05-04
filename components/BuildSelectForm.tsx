@@ -95,44 +95,29 @@ const initialState: State = {
   nextSelectedItemCodes: [],
 };
 
-interface Props {
-  itemCodes: number[];
-  weaponTypes: WeaponType[];
-  onSelectedItemCodesChange: (itemCodes: number[]) => void;
+interface Filter {
   showCommon: boolean;
   onlyFinal: boolean;
   showBuiltFromMeteorite: boolean;
   showBuiltFromTreeOfLife: boolean;
   showBuiltFromVfBloodSample: boolean;
   showBuiltFromMithril: boolean;
-  onToggleShowCommon: () => void;
-  onToggleOnlyFinal: () => void;
-  onToggleShowBuiltFromMeteorite: () => void;
-  onToggleShowBuiltFromTreeOfLife: () => void;
-  onToggleShowBuiltFromVfBloodSample: () => void;
-  onToggleShowBuiltFromMithril: () => void;
+}
+
+type FilterType = keyof Filter;
+
+interface Props {
+  itemCodes: number[];
+  weaponTypes: WeaponType[];
+  onSelectedItemCodesChange: (itemCodes: number[]) => void;
+  filter: Filter;
+  onToggleFilter: (f: FilterType) => void;
 }
 
 const itemsFor = (
   tabType: TabType,
-  {
-    onlyFinal,
-    showCommon,
-    selectedWeaponType,
-    showBuiltFromMeteorite,
-    showBuiltFromTreeOfLife,
-    showBuiltFromVfBloodSample,
-    showBuiltFromMithril,
-  }: Pick<
-    Props,
-    | "showCommon"
-    | "onlyFinal"
-    | "showBuiltFromMeteorite"
-    | "showBuiltFromTreeOfLife"
-    | "showBuiltFromVfBloodSample"
-    | "showBuiltFromMithril"
-  > &
-    Pick<State, "selectedWeaponType">
+  filter: Filter,
+  selectedWeaponType: WeaponType
 ) => {
   let items: Item[];
 
@@ -157,27 +142,27 @@ const itemsFor = (
       throw new Error(`Unhandled case: ${exhaustiveCheck}`);
   }
 
-  if (!showCommon) {
+  if (!filter.showCommon) {
     items = items.filter((i) => i.itemGrade !== "Common");
   }
 
-  if (onlyFinal) {
+  if (filter.onlyFinal) {
     items = items.filter((i) => i.isFinalItemInSameType);
   }
 
-  if (!showBuiltFromMeteorite) {
+  if (!filter.showBuiltFromMeteorite) {
     items = items.filter((i) => !i.isBuiltFromMeteorite);
   }
 
-  if (!showBuiltFromTreeOfLife) {
+  if (!filter.showBuiltFromTreeOfLife) {
     items = items.filter((i) => !i.isBuiltFromTreeOfLife);
   }
 
-  if (!showBuiltFromVfBloodSample) {
+  if (!filter.showBuiltFromVfBloodSample) {
     items = items.filter((i) => !i.isBuiltFromVfBloodSample);
   }
 
-  if (!showBuiltFromMithril) {
+  if (!filter.showBuiltFromMithril) {
     items = items.filter((i) => !i.isBuiltFromMithril);
   }
 
@@ -204,18 +189,8 @@ export const BuildSelectForm: React.FC<Props> = ({
   itemCodes,
   weaponTypes,
   onSelectedItemCodesChange,
-  showCommon,
-  onlyFinal,
-  showBuiltFromMeteorite,
-  showBuiltFromTreeOfLife,
-  showBuiltFromVfBloodSample,
-  showBuiltFromMithril,
-  onToggleShowCommon,
-  onToggleOnlyFinal,
-  onToggleShowBuiltFromMeteorite,
-  onToggleShowBuiltFromTreeOfLife,
-  onToggleShowBuiltFromVfBloodSample,
-  onToggleShowBuiltFromMithril,
+  filter,
+  onToggleFilter,
 }) => {
   const [
     { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType },
@@ -271,54 +246,20 @@ export const BuildSelectForm: React.FC<Props> = ({
       </Grid>
       <Grid item xs={9}>
         <FormGroup row>
-          <FormControlLabel
-            control={
-              <Checkbox checked={showCommon} onClick={onToggleShowCommon} />
-            }
-            label={t("buildSelectForm.filters.showCommon")}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={onlyFinal} onClick={onToggleOnlyFinal} />
-            }
-            label={t("buildSelectForm.filters.onlyFinal")}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={showBuiltFromTreeOfLife}
-                onClick={onToggleShowBuiltFromTreeOfLife}
+          {Object.keys(filter).map((k: keyof Filter) => {
+            return (
+              <FormControlLabel
+                key={k}
+                control={
+                  <Checkbox
+                    checked={filter[k]}
+                    onClick={() => onToggleFilter(k)}
+                  />
+                }
+                label={t(`buildSelectForm.filters.${k}`)}
               />
-            }
-            label={t("buildSelectForm.filters.showBuiltFromTreeOfLife")}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={showBuiltFromMeteorite}
-                onClick={onToggleShowBuiltFromMeteorite}
-              />
-            }
-            label={t("buildSelectForm.filters.showBuiltFromMeteorite")}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={showBuiltFromVfBloodSample}
-                onClick={onToggleShowBuiltFromVfBloodSample}
-              />
-            }
-            label={t("buildSelectForm.filters.showBuiltFromVfBloodSample")}
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={showBuiltFromMithril}
-                onClick={onToggleShowBuiltFromMithril}
-              />
-            }
-            label={t("buildSelectForm.filters.showBuiltFromMithril")}
-          />
+            );
+          })}
         </FormGroup>
         <Tabs
           value={selectedTabIndex}
@@ -361,29 +302,23 @@ export const BuildSelectForm: React.FC<Props> = ({
               </>
             )}
 
-            {itemsFor(selectedTabType, {
-              selectedWeaponType,
-              showCommon,
-              onlyFinal,
-              showBuiltFromMeteorite,
-              showBuiltFromTreeOfLife,
-              showBuiltFromVfBloodSample,
-              showBuiltFromMithril,
-            }).map((item) => (
-              <Grid container key={item.code}>
-                <ItemButton
-                  code={item.code}
-                  onClick={() => {
-                    dispatch({
-                      type: "TOGGLE_ITEM",
-                      itemCode: item.code,
-                      currentItemCodes: itemCodes,
-                    });
-                  }}
-                  selected={itemCodes.includes(item.code)}
-                />
-              </Grid>
-            ))}
+            {itemsFor(selectedTabType, filter, selectedWeaponType).map(
+              (item) => (
+                <Grid container key={item.code}>
+                  <ItemButton
+                    code={item.code}
+                    onClick={() => {
+                      dispatch({
+                        type: "TOGGLE_ITEM",
+                        itemCode: item.code,
+                        currentItemCodes: itemCodes,
+                      });
+                    }}
+                    selected={itemCodes.includes(item.code)}
+                  />
+                </Grid>
+              )
+            )}
           </>
         </TabPanel>
       </Grid>
