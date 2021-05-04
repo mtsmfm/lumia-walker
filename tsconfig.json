@@ -4,7 +4,8 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "WebWorker"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,7 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "experimentalDecorators": true
   },
   "include": [
     "next-env.d.ts",

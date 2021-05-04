@@ -4,7 +4,7 @@ import {
   WeaponType,
   Character,
 } from "../utils/lumiaIsland";
-import { ItemCounts } from "../utils/lumiaIsland";
+import { ItemCounts, sumItemCounts } from "../utils/lumiaIsland";
 import { BuildSelectForm } from "../components/BuildSelectForm";
 import { useReducer } from "react";
 
@@ -26,6 +26,10 @@ interface State {
     open: boolean;
     userIndex: number;
     filter: React.ComponentProps<typeof BuildSelectForm>["filter"];
+  };
+  routeSuggestionForm: {
+    open: boolean;
+    userIndex: number;
   };
 }
 
@@ -57,6 +61,13 @@ type Action =
       type: "CLOSE_BUILD_SELECT_FORM";
     }
   | {
+      type: "OPEN_ROUTE_SUGGESTION_FORM";
+      userIndex: number;
+    }
+  | {
+      type: "CLOSE_ROUTE_SUGGESTION_FORM";
+    }
+  | {
       type: "SELECT_ITEMS";
       itemCodes: number[];
     }
@@ -75,7 +86,13 @@ const calcItemCounts = (users: State["users"]) => {
     .map((code) => Item.findByCode(code));
 
   const requiredItemCounts = calcMakeMaterials(allTargetItems);
-  const allItemCounts = calcAllItemCounts(users);
+  const allItemCounts = sumItemCounts(
+    users.map((u) => ({
+      characterCode: u.selectedCharacterCode,
+      startWeaponType: u.selectedStartWeaponType,
+      route: u.selectedRoute,
+    }))
+  );
   const missingItemCounts = [...requiredItemCounts]
     .filter(([itemCode, count]) => (allItemCounts.get(itemCode) || 0) < count)
     .reduce(
@@ -217,37 +234,30 @@ const reducer = (state: State, action: Action): State => {
         },
       };
     }
+    case "OPEN_ROUTE_SUGGESTION_FORM": {
+      return {
+        ...state,
+        routeSuggestionForm: {
+          ...state.routeSuggestionForm,
+          open: true,
+          userIndex: action.userIndex,
+        },
+      };
+    }
+    case "CLOSE_ROUTE_SUGGESTION_FORM": {
+      return {
+        ...state,
+        routeSuggestionForm: {
+          ...state.routeSuggestionForm,
+          open: false,
+        },
+      };
+    }
     default: {
       const exhaustiveCheck: never = action;
       throw new Error(`Unhandled case: ${exhaustiveCheck}`);
     }
   }
-};
-
-const calcAllItemCounts = (users: State["users"]) => {
-  const allItemCounts = new Map<number, number>();
-
-  users.forEach((u) => {
-    [
-      ...Character.findByCode(u.selectedCharacterCode).startItemCounts(
-        u.selectedStartWeaponType
-      ),
-    ].forEach(([code, count]) =>
-      allItemCounts.set(code, (allItemCounts.get(code) || 0) + count)
-    );
-  });
-
-  [...new Set(users.flatMap((u) => u.selectedRoute))].forEach((areaCode) => {
-    Item.where({ areaCode }).forEach((item) => {
-      allItemCounts.set(
-        item.code,
-        (allItemCounts.get(item.code) || 0) +
-          item.areaItemCounts.get(areaCode) * item.initialCount
-      );
-    });
-  });
-
-  return allItemCounts;
 };
 
 const initialState: State = {
@@ -269,6 +279,10 @@ const initialState: State = {
       showBuiltFromMithril: false,
       onlyBuildable: false,
     },
+  },
+  routeSuggestionForm: {
+    open: false,
+    userIndex: 0,
   },
 };
 

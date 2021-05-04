@@ -21,6 +21,8 @@ import { BuildSelectForm } from "../components/BuildSelectForm";
 import { WeaponTypeImage } from "../components/WeaponTypeImage";
 import { useHomeState } from "../hooks/useHomeState";
 import { useQueryParamStore } from "../hooks/useQueryParamStore";
+import SearchIcon from "@material-ui/icons/Search";
+import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -39,6 +41,7 @@ export default function Home() {
       characterSelectForm,
       buildSelectForm,
       missingItemCounts,
+      routeSuggestionForm,
     },
     dispatch,
   ] = useHomeState();
@@ -101,6 +104,17 @@ export default function Home() {
                         }}
                       >
                         <AddIcon />
+                      </IconButton>
+                      <IconButton
+                        color="primary"
+                        onClick={() => {
+                          dispatch({
+                            type: "OPEN_ROUTE_SUGGESTION_FORM",
+                            userIndex: i,
+                          });
+                        }}
+                      >
+                        <SearchIcon />
                       </IconButton>
                     </Grid>
                   );
@@ -253,6 +267,20 @@ export default function Home() {
                   filterType: f,
                 });
               }}
+            />
+          </Dialog>
+          <Dialog
+            onClose={() => {
+              dispatch({ type: "CLOSE_ROUTE_SUGGESTION_FORM" });
+            }}
+            open={routeSuggestionForm.open}
+          >
+            <RouteSuggestionForm
+              requiredItemCounts={requiredItemCounts}
+              users={users.map((u) => ({
+                characterCode: u.selectedCharacterCode,
+                startWeaponType: u.selectedStartWeaponType,
+              }))}
             />
           </Dialog>
           <Divider />

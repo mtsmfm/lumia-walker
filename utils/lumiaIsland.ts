@@ -9,6 +9,7 @@ import rawCharacterAttributesData from "../data/character_attributes.json";
 import rawStartItemData from "../data/start_item.json";
 import rawRecommendedListData from "../data/recommended_list.json";
 import rawObjectLocationsData from "../map/object_locations.json";
+import { Memoize } from "typescript-memoize";
 
 export const AREA_CODES = [...new Set(rawItemSpawnData.map((d) => d.areaCode))];
 
@@ -85,10 +86,13 @@ type RawWeaponItemData = typeof rawItemWeaponData[number];
 type RawArmorItemData = typeof rawItemArmorData[number];
 type RawConsumableItemData = typeof rawItemConsumableData[number];
 export class Item {
-  static ALL_ITEMS = allItemsData.reduce((map, data) => {
-    const item = new Item(data);
-    return map.set(item.code, item);
-  }, new Map<number, Item>());
+  @Memoize()
+  static get all() {
+    return allItemsData.reduce((map, data) => {
+      const item = new Item(data);
+      return map.set(item.code, item);
+    }, new Map<number, Item>());
+  }
 
   static METEORITE_ITEM_CODE = 401209;
   static TREE_OF_LIFE_ITEM_CODE = 401208;
@@ -104,7 +108,7 @@ export class Item {
   static COD_ITEM_CODE = 302104;
 
   static findByCode(code: number): Item {
-    return Item.ALL_ITEMS.get(code);
+    return Item.all.get(code);
   }
 
   static where(conditions: {
@@ -115,7 +119,7 @@ export class Item {
     armorType?: ArmorType;
     consumableType?: ConsumableType;
   }): Item[] {
-    return [...Item.ALL_ITEMS.values()].filter(
+    return [...Item.all.values()].filter(
       (item) =>
         (conditions.equipmentType === undefined ||
           item.equipmentType === conditions.equipmentType) &&
@@ -138,10 +142,12 @@ export class Item {
     return this.data.code;
   }
 
+  @Memoize()
   get areaCodes() {
     return [...this.areaItemCounts.keys()];
   }
 
+  @Memoize()
   get areaItemCounts(): ItemCounts {
     const objectLocationKind = ({
       [Item.METEORITE_ITEM_CODE]: "meteorite",
@@ -252,6 +258,7 @@ export class Item {
     return this.data.stackable;
   }
 
+  @Memoize()
   get stats() {
     const fieldNames = [
       "attackPower",
@@ -295,6 +302,7 @@ export class Item {
     return `${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}/images/items/${this.code}.png`;
   }
 
+  @Memoize()
   get isFinalItemInSameType(): boolean {
     let items: Item[];
 
@@ -337,18 +345,22 @@ export class Item {
     );
   }
 
+  @Memoize()
   get isBuiltFromMeteorite(): boolean {
     return calcMakeMaterials([this]).has(Item.METEORITE_ITEM_CODE);
   }
 
+  @Memoize()
   get isBuiltFromTreeOfLife(): boolean {
     return calcMakeMaterials([this]).has(Item.TREE_OF_LIFE_ITEM_CODE);
   }
 
+  @Memoize()
   get isBuiltFromVfBloodSample(): boolean {
     return calcMakeMaterials([this]).has(Item.VF_BLOOD_SAMPLE_ITEM_CODE);
   }
 
+  @Memoize()
   get isBuiltFromMithril(): boolean {
     return calcMakeMaterials([this]).has(Item.MITHRIL_ITEM_CODE);
   }
@@ -396,6 +408,50 @@ export const calcMakeMaterials = (items: Item[]) => {
   }, new Map<number, number>());
 
   return itemCounts;
+};
+
+export const sumItemCounts = (
+  users: Array<{
+    characterCode: number;
+    startWeaponType: WeaponType;
+    route: number[];
+  }>
+): ItemCounts => {
+  const itemCounts = new Map<number, number>();
+
+  users.forEach((u) => {
+    [
+      ...Character.findByCode(u.characterCode).startItemCounts(
+        u.startWeaponType
+      ),
+    ].forEach(([code, count]) =>
+      itemCounts.set(code, (itemCounts.get(code) || 0) + count)
+    );
+  });
+
+  [...new Set(users.flatMap((u) => u.route))].forEach((areaCode) => {
+    Item.where({ areaCode }).forEach((item) => {
+      itemCounts.set(
+        item.code,
+        (itemCounts.get(item.code) || 0) +
+          item.areaItemCounts.get(areaCode) * item.initialCount
+      );
+    });
+  });
+
+  return itemCounts;
+};
+
+export const satisfies = ({
+  requirements,
+  current,
+}: {
+  requirements: ItemCounts;
+  current: ItemCounts;
+}) => {
+  return [...requirements].every(
+    ([code, count]) => (current.get(code) || 0) >= count
+  );
 };
 
 export const sumStats = (codes: number[]) => {

@@ -656,6 +656,12 @@
       "onlyBuildable": "Only buildable"
     }
   },
+  "routeSuggestionForm": {
+    "result": {
+      "combinations": "{{count}} combinations",
+      "atLeast": "At least {{count}} areas"
+    }
+  },
   "footer": {
     "copyright": "Eternal Return: Black Survival and its contents are trademarks and copyrights of Nimble Neuron, inc"
   }
