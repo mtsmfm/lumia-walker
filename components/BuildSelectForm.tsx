@@ -271,55 +271,51 @@ export const BuildSelectForm: React.FC<Props> = ({
           ))}
         </Tabs>
         <TabPanel value={selectedTabIndex} index={selectedTabIndex}>
-          <>
-            {selectedTabType.itemType === "Weapon" && (
-              <>
-                <Grid container>
-                  {weaponTypes.map((wt) => (
-                    <Grid
-                      key={wt}
-                      item
-                      xs={6}
-                      sm={4}
-                      md={3}
-                      lg={2}
-                      style={{ display: "flex" }}
-                    >
-                      <WeaponTypeButton
-                        weaponType={wt}
-                        onClick={() =>
-                          dispatch({
-                            type: "SELECT_WEAPON_TYPE",
-                            weaponType: wt,
-                          })
-                        }
-                        selected={selectedWeaponType === wt}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
-                <Divider />
-              </>
-            )}
+          {selectedTabType.itemType === "Weapon" && (
+            <>
+              <Grid container>
+                {weaponTypes.map((wt) => (
+                  <Grid
+                    key={wt}
+                    item
+                    xs={6}
+                    sm={4}
+                    md={3}
+                    lg={2}
+                    style={{ display: "flex" }}
+                  >
+                    <WeaponTypeButton
+                      weaponType={wt}
+                      onClick={() =>
+                        dispatch({
+                          type: "SELECT_WEAPON_TYPE",
+                          weaponType: wt,
+                        })
+                      }
+                      selected={selectedWeaponType === wt}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+              <Divider />
+            </>
+          )}
 
-            {itemsFor(selectedTabType, filter, selectedWeaponType).map(
-              (item) => (
-                <Grid container key={item.code}>
-                  <ItemButton
-                    code={item.code}
-                    onClick={() => {
-                      dispatch({
-                        type: "TOGGLE_ITEM",
-                        itemCode: item.code,
-                        currentItemCodes: itemCodes,
-                      });
-                    }}
-                    selected={itemCodes.includes(item.code)}
-                  />
-                </Grid>
-              )
-            )}
-          </>
+          {itemsFor(selectedTabType, filter, selectedWeaponType).map((item) => (
+            <Grid container key={item.code}>
+              <ItemButton
+                code={item.code}
+                onClick={() => {
+                  dispatch({
+                    type: "TOGGLE_ITEM",
+                    itemCode: item.code,
+                    currentItemCodes: itemCodes,
+                  });
+                }}
+                selected={itemCodes.includes(item.code)}
+              />
+            </Grid>
+          ))}
         </TabPanel>
       </Grid>
     </Grid>
