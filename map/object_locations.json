@@ -1086,18 +1086,6 @@
     "areaCode": 3
   },
   {
-    "x": 42,
-    "y": 471,
-    "kind": "water",
-    "areaCode": 3
-  },
-  {
-    "x": 43,
-    "y": 474,
-    "kind": "water",
-    "areaCode": 3
-  },
-  {
     "x": 49,
     "y": 479,
     "kind": "item",
@@ -1125,18 +1113,6 @@
     "x": 57,
     "y": 498,
     "kind": "item",
-    "areaCode": 3
-  },
-  {
-    "x": 49,
-    "y": 488,
-    "kind": "water",
-    "areaCode": 3
-  },
-  {
-    "x": 51,
-    "y": 492,
-    "kind": "water",
     "areaCode": 3
   },
   {
@@ -2846,13 +2822,13 @@
   {
     "x": 176,
     "y": 651,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 4
   },
   {
     "x": 181,
     "y": 655,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 4
   },
   {
@@ -2876,7 +2852,7 @@
   {
     "x": 139,
     "y": 618,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 4
   },
   {
@@ -2888,7 +2864,7 @@
   {
     "x": 137,
     "y": 607,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 4
   },
   {
@@ -3176,31 +3152,31 @@
   {
     "x": 338,
     "y": 746,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 1
   },
   {
     "x": 340,
     "y": 748,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 1
   },
   {
     "x": 342,
     "y": 750,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 1
   },
   {
     "x": 353,
     "y": 760,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 1
   },
   {
     "x": 355,
     "y": 767,
-    "kind": "carp",
+    "kind": "cod",
     "areaCode": 1
   },
   {
@@ -3922,5 +3898,17 @@
     "y": 218,
     "kind": "item",
     "areaCode": 7
+  },
+  {
+    "x": 43,
+    "y": 474,
+    "kind": "cod",
+    "areaCode": 3
+  },
+  {
+    "x": 42,
+    "y": 470,
+    "kind": "cod",
+    "areaCode": 3
   }
 ]
