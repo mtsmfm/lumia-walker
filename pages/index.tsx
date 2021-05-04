@@ -51,6 +51,9 @@ interface State {
     userIndex: number;
     showCommon: boolean;
     onlyFinal: boolean;
+    showBuiltFromTreeOfLife: boolean;
+    showBuiltFromMeteorite: boolean;
+    showBuiltFromVfBloodSample: boolean;
   };
 }
 
@@ -94,6 +97,15 @@ type Action =
     }
   | {
       type: "TOGGLE_ONLY_FINAL";
+    }
+  | {
+      type: "TOGGLE_SHOW_BUILT_FROM_TREE_OF_LIFE";
+    }
+  | {
+      type: "TOGGLE_SHOW_BUILT_FROM_METEORITE";
+    }
+  | {
+      type: "TOGGLE_SHOW_BUILT_FROM_VF_BLOOD_SAMPLE";
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -250,6 +262,35 @@ const reducer = (state: State, action: Action): State => {
         },
       };
     }
+    case "TOGGLE_SHOW_BUILT_FROM_TREE_OF_LIFE": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          showBuiltFromTreeOfLife: !state.buildSelectForm
+            .showBuiltFromTreeOfLife,
+        },
+      };
+    }
+    case "TOGGLE_SHOW_BUILT_FROM_METEORITE": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          showBuiltFromMeteorite: !state.buildSelectForm.showBuiltFromMeteorite,
+        },
+      };
+    }
+    case "TOGGLE_SHOW_BUILT_FROM_VF_BLOOD_SAMPLE": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          showBuiltFromVfBloodSample: !state.buildSelectForm
+            .showBuiltFromVfBloodSample,
+        },
+      };
+    }
     default: {
       const exhaustiveCheck: never = action;
       throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
@@ -288,6 +329,9 @@ const initialState: State = {
     userIndex: 0,
     showCommon: false,
     onlyFinal: true,
+    showBuiltFromTreeOfLife: false,
+    showBuiltFromMeteorite: false,
+    showBuiltFromVfBloodSample: false,
   },
 };
 
@@ -519,11 +563,25 @@ export default function Home() {
               }}
               onlyFinal={buildSelectForm.onlyFinal}
               showCommon={buildSelectForm.showCommon}
+              showBuiltFromTreeOfLife={buildSelectForm.showBuiltFromTreeOfLife}
+              showBuiltFromMeteorite={buildSelectForm.showBuiltFromMeteorite}
+              showBuiltFromVfBloodSample={
+                buildSelectForm.showBuiltFromVfBloodSample
+              }
               onToggleOnlyFinal={() => {
                 dispatch({ type: "TOGGLE_ONLY_FINAL" });
               }}
               onToggleShowCommon={() => {
                 dispatch({ type: "TOGGLE_SHOW_COMMON" });
+              }}
+              onToggleShowBuiltFromTreeOfLife={() => {
+                dispatch({ type: "TOGGLE_SHOW_BUILT_FROM_TREE_OF_LIFE" });
+              }}
+              onToggleShowBuiltFromMeteorite={() => {
+                dispatch({ type: "TOGGLE_SHOW_BUILT_FROM_METEORITE" });
+              }}
+              onToggleShowBuiltFromVfBloodSample={() => {
+                dispatch({ type: "TOGGLE_SHOW_BUILT_FROM_VF_BLOOD_SAMPLE" });
               }}
             />
           </Dialog>

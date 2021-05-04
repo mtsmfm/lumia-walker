@@ -89,6 +89,10 @@ export class Item {
     return map.set(item.code, item);
   }, new Map<number, Item>());
 
+  static METEORITE_ITEM_CODE = 401209;
+  static TREE_OF_LIFE_ITEM_CODE = 401208;
+  static VF_BLOOD_SAMPLE_ITEM_CODE = 401401;
+
   static findByCode(code: number): Item {
     return Item.ALL_ITEMS.get(code);
   }
@@ -292,6 +296,18 @@ export class Item {
     return !items.some(
       (i) => i.makeMaterial1 === this.code || i.makeMaterial2 === this.code
     );
+  }
+
+  get isBuiltFromMeteorite(): boolean {
+    return calcMakeMaterials([this]).has(Item.METEORITE_ITEM_CODE);
+  }
+
+  get isBuiltFromTreeOfLife(): boolean {
+    return calcMakeMaterials([this]).has(Item.TREE_OF_LIFE_ITEM_CODE);
+  }
+
+  get isBuiltFromVfBloodSample(): boolean {
+    return calcMakeMaterials([this]).has(Item.VF_BLOOD_SAMPLE_ITEM_CODE);
   }
 }
 

@@ -648,7 +648,10 @@
   "buildSelectForm": {
     "filters": {
       "showCommon": "Show common",
-      "onlyFinal": "Only final"
+      "onlyFinal": "Only final",
+      "showBuiltFromTreeOfLife": "Show built from Tree of Life",
+      "showBuiltFromMeteorite": "Show built from Meteorite",
+      "showBuiltFromVfBloodSample": "Show built from VF BLood Sample"
     }
   },
   "footer": {

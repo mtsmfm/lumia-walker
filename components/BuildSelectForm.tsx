@@ -101,8 +101,14 @@ interface Props {
   onSelectedItemCodesChange: (itemCodes: number[]) => void;
   showCommon: boolean;
   onlyFinal: boolean;
+  showBuiltFromMeteorite: boolean;
+  showBuiltFromTreeOfLife: boolean;
+  showBuiltFromVfBloodSample: boolean;
   onToggleShowCommon: () => void;
   onToggleOnlyFinal: () => void;
+  onToggleShowBuiltFromMeteorite: () => void;
+  onToggleShowBuiltFromTreeOfLife: () => void;
+  onToggleShowBuiltFromVfBloodSample: () => void;
 }
 
 const itemsFor = (
@@ -111,7 +117,18 @@ const itemsFor = (
     onlyFinal,
     showCommon,
     selectedWeaponType,
-  }: Pick<Props, "showCommon" | "onlyFinal"> & Pick<State, "selectedWeaponType">
+    showBuiltFromMeteorite,
+    showBuiltFromTreeOfLife,
+    showBuiltFromVfBloodSample,
+  }: Pick<
+    Props,
+    | "showCommon"
+    | "onlyFinal"
+    | "showBuiltFromMeteorite"
+    | "showBuiltFromTreeOfLife"
+    | "showBuiltFromVfBloodSample"
+  > &
+    Pick<State, "selectedWeaponType">
 ) => {
   let items: Item[];
 
@@ -144,6 +161,18 @@ const itemsFor = (
     items = items.filter((i) => i.isFinalItemInSameType);
   }
 
+  if (!showBuiltFromMeteorite) {
+    items = items.filter((i) => !i.isBuiltFromMeteorite);
+  }
+
+  if (!showBuiltFromTreeOfLife) {
+    items = items.filter((i) => !i.isBuiltFromTreeOfLife);
+  }
+
+  if (!showBuiltFromVfBloodSample) {
+    items = items.filter((i) => !i.isBuiltFromVfBloodSample);
+  }
+
   return items;
 };
 
@@ -169,8 +198,14 @@ export const BuildSelectForm: React.FC<Props> = ({
   onSelectedItemCodesChange,
   showCommon,
   onlyFinal,
+  showBuiltFromMeteorite,
+  showBuiltFromTreeOfLife,
+  showBuiltFromVfBloodSample,
   onToggleShowCommon,
   onToggleOnlyFinal,
+  onToggleShowBuiltFromMeteorite,
+  onToggleShowBuiltFromTreeOfLife,
+  onToggleShowBuiltFromVfBloodSample,
 }) => {
   const [
     { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType },
@@ -238,6 +273,33 @@ export const BuildSelectForm: React.FC<Props> = ({
             }
             label={t("buildSelectForm.filters.onlyFinal")}
           />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={showBuiltFromTreeOfLife}
+                onClick={onToggleShowBuiltFromTreeOfLife}
+              />
+            }
+            label={t("buildSelectForm.filters.showBuiltFromTreeOfLife")}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={showBuiltFromMeteorite}
+                onClick={onToggleShowBuiltFromMeteorite}
+              />
+            }
+            label={t("buildSelectForm.filters.showBuiltFromMeteorite")}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={showBuiltFromVfBloodSample}
+                onClick={onToggleShowBuiltFromVfBloodSample}
+              />
+            }
+            label={t("buildSelectForm.filters.showBuiltFromVfBloodSample")}
+          />
         </FormGroup>
         <Tabs
           value={selectedTabIndex}
@@ -284,6 +346,9 @@ export const BuildSelectForm: React.FC<Props> = ({
               selectedWeaponType,
               showCommon,
               onlyFinal,
+              showBuiltFromMeteorite,
+              showBuiltFromTreeOfLife,
+              showBuiltFromVfBloodSample,
             }).map((item) => (
               <Grid container key={item.code}>
                 <ItemButton
