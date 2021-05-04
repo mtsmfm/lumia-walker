@@ -311,24 +311,6 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const DUMMY_USERS_DATA = [
-  {
-    selectedCharacterCode: 14,
-    selectedItemsCodes: [120402, 204409, 202410, 203407, 201410, 205201],
-    selectedRoute: [8, 9, 12, 3, 4, 15, 10],
-  },
-  {
-    selectedCharacterCode: 15,
-    selectedItemsCodes: [113411, 202412, 201409, 203403, 204406, 205305],
-    selectedRoute: [9, 3, 4, 15, 10],
-  },
-  {
-    selectedCharacterCode: 1,
-    selectedItemsCodes: [103401, 202402, 201406, 203402, 204402, 205302],
-    selectedRoute: [10, 15, 7, 3, 15, 10],
-  },
-];
-
 const initialState: State = {
   users: [],
   requiredItemCounts: new Map(),
