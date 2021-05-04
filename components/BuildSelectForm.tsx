@@ -12,6 +12,8 @@ import {
   WEAPON_TYPES,
   ARMOR_TYPES,
   CONSUMABLE_TYPES,
+  ItemCounts,
+  calcMakeMaterials,
 } from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -102,6 +104,7 @@ interface Filter {
   showBuiltFromTreeOfLife: boolean;
   showBuiltFromVfBloodSample: boolean;
   showBuiltFromMithril: boolean;
+  onlyBuildable: boolean;
 }
 
 type FilterType = keyof Filter;
@@ -112,12 +115,14 @@ interface Props {
   onSelectedItemCodesChange: (itemCodes: number[]) => void;
   filter: Filter;
   onToggleFilter: (f: FilterType) => void;
+  itemCounts: ItemCounts;
 }
 
 const itemsFor = (
   tabType: TabType,
   filter: Filter,
-  selectedWeaponType: WeaponType
+  selectedWeaponType: WeaponType,
+  itemCounts: ItemCounts
 ) => {
   let items: Item[];
 
@@ -166,6 +171,14 @@ const itemsFor = (
     items = items.filter((i) => !i.isBuiltFromMithril);
   }
 
+  if (filter.onlyBuildable) {
+    items = items.filter((i) =>
+      [...calcMakeMaterials([i])].every(
+        ([itemCode, count]) => (itemCounts.get(itemCode) || 0) >= count
+      )
+    );
+  }
+
   return items;
 };
 
@@ -191,6 +204,7 @@ export const BuildSelectForm: React.FC<Props> = ({
   onSelectedItemCodesChange,
   filter,
   onToggleFilter,
+  itemCounts,
 }) => {
   const [
     { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType },
@@ -301,7 +315,12 @@ export const BuildSelectForm: React.FC<Props> = ({
             </>
           )}
 
-          {itemsFor(selectedTabType, filter, selectedWeaponType).map((item) => (
+          {itemsFor(
+            selectedTabType,
+            filter,
+            selectedWeaponType,
+            itemCounts
+          ).map((item) => (
             <Grid container key={item.code}>
               <ItemButton
                 code={item.code}

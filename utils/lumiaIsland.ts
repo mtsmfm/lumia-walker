@@ -8,6 +8,7 @@ import rawCharacterData from "../data/character.json";
 import rawCharacterAttributesData from "../data/character_attributes.json";
 import rawStartItemData from "../data/start_item.json";
 import rawRecommendedListData from "../data/recommended_list.json";
+import rawObjectLocationsData from "../map/object_locations.json";
 
 export const AREA_CODES = [...new Set(rawItemSpawnData.map((d) => d.areaCode))];
 
@@ -94,6 +95,14 @@ export class Item {
   static VF_BLOOD_SAMPLE_ITEM_CODE = 401401;
   static MITHRIL_ITEM_CODE = 401304;
 
+  static WATER_ITEM_CODE = 301102;
+  static BRANCH_ITEM_CODE = 108101;
+  static STONE_ITEM_CODE = 112101;
+  static LEATHER_ITEM_CODE = 401103;
+  static CARP_ITEM_CODE = 302109;
+  static POTATO_ITEM_CODE = 302102;
+  static COD_ITEM_CODE = 302104;
+
   static findByCode(code: number): Item {
     return Item.ALL_ITEMS.get(code);
   }
@@ -133,13 +142,42 @@ export class Item {
     return [...this.areaItemCounts.keys()];
   }
 
-  get areaItemCounts() {
-    return rawItemSpawnData
-      .filter((d) => d.itemCode === this.code)
-      .reduce(
-        (acc, data) => acc.set(data.areaCode, data.dropCount),
-        new Map<number, number>()
-      );
+  get areaItemCounts(): ItemCounts {
+    const objectLocationKind = ({
+      [Item.METEORITE_ITEM_CODE]: "meteorite",
+      [Item.TREE_OF_LIFE_ITEM_CODE]: "tree of life",
+      [Item.WATER_ITEM_CODE]: "water",
+      [Item.BRANCH_ITEM_CODE]: "branch",
+      [Item.STONE_ITEM_CODE]: "stone",
+      [Item.LEATHER_ITEM_CODE]: "leather",
+      [Item.CARP_ITEM_CODE]: "carp",
+      [Item.POTATO_ITEM_CODE]: "potato",
+      [Item.COD_ITEM_CODE]: "cod",
+    } as const)[this.code];
+
+    if (objectLocationKind) {
+      if (objectLocationKind === "leather") {
+        return AREA_CODES.reduce(
+          (acc, areaCode) => acc.set(areaCode, 100),
+          new Map<number, number>()
+        );
+      } else {
+        return rawObjectLocationsData
+          .filter(({ kind }) => kind === objectLocationKind)
+          .reduce(
+            (acc, { areaCode }) =>
+              acc.set(areaCode, (acc.get(areaCode) || 0) + 1),
+            new Map<number, number>()
+          );
+      }
+    } else {
+      return rawItemSpawnData
+        .filter((d) => d.itemCode === this.code)
+        .reduce(
+          (acc, data) => acc.set(data.areaCode, data.dropCount),
+          new Map<number, number>()
+        );
+    }
   }
 
   get itemType() {

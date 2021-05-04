@@ -250,6 +250,32 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
+const calcAllItemCounts = (users: State["users"]) => {
+  const allItemCounts = new Map<number, number>();
+
+  users.forEach((u) => {
+    [
+      ...Character.findByCode(u.selectedCharacterCode).startItemCounts(
+        u.selectedStartWeaponType
+      ),
+    ].forEach(([code, count]) =>
+      allItemCounts.set(code, (allItemCounts.get(code) || 0) + count)
+    );
+  });
+
+  [...new Set(users.flatMap((u) => u.selectedRoute))].forEach((areaCode) => {
+    Item.where({ areaCode }).forEach((item) => {
+      allItemCounts.set(
+        item.code,
+        (allItemCounts.get(item.code) || 0) +
+          item.areaItemCounts.get(areaCode) * item.initialCount
+      );
+    });
+  });
+
+  return allItemCounts;
+};
+
 const initialState: State = {
   users: [],
   requiredItemCounts: new Map(),
@@ -268,6 +294,7 @@ const initialState: State = {
       showBuiltFromMeteorite: false,
       showBuiltFromVfBloodSample: false,
       showBuiltFromMithril: false,
+      onlyBuildable: false,
     },
   },
 };
@@ -482,6 +509,7 @@ export default function Home() {
             open={buildSelectForm.open}
           >
             <BuildSelectForm
+              itemCounts={calcAllItemCounts(users)}
               weaponTypes={
                 users[buildSelectForm.userIndex]
                   ? Character.findByCode(
