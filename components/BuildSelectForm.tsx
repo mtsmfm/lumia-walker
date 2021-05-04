@@ -104,11 +104,13 @@ interface Props {
   showBuiltFromMeteorite: boolean;
   showBuiltFromTreeOfLife: boolean;
   showBuiltFromVfBloodSample: boolean;
+  showBuiltFromMithril: boolean;
   onToggleShowCommon: () => void;
   onToggleOnlyFinal: () => void;
   onToggleShowBuiltFromMeteorite: () => void;
   onToggleShowBuiltFromTreeOfLife: () => void;
   onToggleShowBuiltFromVfBloodSample: () => void;
+  onToggleShowBuiltFromMithril: () => void;
 }
 
 const itemsFor = (
@@ -120,6 +122,7 @@ const itemsFor = (
     showBuiltFromMeteorite,
     showBuiltFromTreeOfLife,
     showBuiltFromVfBloodSample,
+    showBuiltFromMithril,
   }: Pick<
     Props,
     | "showCommon"
@@ -127,6 +130,7 @@ const itemsFor = (
     | "showBuiltFromMeteorite"
     | "showBuiltFromTreeOfLife"
     | "showBuiltFromVfBloodSample"
+    | "showBuiltFromMithril"
   > &
     Pick<State, "selectedWeaponType">
 ) => {
@@ -173,6 +177,10 @@ const itemsFor = (
     items = items.filter((i) => !i.isBuiltFromVfBloodSample);
   }
 
+  if (!showBuiltFromMithril) {
+    items = items.filter((i) => !i.isBuiltFromMithril);
+  }
+
   return items;
 };
 
@@ -201,11 +209,13 @@ export const BuildSelectForm: React.FC<Props> = ({
   showBuiltFromMeteorite,
   showBuiltFromTreeOfLife,
   showBuiltFromVfBloodSample,
+  showBuiltFromMithril,
   onToggleShowCommon,
   onToggleOnlyFinal,
   onToggleShowBuiltFromMeteorite,
   onToggleShowBuiltFromTreeOfLife,
   onToggleShowBuiltFromVfBloodSample,
+  onToggleShowBuiltFromMithril,
 }) => {
   const [
     { selectedTabIndex, nextSelectedItemCodes, selectedWeaponType },
@@ -300,6 +310,15 @@ export const BuildSelectForm: React.FC<Props> = ({
             }
             label={t("buildSelectForm.filters.showBuiltFromVfBloodSample")}
           />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={showBuiltFromMithril}
+                onClick={onToggleShowBuiltFromMithril}
+              />
+            }
+            label={t("buildSelectForm.filters.showBuiltFromMithril")}
+          />
         </FormGroup>
         <Tabs
           value={selectedTabIndex}
@@ -349,6 +368,7 @@ export const BuildSelectForm: React.FC<Props> = ({
               showBuiltFromMeteorite,
               showBuiltFromTreeOfLife,
               showBuiltFromVfBloodSample,
+              showBuiltFromMithril,
             }).map((item) => (
               <Grid container key={item.code}>
                 <ItemButton

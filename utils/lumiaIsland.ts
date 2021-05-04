@@ -92,6 +92,7 @@ export class Item {
   static METEORITE_ITEM_CODE = 401209;
   static TREE_OF_LIFE_ITEM_CODE = 401208;
   static VF_BLOOD_SAMPLE_ITEM_CODE = 401401;
+  static MITHRIL_ITEM_CODE = 401304;
 
   static findByCode(code: number): Item {
     return Item.ALL_ITEMS.get(code);
@@ -308,6 +309,10 @@ export class Item {
 
   get isBuiltFromVfBloodSample(): boolean {
     return calcMakeMaterials([this]).has(Item.VF_BLOOD_SAMPLE_ITEM_CODE);
+  }
+
+  get isBuiltFromMithril(): boolean {
+    return calcMakeMaterials([this]).has(Item.MITHRIL_ITEM_CODE);
   }
 }
 

@@ -54,6 +54,7 @@ interface State {
     showBuiltFromTreeOfLife: boolean;
     showBuiltFromMeteorite: boolean;
     showBuiltFromVfBloodSample: boolean;
+    showBuiltFromMithril: boolean;
   };
 }
 
@@ -106,6 +107,9 @@ type Action =
     }
   | {
       type: "TOGGLE_SHOW_BUILT_FROM_VF_BLOOD_SAMPLE";
+    }
+  | {
+      type: "TOGGLE_SHOW_BUILT_FROM_MITHRIL";
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -291,6 +295,15 @@ const reducer = (state: State, action: Action): State => {
         },
       };
     }
+    case "TOGGLE_SHOW_BUILT_FROM_MITHRIL": {
+      return {
+        ...state,
+        buildSelectForm: {
+          ...state.buildSelectForm,
+          showBuiltFromMithril: !state.buildSelectForm.showBuiltFromMithril,
+        },
+      };
+    }
     default: {
       const exhaustiveCheck: never = action;
       throw new Error(`Unhandled color case: ${exhaustiveCheck}`);
@@ -332,6 +345,7 @@ const initialState: State = {
     showBuiltFromTreeOfLife: false,
     showBuiltFromMeteorite: false,
     showBuiltFromVfBloodSample: false,
+    showBuiltFromMithril: false,
   },
 };
 
@@ -568,6 +582,7 @@ export default function Home() {
               showBuiltFromVfBloodSample={
                 buildSelectForm.showBuiltFromVfBloodSample
               }
+              showBuiltFromMithril={buildSelectForm.showBuiltFromMithril}
               onToggleOnlyFinal={() => {
                 dispatch({ type: "TOGGLE_ONLY_FINAL" });
               }}
@@ -582,6 +597,9 @@ export default function Home() {
               }}
               onToggleShowBuiltFromVfBloodSample={() => {
                 dispatch({ type: "TOGGLE_SHOW_BUILT_FROM_VF_BLOOD_SAMPLE" });
+              }}
+              onToggleShowBuiltFromMithril={() => {
+                dispatch({ type: "TOGGLE_SHOW_BUILT_FROM_MITHRIL" });
               }}
             />
           </Dialog>
