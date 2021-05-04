@@ -130,6 +130,14 @@ export const LumiaIslandMap: React.FC<Props> = ({
         <circle key={i} cx={l.x / RATIO} cy={l.y / RATIO} r={2} fill="cyan" />
       ))}
 
+      {OBJECT_LOCATIONS.filter((l) => l.kind === "meteorite").map((l, i) => (
+        <circle key={i} cx={l.x / RATIO} cy={l.y / RATIO} r={2} fill="red" />
+      ))}
+
+      {OBJECT_LOCATIONS.filter((l) => l.kind === "tree of life").map((l, i) => (
+        <circle key={i} cx={l.x / RATIO} cy={l.y / RATIO} r={2} fill="green" />
+      ))}
+
       {routeCentroidsList.map((routeCentroids, i) => {
         if (routeCentroids.length > 1) {
           return (
