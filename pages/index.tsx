@@ -42,6 +42,7 @@ interface State {
   }>;
   requiredItemCounts: ItemCounts;
   missingItemCounts: ItemCounts;
+  allItemCounts: ItemCounts;
   characterSelectForm: {
     open: boolean;
     userIndex: number;
@@ -99,12 +100,9 @@ const calcItemCounts = (users: State["users"]) => {
     .map((code) => Item.findByCode(code));
 
   const requiredItemCounts = calcMakeMaterials(allTargetItems);
-  const allAreaCodes = new Set(users.flatMap((u) => u.selectedRoute));
+  const allItemCounts = calcAllItemCounts(users);
   const missingItemCounts = [...requiredItemCounts]
-    .filter(
-      ([itemCode, _]) =>
-        !Item.findByCode(itemCode).areaCodes.some((c) => allAreaCodes.has(c))
-    )
+    .filter(([itemCode, count]) => (allItemCounts.get(itemCode) || 0) < count)
     .reduce(
       (acc, [code, count]) => acc.set(code, count),
       new Map<number, number>()
@@ -113,6 +111,7 @@ const calcItemCounts = (users: State["users"]) => {
   return {
     requiredItemCounts,
     missingItemCounts,
+    allItemCounts,
   };
 };
 
@@ -280,6 +279,7 @@ const initialState: State = {
   users: [],
   requiredItemCounts: new Map(),
   missingItemCounts: new Map(),
+  allItemCounts: new Map(),
   characterSelectForm: {
     open: false,
     userIndex: 0,
@@ -306,6 +306,7 @@ export default function Home() {
     {
       users,
       requiredItemCounts,
+      allItemCounts,
       characterSelectForm,
       buildSelectForm,
       missingItemCounts,
@@ -411,14 +412,22 @@ export default function Home() {
                   </ItemBadge>
                 ))}
               </Grid>
-              <HelpIcon />
-              <Grid container alignItems="center">
-                {[...missingItemCounts].map(([code, count]) => (
-                  <ItemBadge key={code} badgeContent={count} color="primary">
-                    <ItemImage width={60} key={code} code={Number(code)} />
-                  </ItemBadge>
-                ))}
-              </Grid>
+              {[...missingItemCounts].length > 0 && (
+                <>
+                  <HelpIcon />
+                  <Grid container alignItems="center">
+                    {[...missingItemCounts].map(([code, count]) => (
+                      <ItemBadge
+                        key={code}
+                        badgeContent={count}
+                        color="primary"
+                      >
+                        <ItemImage width={60} key={code} code={Number(code)} />
+                      </ItemBadge>
+                    ))}
+                  </Grid>
+                </>
+              )}
             </Grid>
           </Grid>
           <Grid container>
@@ -509,7 +518,7 @@ export default function Home() {
             open={buildSelectForm.open}
           >
             <BuildSelectForm
-              itemCounts={calcAllItemCounts(users)}
+              itemCounts={allItemCounts}
               weaponTypes={
                 users[buildSelectForm.userIndex]
                   ? Character.findByCode(
