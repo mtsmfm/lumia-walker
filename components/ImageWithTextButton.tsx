@@ -18,7 +18,7 @@ export const ImageWithTextButton: React.FC<{
         display: "flex",
         flex: 1,
         justifyContent: "start",
-        border: selected && "1px solid red",
+        border: selected ? "1px solid red" : undefined,
       }}
       onClick={onClick}
     >

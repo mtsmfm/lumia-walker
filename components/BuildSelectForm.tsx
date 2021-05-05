@@ -217,8 +217,6 @@ export const BuildSelectForm: React.FC<Props> = ({
 
   const { t } = useTranslation();
 
-  const stats = sumStats(itemCodes);
-
   useEffect(() => {
     if (nextSelectedItemCodes !== itemCodes) {
       onSelectedItemCodesChange(nextSelectedItemCodes);
@@ -233,11 +231,11 @@ export const BuildSelectForm: React.FC<Props> = ({
         <TableContainer>
           <Table size="small">
             <TableBody>
-              {Object.keys(stats).map((k) => {
+              {[...sumStats(itemCodes)].map(([k, v]) => {
                 return (
                   <TableRow key={k}>
                     <TableCell>{t(`stats.${k}`)}</TableCell>
-                    <TableCell>{stats[k]}</TableCell>
+                    <TableCell>{v}</TableCell>
                   </TableRow>
                 );
               })}
@@ -260,7 +258,7 @@ export const BuildSelectForm: React.FC<Props> = ({
       </Grid>
       <Grid item xs={9}>
         <FormGroup row>
-          {Object.keys(filter).map((k: keyof Filter) => {
+          {(Object.keys(filter) as Array<keyof Filter>).map((k) => {
             return (
               <FormControlLabel
                 key={k}

@@ -108,7 +108,7 @@ export class Item {
   static COD_ITEM_CODE = 302104;
 
   static findByCode(code: number): Item {
-    return Item.all.get(code);
+    return Item.all.get(code)!;
   }
 
   static where(conditions: {
@@ -286,16 +286,12 @@ export class Item {
       "increaseSkillDamageRatio",
       "preventSkillDamagedRatio",
     ];
-    return fieldNames.reduce((acc, name) => {
-      if (this.data[name]) {
-        return {
-          ...acc,
-          [name]: this.data[name],
-        };
-      } else {
-        return acc;
-      }
-    }, {});
+    return fieldNames
+      .filter((n) => this.data.hasOwnProperty(n) && (this.data as any)[n] > 0)
+      .reduce(
+        (acc, name) => acc.set(name, (this.data as any)[name]),
+        new Map<string, number>()
+      );
   }
 
   get imageUrl() {
@@ -434,7 +430,7 @@ export const sumItemCounts = (
       itemCounts.set(
         item.code,
         (itemCounts.get(item.code) || 0) +
-          item.areaItemCounts.get(areaCode) * item.initialCount
+          item.areaItemCounts.get(areaCode)! * item.initialCount
       );
     });
   });
@@ -460,13 +456,12 @@ export const sumStats = (codes: number[]) => {
   return EQUIPMENT_TYPES.reduce((acc, type) => {
     const item = items.find((i) => i.equipmentType === type);
     if (item) {
-      Object.entries(item.stats).map(([k, v]) => {
-        acc[k] ||= 0;
-        acc[k] = Number((acc[k] + v).toFixed(5));
+      [...item.stats].map(([k, v]) => {
+        acc.set(k, Number(((acc.get(k) || 0) + v).toFixed(5)));
       });
     }
     return acc;
-  }, {});
+  }, new Map<string, number>());
 };
 
 export class Character {
@@ -483,7 +478,7 @@ export class Character {
   }
 
   static findByCode(code: number) {
-    return Character.ALL_CHARACTERS.find((c) => c.code === code);
+    return Character.ALL_CHARACTERS.find((c) => c.code === code)!;
   }
 
   get code() {
@@ -514,7 +509,7 @@ export class Character {
     const result = new Map(Character.COMMON_START_ITEM_COUNTS);
     const startWeaponCode = rawRecommendedListData.find(
       (d) => d.characterCode === this.code && d.mastery === wt
-    ).startWeapon;
+    )!.startWeapon;
 
     result.set(startWeaponCode, 1);
 

@@ -87,7 +87,7 @@ export const LumiaIslandMap: React.FC<Props> = ({
   });
 
   const routeCentroidsList = routes.map((route) =>
-    route.map((r) => AREA_CENTROIDS.find((c) => r === c.areaCode))
+    route.map((r) => AREA_CENTROIDS.find((c) => r === c.areaCode)!)
   );
 
   useEffect(() => {

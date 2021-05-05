@@ -15,7 +15,10 @@ export const CharacterSelectorForm: React.FC<Props> = ({
   selectedWeaponType,
   onSelect,
 }) => {
-  const selectedCharacter = Character.findByCode(selectedCharacterCode);
+  const selectedCharacter =
+    selectedCharacterCode !== undefined
+      ? Character.findByCode(selectedCharacterCode)
+      : undefined;
 
   return (
     <Grid container>
@@ -41,16 +44,17 @@ export const CharacterSelectorForm: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Grid item xs={4}>
-        {selectedCharacter.startWeaponTypes.map((wt) => (
-          <WeaponTypeButton
-            key={wt}
-            weaponType={wt}
-            onClick={() => {
-              onSelect(selectedCharacter.code, wt);
-            }}
-            selected={selectedWeaponType === wt}
-          />
-        ))}
+        {selectedCharacter &&
+          selectedCharacter.startWeaponTypes.map((wt) => (
+            <WeaponTypeButton
+              key={wt}
+              weaponType={wt}
+              onClick={() => {
+                onSelect(selectedCharacter.code, wt);
+              }}
+              selected={selectedWeaponType === wt}
+            />
+          ))}
       </Grid>
     </Grid>
   );

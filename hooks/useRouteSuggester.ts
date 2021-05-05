@@ -12,12 +12,16 @@ export const useRouteSuggester = (onMessage: (data: ResponseData) => void) => {
       onMessage(evt.data);
 
     return () => {
-      workerRef.current.terminate();
+      if (workerRef.current) {
+        workerRef.current.terminate();
+      }
     };
   }, []);
 
   const postMessage = useCallback((data: RequestData) => {
-    return workerRef.current.postMessage(data);
+    if (workerRef.current) {
+      workerRef.current.postMessage(data);
+    }
   }, []);
 
   return postMessage;

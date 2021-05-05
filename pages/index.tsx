@@ -23,10 +23,11 @@ import { useHomeState } from "../hooks/useHomeState";
 import { useQueryParamStore } from "../hooks/useQueryParamStore";
 import SearchIcon from "@material-ui/icons/Search";
 import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
+import { GetStaticProps } from "next";
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common"])),
+    ...(await serverSideTranslations(locale!, ["common"])),
   },
 });
 
