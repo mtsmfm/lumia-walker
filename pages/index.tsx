@@ -282,6 +282,12 @@ export default function Home() {
                 characterCode: u.selectedCharacterCode,
                 startWeaponType: u.selectedStartWeaponType,
               }))}
+              onSelectRoute={(route) => {
+                dispatch({
+                  type: "CHANGE_ROUTES",
+                  routes: users.map((u) => route),
+                });
+              }}
             />
           </Dialog>
           <Divider />

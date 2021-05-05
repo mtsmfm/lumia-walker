@@ -6,9 +6,10 @@ import { Character } from "../utils/lumiaIsland";
 import { useEffect, useReducer } from "react";
 
 interface Props {
-  routes: number[][];
-  onRoutesChange: (routes: number[][]) => void;
-  users: number[];
+  route?: number[];
+  routes?: number[][];
+  onRoutesChange?: (routes: number[][]) => void;
+  users?: number[];
 }
 
 const RATIO = 120 / 25.4;
@@ -76,9 +77,10 @@ const reducer = (state: State, action: Action): State => {
 };
 
 export const LumiaIslandMap: React.FC<Props> = ({
-  routes,
+  route,
+  routes = route ? [route] : [],
   onRoutesChange,
-  users,
+  users = [],
 }) => {
   const { t } = useTranslation();
   const [{ changedRoutes, selectedUserIndex }, dispatch] = useReducer(reducer, {
@@ -91,7 +93,7 @@ export const LumiaIslandMap: React.FC<Props> = ({
   );
 
   useEffect(() => {
-    onRoutesChange(changedRoutes);
+    onRoutesChange && onRoutesChange(changedRoutes);
   }, [changedRoutes]);
 
   return (
@@ -164,7 +166,7 @@ export const LumiaIslandMap: React.FC<Props> = ({
             fill: "#fff",
             strokeWidth: "1",
             paintOrder: "stroke",
-            cursor: "pointer",
+            cursor: onRoutesChange && "pointer",
             userSelect: "none",
           }}
           textAnchor="middle"
@@ -209,7 +211,7 @@ export const LumiaIslandMap: React.FC<Props> = ({
                   strokeWidth: "1",
                   paintOrder: "stroke",
                   border: "1px solid black",
-                  cursor: "pointer",
+                  cursor: onRoutesChange && "pointer",
                   userSelect: "none",
                 }}
                 onClick={() => {

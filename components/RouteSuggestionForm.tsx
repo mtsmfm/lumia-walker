@@ -9,6 +9,7 @@ import { useRouteSuggester } from "../hooks/useRouteSuggester";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { ResponseData } from "../workers/routeSuggester";
 import Typography from "@material-ui/core/Typography";
+import { LumiaIslandMap } from "./LumiaIslandMap";
 
 interface Props {
   requiredItemCounts: ItemCounts;
@@ -16,6 +17,7 @@ interface Props {
     characterCode: number;
     startWeaponType: WeaponType;
   }>;
+  onSelectRoute: (route: number[]) => void;
 }
 
 interface State {
@@ -23,12 +25,18 @@ interface State {
   total: bigint;
   current: bigint;
   inProgress: boolean;
+  previewRoute: number[];
 }
 
-type Action = {
-  type: "RECEIVE_MESSAGE";
-  response: ResponseData;
-};
+type Action =
+  | {
+      type: "RECEIVE_MESSAGE";
+      response: ResponseData;
+    }
+  | {
+      type: "PREVIEW_ROUTE";
+      route: number[];
+    };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -58,6 +66,13 @@ const reducer = (state: State, action: Action): State => {
         }
       }
     }
+    case "PREVIEW_ROUTE": {
+      return { ...state, previewRoute: action.route };
+    }
+    default: {
+      const exhaustiveCheck: never = action;
+      throw new Error(`Unhandled case: ${exhaustiveCheck}`);
+    }
   }
 };
 
@@ -66,14 +81,16 @@ const initialState: State = {
   total: BigInt(0),
   current: BigInt(0),
   inProgress: false,
+  previewRoute: [],
 };
 
 export const RouteSuggestionForm: React.FC<Props> = ({
   users,
   requiredItemCounts,
+  onSelectRoute,
 }) => {
   const [
-    { suggestedRoutes, inProgress, current, total },
+    { suggestedRoutes, inProgress, current, total, previewRoute },
     dispatch,
   ] = useReducer(reducer, initialState);
 
@@ -103,6 +120,7 @@ export const RouteSuggestionForm: React.FC<Props> = ({
           {suggestedRoutes.length === 0 && <>Not found</>}
           {suggestedRoutes.length > 0 && (
             <>
+              <LumiaIslandMap route={previewRoute} />
               <Typography>
                 {t("routeSuggestionForm.result.combinations", {
                   count: suggestedRoutes.length,
@@ -115,7 +133,20 @@ export const RouteSuggestionForm: React.FC<Props> = ({
               </Typography>
               <List>
                 {suggestedRoutes.map((route, i) => (
-                  <ListItem key={i}>
+                  <ListItem
+                    key={i}
+                    button
+                    selected={route === previewRoute}
+                    onMouseEnter={() => {
+                      dispatch({
+                        type: "PREVIEW_ROUTE",
+                        route,
+                      });
+                    }}
+                    onClick={() => {
+                      onSelectRoute(route);
+                    }}
+                  >
                     <ListItemText
                       primary={route
                         .map((areaCode) => t(`areas.${areaCode}`))
