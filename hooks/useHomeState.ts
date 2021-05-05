@@ -174,7 +174,7 @@ const reducer = (state: State, action: Action): State => {
           ...state.users,
           {
             selectedCharacterCode: c.code,
-            selectedStartWeaponType: c.weaponTypes[0],
+            selectedStartWeaponType: c.startWeaponTypes[0],
             selectedItemsCodes: [],
             selectedRoute: [],
           },
