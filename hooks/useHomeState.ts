@@ -78,6 +78,10 @@ type Action =
   | {
       type: "TOGGLE_BUILD_SELECT_FORM_FILTER";
       filterType: keyof React.ComponentProps<typeof BuildSelectForm>["filter"];
+    }
+  | {
+      type: "REMOVE_USER";
+      userIndex: number;
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -251,6 +255,14 @@ const reducer = (state: State, action: Action): State => {
           ...state.routeSuggestionForm,
           open: false,
         },
+      };
+    }
+    case "REMOVE_USER": {
+      const nextUsers = state.users.filter((_, i) => i !== action.userIndex);
+      return {
+        ...state,
+        users: nextUsers,
+        ...calcItemCounts(nextUsers),
       };
     }
     default: {

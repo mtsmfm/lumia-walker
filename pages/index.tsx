@@ -24,6 +24,8 @@ import { useQueryParamStore } from "../hooks/useQueryParamStore";
 import SearchIcon from "@material-ui/icons/Search";
 import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 import { GetStaticProps } from "next";
+import Badge from "@material-ui/core/Badge";
+import CloseIcon from "@material-ui/icons/Close";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -73,16 +75,33 @@ export default function Home() {
                 {users.map((u, i) => {
                   return (
                     <Grid item xs={4} key={i}>
-                      <Button
-                        onClick={() => {
-                          dispatch({
-                            type: "OPEN_CHARACTER_SELECT_FORM",
-                            userIndex: i,
-                          });
-                        }}
+                      <Badge
+                        overlap="circle"
+                        badgeContent={
+                          <IconButton
+                            color="primary"
+                            onClick={() => {
+                              dispatch({
+                                type: "REMOVE_USER",
+                                userIndex: i,
+                              });
+                            }}
+                          >
+                            <CloseIcon />
+                          </IconButton>
+                        }
                       >
-                        <CharacterImage code={u.selectedCharacterCode} />
-                      </Button>
+                        <Button
+                          onClick={() => {
+                            dispatch({
+                              type: "OPEN_CHARACTER_SELECT_FORM",
+                              userIndex: i,
+                            });
+                          }}
+                        >
+                          <CharacterImage code={u.selectedCharacterCode} />
+                        </Button>
+                      </Badge>
                       {u.selectedItemsCodes.map((c) => (
                         <ItemButton
                           key={c}
