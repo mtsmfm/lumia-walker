@@ -26,6 +26,9 @@ import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 import { GetStaticProps } from "next";
 import Badge from "@material-ui/core/Badge";
 import CloseIcon from "@material-ui/icons/Close";
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -208,7 +211,33 @@ export default function Home() {
                   </Grid>
                   {u.selectedRoute.map((r, j) => (
                     <div key={`${i}-${j}`}>
-                      <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
+                      <Grid container>
+                        <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
+                        <ButtonGroup size="small">
+                          <IconButton
+                            onClick={() => {
+                              dispatch({
+                                type: "UP_ROUTE_AREA",
+                                userIndex: i,
+                                routeIndex: j,
+                              });
+                            }}
+                          >
+                            <ArrowDropUpIcon />
+                          </IconButton>
+                          <IconButton
+                            onClick={() => {
+                              dispatch({
+                                type: "DOWN_ROUTE_AREA",
+                                userIndex: i,
+                                routeIndex: j,
+                              });
+                            }}
+                          >
+                            <ArrowDropDownIcon />
+                          </IconButton>
+                        </ButtonGroup>
+                      </Grid>
 
                       <Grid container>
                         {[...requiredItemCounts.keys()]

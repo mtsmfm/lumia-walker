@@ -82,6 +82,16 @@ type Action =
   | {
       type: "REMOVE_USER";
       userIndex: number;
+    }
+  | {
+      type: "UP_ROUTE_AREA";
+      userIndex: number;
+      routeIndex: number;
+    }
+  | {
+      type: "DOWN_ROUTE_AREA";
+      userIndex: number;
+      routeIndex: number;
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -263,6 +273,47 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         users: nextUsers,
         ...calcItemCounts(nextUsers),
+      };
+    }
+    case "UP_ROUTE_AREA": {
+      return {
+        ...state,
+        users: state.users.map((u, i) => {
+          if (i === action.userIndex && action.routeIndex > 0) {
+            const route = [...u.selectedRoute];
+
+            [route[action.routeIndex - 1], route[action.routeIndex]] = [
+              route[action.routeIndex],
+              route[action.routeIndex - 1],
+            ];
+
+            return { ...u, selectedRoute: route };
+          } else {
+            return u;
+          }
+        }),
+      };
+    }
+    case "DOWN_ROUTE_AREA": {
+      return {
+        ...state,
+        users: state.users.map((u, i) => {
+          if (
+            i === action.userIndex &&
+            action.routeIndex < u.selectedRoute.length - 1
+          ) {
+            const route = [...u.selectedRoute];
+
+            [route[action.routeIndex + 1], route[action.routeIndex]] = [
+              route[action.routeIndex],
+              route[action.routeIndex + 1],
+            ];
+
+            return { ...u, selectedRoute: route };
+          } else {
+            return u;
+          }
+        }),
       };
     }
     default: {
