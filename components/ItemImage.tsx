@@ -86,6 +86,7 @@ export const ItemImage: React.FC<{
     >
       <img
         src={item.imageUrl}
+        draggable={false}
         style={{
           display: "block",
           width,
