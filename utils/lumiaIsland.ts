@@ -287,7 +287,7 @@ export class Item {
       "preventSkillDamagedRatio",
     ];
     return fieldNames
-      .filter((n) => this.data.hasOwnProperty(n) && (this.data as any)[n] > 0)
+      .filter((n) => this.data.hasOwnProperty(n) && (this.data as any)[n] !== 0)
       .reduce(
         (acc, name) => acc.set(name, (this.data as any)[name]),
         new Map<string, number>()
