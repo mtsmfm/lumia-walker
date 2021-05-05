@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -25,7 +27,9 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Component {...pageProps} />
+      <DndProvider backend={HTML5Backend}>
+        <Component {...pageProps} />
+      </DndProvider>
     </React.Fragment>
   );
 };

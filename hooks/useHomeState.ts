@@ -82,6 +82,12 @@ type Action =
   | {
       type: "REMOVE_USER";
       userIndex: number;
+    }
+  | {
+      type: "DND_ROUTE_AREA";
+      dragIndex: number;
+      hoverIndex: number;
+      userIndex: number;
     };
 
 const calcItemCounts = (users: State["users"]) => {
@@ -263,6 +269,28 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         users: nextUsers,
         ...calcItemCounts(nextUsers),
+      };
+    }
+    case "DND_ROUTE_AREA": {
+      return {
+        ...state,
+        users: state.users.map((u, i) => {
+          if (i === action.userIndex) {
+            const selectedRoute = [...u.selectedRoute];
+            selectedRoute.splice(action.dragIndex, 1);
+            selectedRoute.splice(
+              action.hoverIndex,
+              0,
+              u.selectedRoute[action.dragIndex]
+            );
+
+            console.log(u.selectedRoute, "->", selectedRoute);
+
+            return { ...u, selectedRoute };
+          } else {
+            return u;
+          }
+        }),
       };
     }
     default: {

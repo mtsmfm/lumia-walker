@@ -13,7 +13,6 @@ import { CharacterImage } from "../components/CharacterImage";
 import Dialog from "@material-ui/core/Dialog";
 import { CharacterSelectorForm } from "../components/CharacterSelectorForm";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import AddIcon from "@material-ui/icons/Add";
 import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
@@ -26,6 +25,7 @@ import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 import { GetStaticProps } from "next";
 import Badge from "@material-ui/core/Badge";
 import CloseIcon from "@material-ui/icons/Close";
+import { RouteArea } from "../components/RouteArea";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -207,26 +207,20 @@ export default function Home() {
                     ))}
                   </Grid>
                   {u.selectedRoute.map((r, j) => (
-                    <div key={`${i}-${j}`}>
-                      <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
-
-                      <Grid container>
-                        {[...requiredItemCounts.keys()]
-                          .map((c) => Item.findByCode(c))
-                          .filter(({ areaCodes }) => areaCodes.includes(r))
-                          .map(({ code }) => (
-                            <Grid key={`${i}-${code}`} item>
-                              <ItemBadge
-                                key={`${i}-${code}`}
-                                badgeContent={requiredItemCounts.get(code)}
-                                color="primary"
-                              >
-                                <ItemImage width={60} code={code} />
-                              </ItemBadge>
-                            </Grid>
-                          ))}
-                      </Grid>
-                    </div>
+                    <RouteArea
+                      key={`${i}-${j}`}
+                      index={j}
+                      areaCode={r}
+                      requiredItemCounts={requiredItemCounts}
+                      onMove={(dragIndex, hoverIndex) => {
+                        dispatch({
+                          type: "DND_ROUTE_AREA",
+                          dragIndex,
+                          hoverIndex,
+                          userIndex: i,
+                        });
+                      }}
+                    />
                   ))}
                 </Grid>
               );
