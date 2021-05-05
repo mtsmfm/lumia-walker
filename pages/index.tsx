@@ -179,12 +179,12 @@ export default function Home() {
               )}
             </Grid>
           </Grid>
-          <Grid container>
-            {users.map((u, i) => {
-              const character = Character.findByCode(u.selectedCharacterCode);
+          {users.map((u, i) => {
+            const character = Character.findByCode(u.selectedCharacterCode);
 
-              return (
-                <Grid item xs={4} key={i}>
+            return (
+              <Grid key={i} container>
+                <Grid item xs={12}>
                   <Button
                     key={i}
                     onClick={() => {
@@ -259,9 +259,9 @@ export default function Home() {
                     </div>
                   ))}
                 </Grid>
-              );
-            })}
-          </Grid>
+              </Grid>
+            );
+          })}
           <Dialog
             onClose={() => {
               dispatch({ type: "CLOSE_CHARACTER_SELECT_FORM" });
