@@ -29,6 +29,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
+import { ButtonGroupIconButton } from "../components/ButtonGroupIconButton";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -214,7 +215,7 @@ export default function Home() {
                       <Grid container>
                         <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
                         <ButtonGroup size="small">
-                          <IconButton
+                          <ButtonGroupIconButton
                             onClick={() => {
                               dispatch({
                                 type: "UP_ROUTE_AREA",
@@ -224,8 +225,8 @@ export default function Home() {
                             }}
                           >
                             <ArrowDropUpIcon />
-                          </IconButton>
-                          <IconButton
+                          </ButtonGroupIconButton>
+                          <ButtonGroupIconButton
                             onClick={() => {
                               dispatch({
                                 type: "DOWN_ROUTE_AREA",
@@ -235,7 +236,7 @@ export default function Home() {
                             }}
                           >
                             <ArrowDropDownIcon />
-                          </IconButton>
+                          </ButtonGroupIconButton>
                         </ButtonGroup>
                       </Grid>
 
