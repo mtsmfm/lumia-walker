@@ -54,7 +54,7 @@ export const ItemImage: React.FC<{
             <TableContainer>
               <Table size="small">
                 <TableBody>
-                  {Object.entries(item.stats).map(([k, v]) => {
+                  {[...item.stats].map(([k, v]) => {
                     return (
                       <TableRow key={k}>
                         <TableCell>{t(`stats.${k}`)}</TableCell>
