@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ItemButton } from "../components/ItemButton";
-import { Item, Character } from "../utils/lumiaIsland";
+import { Character } from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import { LumiaIslandMap } from "../components/LumiaIslandMap";
 import { ItemImage } from "../components/ItemImage";
@@ -13,7 +13,6 @@ import { CharacterImage } from "../components/CharacterImage";
 import Dialog from "@material-ui/core/Dialog";
 import { CharacterSelectorForm } from "../components/CharacterSelectorForm";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import AddIcon from "@material-ui/icons/Add";
 import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
@@ -26,10 +25,7 @@ import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 import { GetStaticProps } from "next";
 import Badge from "@material-ui/core/Badge";
 import CloseIcon from "@material-ui/icons/Close";
-import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-import { ButtonGroupIconButton } from "../components/ButtonGroupIconButton";
+import { RouteArea } from "../components/RouteArea";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -211,52 +207,25 @@ export default function Home() {
                     ))}
                   </Grid>
                   {u.selectedRoute.map((r, j) => (
-                    <div key={`${i}-${j}`}>
-                      <Grid container>
-                        <Typography gutterBottom>{t(`areas.${r}`)}</Typography>
-                        <ButtonGroup size="small">
-                          <ButtonGroupIconButton
-                            onClick={() => {
-                              dispatch({
-                                type: "UP_ROUTE_AREA",
-                                userIndex: i,
-                                routeIndex: j,
-                              });
-                            }}
-                          >
-                            <ArrowDropUpIcon />
-                          </ButtonGroupIconButton>
-                          <ButtonGroupIconButton
-                            onClick={() => {
-                              dispatch({
-                                type: "DOWN_ROUTE_AREA",
-                                userIndex: i,
-                                routeIndex: j,
-                              });
-                            }}
-                          >
-                            <ArrowDropDownIcon />
-                          </ButtonGroupIconButton>
-                        </ButtonGroup>
-                      </Grid>
-
-                      <Grid container>
-                        {[...requiredItemCounts.keys()]
-                          .map((c) => Item.findByCode(c))
-                          .filter(({ areaCodes }) => areaCodes.includes(r))
-                          .map(({ code }) => (
-                            <Grid key={`${i}-${code}`} item>
-                              <ItemBadge
-                                key={`${i}-${code}`}
-                                badgeContent={requiredItemCounts.get(code)}
-                                color="primary"
-                              >
-                                <ItemImage width={60} code={code} />
-                              </ItemBadge>
-                            </Grid>
-                          ))}
-                      </Grid>
-                    </div>
+                    <RouteArea
+                      key={`${i}-${j}`}
+                      areaCode={r}
+                      onUp={() => {
+                        dispatch({
+                          type: "UP_ROUTE_AREA",
+                          userIndex: i,
+                          routeIndex: j,
+                        });
+                      }}
+                      onDown={() => {
+                        dispatch({
+                          type: "DOWN_ROUTE_AREA",
+                          userIndex: i,
+                          routeIndex: j,
+                        });
+                      }}
+                      requiredItemCounts={requiredItemCounts}
+                    />
                   ))}
                 </Grid>
               </Grid>
