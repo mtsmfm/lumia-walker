@@ -6,4 +6,12 @@ module.exports = withTM({
   future: {
     webpack5: true,
   },
+  // https://github.com/vercel/next.js/issues/22813#issuecomment-810961712
+  webpack: (config, { isServer, dev }) => {
+    config.output.chunkFilename = isServer
+      ? `${dev ? "[name]" : "[name].[fullhash]"}.js`
+      : `static/chunks/${dev ? "[name]" : "[name].[fullhash]"}.js`;
+
+    return config;
+  },
 });
