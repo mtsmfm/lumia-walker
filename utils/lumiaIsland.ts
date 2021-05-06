@@ -10,6 +10,7 @@ import rawStartItemData from "../data/start_item.json";
 import rawRecommendedListData from "../data/recommended_list.json";
 import rawObjectLocationsData from "../map/object_locations.json";
 import { Memoize } from "typescript-memoize";
+import { updateMap } from "./mapHelpers";
 
 export const AREA_CODES = [...new Set(rawItemSpawnData.map((d) => d.areaCode))];
 
@@ -343,22 +344,22 @@ export class Item {
 
   @Memoize()
   get isBuiltFromMeteorite(): boolean {
-    return calcMakeMaterials([this]).has(Item.METEORITE_ITEM_CODE);
+    return calcMissingMakeMaterials([this]).has(Item.METEORITE_ITEM_CODE);
   }
 
   @Memoize()
   get isBuiltFromTreeOfLife(): boolean {
-    return calcMakeMaterials([this]).has(Item.TREE_OF_LIFE_ITEM_CODE);
+    return calcMissingMakeMaterials([this]).has(Item.TREE_OF_LIFE_ITEM_CODE);
   }
 
   @Memoize()
   get isBuiltFromVfBloodSample(): boolean {
-    return calcMakeMaterials([this]).has(Item.VF_BLOOD_SAMPLE_ITEM_CODE);
+    return calcMissingMakeMaterials([this]).has(Item.VF_BLOOD_SAMPLE_ITEM_CODE);
   }
 
   @Memoize()
   get isBuiltFromMithril(): boolean {
-    return calcMakeMaterials([this]).has(Item.MITHRIL_ITEM_CODE);
+    return calcMissingMakeMaterials([this]).has(Item.MITHRIL_ITEM_CODE);
   }
 }
 
@@ -372,38 +373,41 @@ const visitItemBuildTree = (
   }
 };
 
-export const calcMakeMaterials = (items: Item[]) => {
-  const materials: Item[] = [];
-  const leftoverItems: Item[] = [];
+export const calcMissingMakeMaterials = (
+  items: Item[],
+  itemCounts: ItemCounts = new Map()
+) => {
+  const missingItemCounts: ItemCounts = new Map();
+  const currentItemCounts = new Map(itemCounts);
 
   items.forEach((item) => {
     visitItemBuildTree(item, (i) => {
-      if (i.makeMaterial1 === 0) {
-        materials.push(i);
-      }
+      if (currentItemCounts.has(i.code)) {
+        updateMap(
+          currentItemCounts,
+          i.code,
+          (v) => (v || 0) - 1,
+          (v) => v === 0
+        );
 
-      let leftoverItemIndex = leftoverItems.findIndex(
-        (li) => li.code === i.code
-      );
-
-      if (leftoverItemIndex !== -1) {
-        leftoverItems.splice(leftoverItemIndex, 1);
         return "skip";
       }
 
-      if (i.makeMaterial1 !== 0) {
-        [...Array(i.initialCount - 1)].forEach(() => {
-          leftoverItems.push(i);
-        });
+      if (i.makeMaterial1 === 0) {
+        updateMap(missingItemCounts, i.code, (v) => (v || 0) + 1);
+      } else {
+        if (i.initialCount > 1) {
+          updateMap(
+            currentItemCounts,
+            i.code,
+            (v) => (v || 0) + i.initialCount - 1
+          );
+        }
       }
     });
   });
 
-  const itemCounts: ItemCounts = materials.reduce((acc, item) => {
-    return acc.set(item.code, (acc.get(item.code) || 0) + 1);
-  }, new Map<number, number>());
-
-  return itemCounts;
+  return missingItemCounts;
 };
 
 export const sumItemCounts = (

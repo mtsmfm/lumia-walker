@@ -1,6 +1,6 @@
 import {
   Item,
-  calcMakeMaterials,
+  calcMissingMakeMaterials,
   WeaponType,
   Character,
 } from "../utils/lumiaIsland";
@@ -99,7 +99,7 @@ const calcItemCounts = (users: State["users"]) => {
     .flatMap((u) => u.selectedItemsCodes)
     .map((code) => Item.findByCode(code));
 
-  const requiredItemCounts = calcMakeMaterials(allTargetItems);
+  const requiredItemCounts = calcMissingMakeMaterials(allTargetItems);
   const allItemCounts = sumItemCounts(
     users.map((u) => ({
       characterCode: u.selectedCharacterCode,

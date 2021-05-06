@@ -13,7 +13,7 @@ import {
   ARMOR_TYPES,
   CONSUMABLE_TYPES,
   ItemCounts,
-  calcMakeMaterials,
+  calcMissingMakeMaterials,
 } from "../utils/lumiaIsland";
 import Divider from "@material-ui/core/Divider";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -173,7 +173,7 @@ const itemsFor = (
 
   if (filter.onlyBuildable) {
     items = items.filter((i) =>
-      [...calcMakeMaterials([i])].every(
+      [...calcMissingMakeMaterials([i])].every(
         ([itemCode, count]) => (itemCounts.get(itemCode) || 0) >= count
       )
     );
