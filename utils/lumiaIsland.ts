@@ -17,8 +17,8 @@ export type ItemCounts = Map<number, number>;
 
 export const EQUIPMENT_TYPES = [
   "Weapon",
-  "Head",
   "Chest",
+  "Head",
   "Arm",
   "Leg",
   "Trinket",
