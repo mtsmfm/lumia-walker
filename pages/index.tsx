@@ -26,6 +26,7 @@ import { GetStaticProps } from "next";
 import Badge from "@material-ui/core/Badge";
 import CloseIcon from "@material-ui/icons/Close";
 import { RouteArea } from "../components/RouteArea";
+import { RoutePlan } from "../components/RoutePlan";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -206,27 +207,24 @@ export default function Home() {
                       </ItemBadge>
                     ))}
                   </Grid>
-                  {u.selectedRoute.map((r, j) => (
-                    <RouteArea
-                      key={`${i}-${j}`}
-                      areaCode={r}
-                      onUp={() => {
-                        dispatch({
-                          type: "UP_ROUTE_AREA",
-                          userIndex: i,
-                          routeIndex: j,
-                        });
-                      }}
-                      onDown={() => {
-                        dispatch({
-                          type: "DOWN_ROUTE_AREA",
-                          userIndex: i,
-                          routeIndex: j,
-                        });
-                      }}
-                      requiredItemCounts={requiredItemCounts}
-                    />
-                  ))}
+                  <RoutePlan
+                    route={u.selectedRoute}
+                    requiredItemCounts={requiredItemCounts}
+                    onUp={(routeIndex) => {
+                      dispatch({
+                        type: "UP_ROUTE_AREA",
+                        userIndex: i,
+                        routeIndex,
+                      });
+                    }}
+                    onDown={(routeIndex) => {
+                      dispatch({
+                        type: "DOWN_ROUTE_AREA",
+                        userIndex: i,
+                        routeIndex,
+                      });
+                    }}
+                  />
                 </Grid>
               </Grid>
             );
