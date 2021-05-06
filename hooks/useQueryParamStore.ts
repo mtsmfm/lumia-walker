@@ -21,7 +21,9 @@ export const useQueryParamStore = <T extends {}>(
 
   useEffect(() => {
     if (router.query.data) {
-      router.push(`?data=${encodeURIComponent(json)}`);
+      router.push(`?data=${encodeURIComponent(json)}`, undefined, {
+        scroll: false,
+      });
     }
   }, [json]);
 };
