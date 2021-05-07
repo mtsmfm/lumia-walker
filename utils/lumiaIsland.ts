@@ -410,6 +410,53 @@ export const calcMissingMakeMaterials = (
   return missingItemCounts;
 };
 
+export const craftTargetItems = (
+  items: Item[],
+  itemCounts: ItemCounts
+): ItemCounts => {
+  const currentItemCounts = new Map(itemCounts);
+
+  let changed = true;
+
+  while (changed) {
+    changed = false;
+
+    items.forEach((item) => {
+      visitItemBuildTree(item, (i) => {
+        if (currentItemCounts.get(i.code)) {
+          return "skip";
+        }
+
+        if (
+          (currentItemCounts.get(i.makeMaterial1) || 0) > 0 &&
+          (currentItemCounts.get(i.makeMaterial2) || 0) > 0
+        ) {
+          [i.makeMaterial1, i.makeMaterial2].forEach((m) => {
+            updateMap(
+              currentItemCounts,
+              m,
+              (v) => (v || 1) - 1,
+              (v) => v === 0
+            );
+          });
+
+          updateMap(
+            currentItemCounts,
+            i.code,
+            (v) => (v || 0) + i.initialCount
+          );
+
+          changed = true;
+
+          return "skip";
+        }
+      });
+    });
+  }
+
+  return currentItemCounts;
+};
+
 export const sumItemCounts = (
   users: Array<{
     characterCode: number;

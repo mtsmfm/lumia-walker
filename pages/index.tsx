@@ -17,7 +17,6 @@ import AddIcon from "@material-ui/icons/Add";
 import HelpIcon from "@material-ui/icons/Help";
 import IconButton from "@material-ui/core/IconButton";
 import { BuildSelectForm } from "../components/BuildSelectForm";
-import { WeaponTypeImage } from "../components/WeaponTypeImage";
 import { useHomeState } from "../hooks/useHomeState";
 import { useQueryParamStore } from "../hooks/useQueryParamStore";
 import SearchIcon from "@material-ui/icons/Search";
@@ -25,7 +24,6 @@ import { RouteSuggestionForm } from "../components/RouteSuggestionForm";
 import { GetStaticProps } from "next";
 import Badge from "@material-ui/core/Badge";
 import CloseIcon from "@material-ui/icons/Close";
-import { RouteArea } from "../components/RouteArea";
 import { RoutePlan } from "../components/RoutePlan";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
@@ -176,59 +174,39 @@ export default function Home() {
               )}
             </Grid>
           </Grid>
-          {users.map((u, i) => {
-            const character = Character.findByCode(u.selectedCharacterCode);
-
-            return (
-              <Grid key={i} container>
-                <Grid item xs={12}>
-                  <Button
-                    key={i}
-                    onClick={() => {
-                      dispatch({
-                        type: "OPEN_CHARACTER_SELECT_FORM",
-                        userIndex: i,
-                      });
-                    }}
-                  >
-                    <CharacterImage code={u.selectedCharacterCode} />
-                    <WeaponTypeImage weaponType={u.selectedStartWeaponType} />
-                  </Button>
-                  <Grid container>
-                    {[
-                      ...character.startItemCounts(u.selectedStartWeaponType),
-                    ].map(([code, count]) => (
-                      <ItemBadge
-                        key={code}
-                        badgeContent={count}
-                        color="primary"
-                      >
-                        <ItemImage width={60} code={code} />
-                      </ItemBadge>
-                    ))}
-                  </Grid>
-                  <RoutePlan
-                    route={u.selectedRoute}
-                    requiredItemCounts={requiredItemCounts}
-                    onUp={(routeIndex) => {
-                      dispatch({
-                        type: "UP_ROUTE_AREA",
-                        userIndex: i,
-                        routeIndex,
-                      });
-                    }}
-                    onDown={(routeIndex) => {
-                      dispatch({
-                        type: "DOWN_ROUTE_AREA",
-                        userIndex: i,
-                        routeIndex,
-                      });
-                    }}
-                  />
-                </Grid>
+          {users.map((u, i) => (
+            <Grid key={i} container>
+              <Grid item xs={12}>
+                <RoutePlan
+                  route={u.selectedRoute}
+                  requiredItemCounts={requiredItemCounts}
+                  onUp={(routeIndex) => {
+                    dispatch({
+                      type: "UP_ROUTE_AREA",
+                      userIndex: i,
+                      routeIndex,
+                    });
+                  }}
+                  onDown={(routeIndex) => {
+                    dispatch({
+                      type: "DOWN_ROUTE_AREA",
+                      userIndex: i,
+                      routeIndex,
+                    });
+                  }}
+                  characterCode={u.selectedCharacterCode}
+                  itemCodes={u.selectedItemsCodes}
+                  onCharacterClick={() => {
+                    dispatch({
+                      type: "OPEN_CHARACTER_SELECT_FORM",
+                      userIndex: i,
+                    });
+                  }}
+                  startWeaponType={u.selectedStartWeaponType}
+                />
               </Grid>
-            );
-          })}
+            </Grid>
+          ))}
           <Dialog
             onClose={() => {
               dispatch({ type: "CLOSE_CHARACTER_SELECT_FORM" });
