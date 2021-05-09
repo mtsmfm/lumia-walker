@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import GitHubForkRibbon from "react-github-fork-ribbon";
 
 const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -25,6 +26,13 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
+      <GitHubForkRibbon
+        href="//github.com/mtsmfm/lumia-walker"
+        target="_blank"
+        position="right"
+      >
+        Fork me on GitHub
+      </GitHubForkRibbon>
       <Component {...pageProps} />
     </React.Fragment>
   );
